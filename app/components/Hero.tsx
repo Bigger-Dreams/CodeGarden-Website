@@ -15,8 +15,9 @@ export function Hero() {
         </h1>
 
         <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-bone/75">
-          Ich modernisiere Websites und Apps für Wiener Handwerks- und
-          Einzelhandelsbetriebe — von der Strategie bis zum fertigen Code.
+          Ich entwickle neue Apps und Plattformen und optimiere Frontend
+          sowie UI/UX für Unternehmen — von der Strategie bis zum fertigen
+          Code.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-6">

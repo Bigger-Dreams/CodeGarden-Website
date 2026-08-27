@@ -2,9 +2,9 @@
 
 ## Projektkontext
 
-Business-Website für ein Einzelunternehmen (Frontend-/UI-UX-Modernisierung als Dienstleistung).
-Zielgruppe: Österreichische KMUs (v. a. Handwerk, lokaler Einzelhandel) ohne eigenes Dev-Team, die
-digitale Produkte outsourcen. Fokus Wien/Österreich, kein DACH-Anspruch.
+Business-Website für ein Einzelunternehmen (Entwicklung neuer Apps/Plattformen sowie
+Frontend-/UI-UX-Optimierung als Dienstleistung). Zielgruppe: Unternehmen ohne eigenes Dev-Team,
+die digitale Produkte outsourcen. Fokus Wien/Österreich, kein DACH-Anspruch.
 
 Positionierung: Personenmarke, nicht anonymes Studio. USP: Product-Management-Hintergrund +
 technische Umsetzung — versteht Business-Strategie UND Code, nicht nur eines von beidem.

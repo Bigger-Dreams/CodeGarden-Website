@@ -1,7 +1,7 @@
 const services = [
   {
-    title: "UI/UX-Redesign",
-    text: "Ihre bestehende Website oder App wird neu gedacht — klar strukturiert, auf die Bedürfnisse Ihrer Kund:innen zugeschnitten.",
+    title: "Apps & Plattformen",
+    text: "Neue digitale Produkte werden von Grund auf entwickelt — oder bestehende neu gedacht, klar strukturiert und auf Ihre Nutzer:innen zugeschnitten.",
   },
   {
     title: "Frontend-Entwicklung",
