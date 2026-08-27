@@ -10,6 +10,13 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-fraunces);
+
+  --color-ink: #17140f;
+  --color-bone: #efe9dc;
+  --color-brass: #b8925a;
+  --color-brass-bright: #d4a968;
+  --color-rust: #8a4a34;
+  --color-slate: #4a5049;
 }
 
 body {
