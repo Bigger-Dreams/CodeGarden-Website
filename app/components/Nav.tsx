@@ -17,8 +17,8 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate/40 bg-ink">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5 sm:px-12 lg:px-24">
+    <header className="sticky top-0 z-50 border-b border-slate/40 bg-ink px-6 sm:px-12 lg:px-24">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between py-5">
         <Link href="/" className="font-heading font-medium text-xl text-bone">
           UI Company
         </Link>
@@ -62,7 +62,7 @@ export function Nav() {
       </div>
 
       {open && (
-        <div id="mobile-menu" className="border-t border-slate/40 px-6 py-6 sm:hidden">
+        <div id="mobile-menu" className="border-t border-slate/40 py-6 sm:hidden">
           <nav className="flex flex-col items-start gap-5">
             {links.map((link) => (
               <Link

@@ -1,5 +1,3 @@
-const dated = { fontFamily: "Arial, Helvetica, sans-serif" };
-
 export function Hero() {
   return (
     <section className="flex min-h-screen flex-col justify-center bg-ink px-6 py-24 text-bone sm:px-12 lg:px-24">
@@ -35,63 +33,36 @@ export function Hero() {
           </a>
         </div>
 
-        <div
-          aria-hidden="true"
-          className="mt-20 grid max-w-3xl grid-cols-1 gap-8 sm:grid-cols-2"
-        >
-          <div>
-            <p className="mb-2 font-sans text-[10px] uppercase tracking-widest text-bone/40">
-              vorher
-            </p>
-            <div className="overflow-hidden rounded-sm border border-slate/40">
-              <div className="flex items-center gap-1.5 bg-[#d9d9d9] px-2 py-1.5">
-                <span className="h-2 w-2 rounded-full bg-[#e33]" />
-                <span className="h-2 w-2 rounded-full bg-[#ec3]" />
-                <span className="h-2 w-2 rounded-full bg-[#2b2]" />
+        <div className="mt-20 max-w-3xl" aria-hidden="true">
+          <div className="flex min-h-80 flex-col overflow-hidden rounded-sm border border-slate/40 bg-ink">
+            <div className="flex items-center gap-1.5 border-b border-bone/10 px-4 py-2.5">
+              <span className="h-2 w-2 rounded-full bg-bone/25" />
+              <span className="h-2 w-2 rounded-full bg-bone/25" />
+              <span className="h-2 w-2 rounded-full bg-bone/25" />
+            </div>
+            <div className="flex flex-1">
+              <div className="flex w-20 flex-col gap-3 border-r border-bone/10 p-4">
+                <div className="h-2 w-12 rounded-full bg-brass/60" />
+                <div className="h-2 w-10 rounded-full bg-bone/20" />
+                <div className="h-2 w-14 rounded-full bg-bone/15" />
+                <div className="h-2 w-9 rounded-full bg-bone/15" />
               </div>
-              <div className="bg-white p-4">
-                <p style={dated} className="text-[15px] font-bold text-[#1a1a1a]">
-                  Herzlich Willkommen!
-                </p>
-                <p style={dated} className="mt-1 text-[11px] leading-tight text-[#444]">
-                  Wir freuen uns auf Ihren Besuch. Öffnungszeiten und mehr
-                  finden Sie hier.
-                </p>
-                <div className="mt-3 flex flex-wrap gap-1">
-                  <span style={dated} className="bg-[#0645ad] px-2 py-1 text-[10px] text-white">
-                    Mehr erfahren
-                  </span>
-                  <span
-                    style={dated}
-                    className="border border-[#999] bg-[#e0e0e0] px-2 py-1 text-[10px] text-[#333]"
-                  >
-                    Kontakt
-                  </span>
-                  <span style={dated} className="bg-[#c0392b] px-2 py-1 text-[10px] text-white">
-                    Jetzt anrufen!
-                  </span>
+              <div className="flex-1 p-6">
+                <div className="mb-5 h-2.5 w-32 rounded-sm bg-bone/20" />
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="h-16 rounded-sm bg-brass/40" />
+                  <div className="h-16 rounded-sm bg-bone/10" />
+                  <div className="h-16 rounded-sm bg-bone/10" />
+                  <div className="h-16 rounded-sm bg-bone/10" />
+                  <div className="h-16 rounded-sm bg-bone/10" />
+                  <div className="h-16 rounded-sm bg-bone/10" />
                 </div>
               </div>
             </div>
           </div>
-
-          <div>
-            <p className="mb-2 font-sans text-[10px] uppercase tracking-widest text-brass/70">
-              danach
-            </p>
-            <div className="rounded-sm border border-brass/30 bg-ink p-5">
-              <p className="font-heading font-medium text-xl text-bone">Willkommen.</p>
-              <p className="mt-2 font-sans text-[13px] leading-relaxed text-bone/70">
-                Alles, was Sie wissen müssen — klar strukturiert, auf einen
-                Blick.
-              </p>
-              <div className="mt-4">
-                <span className="inline-block rounded-sm bg-brass px-3 py-1.5 font-sans text-[11px] font-medium text-ink">
-                  Termin vereinbaren
-                </span>
-              </div>
-            </div>
-          </div>
+          <p className="mt-4 font-sans text-sm text-bone/40">
+            Platzhalter — wird durch einen echten Prototyp-Screenshot ersetzt.
+          </p>
         </div>
       </div>
     </section>
