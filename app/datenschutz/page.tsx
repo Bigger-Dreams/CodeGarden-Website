@@ -1,0 +1,21 @@
+export default function DatenschutzPage() {
+  return (
+    <main className="flex flex-1 flex-col bg-bone px-6 py-24 text-ink sm:px-12 lg:px-24">
+      <div className="mx-auto flex w-full max-w-2xl flex-col">
+        <h1 className="font-serif text-4xl tracking-tight text-ink sm:text-5xl">
+          Datenschutzerklärung
+        </h1>
+        <p className="mt-6 font-sans text-base leading-relaxed text-ink/70">
+          Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO
+          folgen hier, sobald der endgültige Funktionsumfang der Website
+          (z. B. Kontaktformular, Analyse-Tools) feststeht.
+        </p>
+        <p className="mt-10 rounded-sm border border-rust/40 bg-rust/10 px-4 py-3 font-sans text-sm leading-relaxed text-ink/70">
+          Platzhaltertext — kein Ersatz für Rechtsberatung. Die finalen
+          Angaben werden vor Veröffentlichung mit einer Rechtsberatung
+          abgestimmt.
+        </p>
+      </div>
+    </main>
+  );
+}
