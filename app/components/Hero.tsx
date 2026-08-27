@@ -8,10 +8,10 @@ export function Hero() {
           Wien · Frontend &amp; UI/UX
         </p>
 
-        <h1 className="mt-6 max-w-3xl font-serif text-5xl leading-[1.05] tracking-tight text-bone sm:text-6xl lg:text-7xl">
+        <h1 className="mt-6 max-w-3xl font-heading font-medium text-5xl leading-[1.05] tracking-tight text-bone sm:text-6xl lg:text-7xl">
           Digitale Produkte, die
           <br />
-          <span className="italic text-brass">überzeugen.</span>
+          <span className="text-brass">überzeugen.</span>
         </h1>
 
         <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-bone/75">
@@ -79,7 +79,7 @@ export function Hero() {
               danach
             </p>
             <div className="rounded-sm border border-brass/30 bg-ink p-5">
-              <p className="font-serif text-xl text-bone">Willkommen.</p>
+              <p className="font-heading font-medium text-xl text-bone">Willkommen.</p>
               <p className="mt-2 font-sans text-[13px] leading-relaxed text-bone/70">
                 Alles, was Sie wissen müssen — klar strukturiert, auf einen
                 Blick.

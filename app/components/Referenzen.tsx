@@ -39,7 +39,7 @@ export function Referenzen() {
                 <span className="self-start rounded-sm bg-bone px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-ink">
                   Konzept
                 </span>
-                <p className="font-serif text-3xl text-bone">{project.name}</p>
+                <p className="font-heading font-medium text-3xl text-bone">{project.name}</p>
               </div>
               <p className="mt-4 font-sans text-sm uppercase tracking-wide text-ink/50">
                 {project.category}

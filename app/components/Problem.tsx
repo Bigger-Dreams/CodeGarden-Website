@@ -25,9 +25,9 @@ export function Problem() {
           ))}
         </ul>
 
-        <h2 className="mt-16 max-w-2xl font-serif text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
+        <h2 className="mt-16 max-w-2xl font-heading font-medium text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
           Zeit für einen Auftritt, der zu Ihrer Arbeit{" "}
-          <span className="italic text-brass-deep">passt</span> — klar,
+          <span className="text-brass-deep">passt</span> — klar,
           modern, vertrauenswürdig.
         </h2>
 

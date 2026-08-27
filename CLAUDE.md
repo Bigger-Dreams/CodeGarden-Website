@@ -46,8 +46,8 @@ One-Pager als Kernseite (Sections als eigene Komponenten in `app/components/`, z
 - **Keine Gradients** — keine Gradient-Utilities in der Tailwind-Config definieren, flache Farbflächen
 - **Wenig bis keine Animation** — höchstens `transition-colors` für Hover-States, kein `framer-motion`,
   keine Scroll-Trigger-/Parallax-Effekte
-- **Font Pairing:** Headline in Serif mit modernem Twist (Fraunces oder Instrument Serif), Body in
-  neutraler Sans-Serif (Inter oder Geist), eingebunden über `next/font`
+- **Font Pairing:** Headline in Sora (markanter Grotesk statt Serif), Body in IBM Plex Sans,
+  eingebunden über `next/font`
 - Design muss selbst als Beweis für UI/UX-Fähigkeiten funktionieren — kein Template-Look
 
 ## Content-Regeln — was NICHT auf der Seite steht

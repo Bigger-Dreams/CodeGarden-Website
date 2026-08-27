@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Sora, IBM_Plex_Sans } from "next/font/google";
 import { Footer } from "./components/Footer";
 import { Nav } from "./components/Nav";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const ibmPlexSans = IBM_Plex_Sans({
+  variable: "--font-ibm-plex-sans",
   subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="de"
-      className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
+      className={`${sora.variable} ${ibmPlexSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Nav />

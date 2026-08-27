@@ -23,7 +23,7 @@ export function Leistungen() {
         <p className="font-sans text-xs uppercase tracking-[0.2em] text-brass">
           Leistungen
         </p>
-        <p className="mt-6 max-w-xl font-serif text-3xl leading-tight tracking-tight text-bone sm:text-4xl">
+        <p className="mt-6 max-w-xl font-heading font-medium text-3xl leading-tight tracking-tight text-bone sm:text-4xl">
           Drei Bausteine, damit aus einer Idee ein Produkt wird, das
           funktioniert.
         </p>
@@ -31,7 +31,7 @@ export function Leistungen() {
         <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-3">
           {services.map((service) => (
             <div key={service.title} className="border-t border-slate/40 pt-6">
-              <h3 className="font-serif text-2xl text-bone">{service.title}</h3>
+              <h3 className="font-heading font-medium text-2xl text-bone">{service.title}</h3>
               <p className="mt-3 font-sans text-base leading-relaxed text-bone/70">
                 {service.text}
               </p>

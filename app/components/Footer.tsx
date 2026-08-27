@@ -14,7 +14,7 @@ export function Footer() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-10">
         <div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-start">
           <div>
-            <p className="font-serif text-xl text-bone">UI Company</p>
+            <p className="font-heading font-medium text-xl text-bone">UI Company</p>
             <p className="mt-1 font-sans text-sm text-bone/60">
               Wien · Frontend &amp; UI/UX
             </p>

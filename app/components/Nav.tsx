@@ -19,7 +19,7 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate/40 bg-ink">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5 sm:px-12 lg:px-24">
-        <Link href="/" className="font-serif text-xl text-bone">
+        <Link href="/" className="font-heading font-medium text-xl text-bone">
           UI Company
         </Link>
 
