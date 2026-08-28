@@ -26,14 +26,14 @@ export function Problem() {
         </ul>
 
         <h2 className="mt-16 max-w-2xl font-heading font-medium text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
-          Zeit für einen Auftritt, der zu Ihrer Arbeit{" "}
-          <span className="text-brass-deep">passt</span> — klar,
-          modern, vertrauenswürdig.
+          Zeit für einen klaren, modernen,{" "}
+          <span className="text-brass-deep">vertrauenswürdigen</span> Auftritt,
+          der zu Ihrer Arbeit passt.
         </h2>
 
         <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-ink/70">
           Ich gestalte und baue digitale Produkte, die Ihre Kompetenz
-          sichtbar machen — statt sie zu verstecken.
+          sichtbar machen, statt sie zu verstecken.
         </p>
       </div>
     </section>

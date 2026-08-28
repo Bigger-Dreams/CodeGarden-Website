@@ -6,8 +6,8 @@ export default function BlogPage() {
           Blog
         </h1>
         <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-ink/70">
-          Praktische Beiträge für Entscheider:innen ohne eigenes Dev-Team —
-          zu UI/UX, Frontend und was eine gute digitale Präsenz ausmacht.
+          Praktische Beiträge zu UI/UX, Frontend und was eine gute digitale
+          Präsenz ausmacht, für Entscheider:innen ohne eigenes Dev-Team.
         </p>
         <p className="mt-10 font-sans text-sm text-ink/50">
           Die ersten Artikel folgen in Kürze.

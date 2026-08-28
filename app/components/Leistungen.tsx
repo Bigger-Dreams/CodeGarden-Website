@@ -1,15 +1,15 @@
 const services = [
   {
     title: "Apps & Plattformen",
-    text: "Neue digitale Produkte werden von Grund auf entwickelt — oder bestehende neu gedacht, klar strukturiert und auf Ihre Nutzer:innen zugeschnitten.",
+    text: "Ich entwickle neue digitale Produkte von Grund auf oder denke bestehende neu, klar strukturiert und auf Ihre Nutzer:innen zugeschnitten.",
   },
   {
     title: "Frontend-Entwicklung",
-    text: "Saubere, moderne Umsetzung in Code — schnell, zuverlässig und auf jedem Gerät nutzbar.",
+    text: "Ich setze Ihr Projekt sauber und modern in Code um. Schnell, zuverlässig und auf jedem Gerät nutzbar.",
   },
   {
     title: "Beratung & Konzeption",
-    text: "Bevor gebaut wird, wird geklärt, was wirklich gebraucht wird — mit Blick auf Ihr Geschäft, nicht nur auf Pixel.",
+    text: "Ich kläre erst, was Sie wirklich brauchen: mit Blick auf Ihr Geschäft, nicht nur auf Pixel.",
   },
 ];
 

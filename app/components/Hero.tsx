@@ -14,7 +14,7 @@ export function Hero() {
 
         <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-bone/75">
           Ich entwickle neue Apps und Plattformen und optimiere Frontend
-          sowie UI/UX für Unternehmen — von der Strategie bis zum fertigen
+          sowie UI/UX für Unternehmen, von der Strategie bis zum fertigen
           Code.
         </p>
 
@@ -61,7 +61,7 @@ export function Hero() {
             </div>
           </div>
           <p className="mt-4 font-sans text-sm text-bone/40">
-            Platzhalter — wird durch einen echten Prototyp-Screenshot ersetzt.
+            Platzhalter. Wird durch einen echten Prototyp-Screenshot ersetzt.
           </p>
         </div>
       </div>

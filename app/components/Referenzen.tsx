@@ -9,7 +9,7 @@ export function Referenzen() {
           Referenzen
         </p>
         <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-ink/70">
-          Portfolio im Aufbau — hier entstehen bald echte Projekte. Bis dahin
+          Portfolio im Aufbau. Hier entstehen bald echte Projekte. Bis dahin
           ein Platzhalter, wie neue Apps und Plattformen aussehen können.
         </p>
 
@@ -47,7 +47,7 @@ export function Referenzen() {
               </div>
             </div>
             <p className="mt-4 max-w-sm font-sans text-base leading-relaxed text-ink/70">
-              Abstrahierte Dashboard-Ansicht — kein echtes Kundenprojekt.
+              Abstrahierte Dashboard-Ansicht, kein echtes Kundenprojekt.
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export function Referenzen() {
               </div>
             </div>
             <p className="mt-4 max-w-sm font-sans text-base leading-relaxed text-ink/70">
-              Abstrahierte mobile Ansicht — kein echtes Kundenprojekt.
+              Abstrahierte mobile Ansicht, kein echtes Kundenprojekt.
             </p>
           </div>
         </div>

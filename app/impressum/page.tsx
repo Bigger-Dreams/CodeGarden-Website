@@ -10,9 +10,9 @@ export default function ImpressumPage() {
           Unternehmensname feststeht.
         </p>
         <p className="mt-10 rounded-sm border border-rust/40 bg-rust/10 px-4 py-3 font-sans text-sm leading-relaxed text-ink/70">
-          Platzhaltertext — kein Ersatz für Rechtsberatung. Die finalen
-          Angaben werden vor Veröffentlichung mit einer Rechtsberatung
-          abgestimmt.
+          Platzhaltertext. Kein Ersatz für Rechtsberatung. Ich stimme die
+          finalen Angaben vor der Veröffentlichung mit einer Rechtsberatung
+          ab.
         </p>
       </div>
     </main>
