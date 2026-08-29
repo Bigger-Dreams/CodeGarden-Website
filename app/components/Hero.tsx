@@ -37,21 +37,14 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="flex items-start justify-end gap-5">
+        <div className="flex justify-end">
           <Image
             src="/hero-app-1.webp"
             alt="Prototyp-Screenshot einer App-Übersicht (Konzept, kein reales Produkt)"
             width={760}
             height={1498}
             priority
-            className="w-[150px] sm:w-[190px]"
-          />
-          <Image
-            src="/hero-app-2.webp"
-            alt="Prototyp-Screenshot einer Konto-Ansicht (Konzept, kein reales Produkt)"
-            width={760}
-            height={1498}
-            className="mt-10 w-[150px] sm:w-[190px]"
+            className="w-[260px] sm:w-[320px]"
           />
         </div>
       </div>
