@@ -1,0 +1,6 @@
+// Set NEXT_PUBLIC_SITE_URL once a real domain is live (Vercel project settings
+// for production, .env.local for local dev). The fallback below is a reserved
+// placeholder domain (example.com) so an unconfigured deploy fails obviously
+// instead of quietly publishing a sitemap/robots.txt with a fake-looking URL.
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.example.com";
