@@ -1,7 +1,5 @@
 import posthog from "posthog-js";
 
-export const CONSENT_KEY = "cookie_consent";
-
 let initialized = false;
 
 export function initPostHog() {
@@ -18,6 +16,9 @@ export function initPostHog() {
     autocapture: false,
     capture_pageview: false,
     disable_session_recording: true,
+    // No cookies or localStorage — the distinct ID lives only in memory
+    // for this page load and is discarded on reload/new tab.
+    persistence: "memory",
   });
 
   initialized = true;

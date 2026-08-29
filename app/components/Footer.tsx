@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { CONSENT_KEY } from "@/lib/posthog";
 
 const links = [
   { href: "/blog", label: "Blog" },
@@ -33,16 +30,6 @@ export function Footer() {
                 {link.label}
               </Link>
             ))}
-            <button
-              type="button"
-              onClick={() => {
-                window.localStorage.removeItem(CONSENT_KEY);
-                window.location.reload();
-              }}
-              className="font-sans text-sm text-bone/75 transition-colors hover:text-brass"
-            >
-              Cookie-Einstellungen
-            </button>
           </nav>
         </div>
 

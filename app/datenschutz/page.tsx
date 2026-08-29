@@ -9,9 +9,9 @@ export default function DatenschutzPage() {
           Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO
           folgen hier, sobald der endgültige Funktionsumfang der Website
           (z. B. Kontaktformular) feststeht. Für die Analyse der
-          Websitenutzung wird PostHog mit EU-Hosting eingesetzt, ausschließlich
-          nach Ihrer Zustimmung über den Cookie-Hinweis und beschränkt auf
-          Seitenaufrufe.
+          Websitenutzung wird PostHog mit EU-Hosting eingesetzt, beschränkt
+          auf Seitenaufrufe und ohne Cookies oder dauerhafte Speicherung auf
+          Ihrem Gerät.
         </p>
         <p className="mt-10 rounded-sm border border-rust/40 bg-rust/10 px-4 py-3 font-sans text-sm leading-relaxed text-ink/70">
           Platzhaltertext. Kein Ersatz für Rechtsberatung. Ich stimme die
