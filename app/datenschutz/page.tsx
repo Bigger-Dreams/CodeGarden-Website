@@ -64,14 +64,17 @@ export default function DatenschutzPage() {
           Anfrage an die eigene Domain.
         </p>
         <p className="mt-3 font-sans text-base leading-relaxed text-ink/70">
-          Erfasst werden ausschließlich Seitenaufrufe, keine Klicks,
-          Mausbewegungen, Formulareingaben oder Session-Aufzeichnungen. Die
-          Zuordnung eines Besuchs erfolgt über eine ID, die nur im
-          Arbeitsspeicher des Browsers für die Dauer des jeweiligen
-          Seitenbesuchs existiert. Dafür werden weder Cookies gesetzt noch
-          Daten in localStorage gespeichert. Nach Schließen des Tabs oder
-          erneutem Laden der Seite ist diese ID nicht mehr vorhanden, eine
-          Wiedererkennung über mehrere Besuche hinweg findet nicht statt.
+          Erfasst werden Seitenaufrufe sowie automatisch bestimmte
+          Interaktionen wie Klicks auf Buttons, Links und andere
+          Bedienelemente (sogenanntes Autocapture von PostHog).
+          Mausbewegungen und Bildschirmaufzeichnungen (Session Recording)
+          bleiben deaktiviert. Die Zuordnung eines Besuchs erfolgt über eine
+          ID, die nur im Arbeitsspeicher des Browsers für die Dauer des
+          jeweiligen Seitenbesuchs existiert. Dafür werden weder Cookies
+          gesetzt noch Daten in localStorage gespeichert. Nach Schließen des
+          Tabs oder erneutem Laden der Seite ist diese ID nicht mehr
+          vorhanden, eine Wiedererkennung über mehrere Besuche hinweg findet
+          nicht statt.
         </p>
         <p className="mt-3 font-sans text-base leading-relaxed text-ink/70">
           Grundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an

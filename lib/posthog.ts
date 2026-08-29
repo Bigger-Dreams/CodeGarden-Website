@@ -13,7 +13,7 @@ export function initPostHog() {
     // requests are first-party instead of going straight to PostHog's
     // domain (official PostHog Next.js reverse-proxy guide).
     api_host: "/ingest",
-    autocapture: false,
+    autocapture: true,
     capture_pageview: false,
     disable_session_recording: true,
     // No cookies or localStorage — the distinct ID lives only in memory
