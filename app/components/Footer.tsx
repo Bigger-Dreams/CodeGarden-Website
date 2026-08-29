@@ -1,12 +1,16 @@
 import Link from "next/link";
+import { contactMailto } from "@/lib/site";
 
 const links = [
   { href: "/blog", label: "Blog" },
   { href: "/ueber-mich", label: "Über mich" },
-  { href: "/#kontakt", label: "Kontakt" },
+  { href: contactMailto, label: "Kontakt", external: true },
   { href: "/impressum", label: "Impressum" },
   { href: "/datenschutz", label: "Datenschutz" },
 ];
+
+const linkClassName =
+  "font-sans text-sm text-bone/75 transition-colors hover:text-brass";
 
 export function Footer() {
   return (
@@ -21,15 +25,17 @@ export function Footer() {
           </div>
 
           <nav className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="font-sans text-sm text-bone/75 transition-colors hover:text-brass"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {links.map((link) =>
+              link.external ? (
+                <a key={link.href} href={link.href} className={linkClassName}>
+                  {link.label}
+                </a>
+              ) : (
+                <Link key={link.href} href={link.href} className={linkClassName}>
+                  {link.label}
+                </Link>
+              ),
+            )}
           </nav>
         </div>
 

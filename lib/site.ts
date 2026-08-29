@@ -4,3 +4,7 @@
 // instead of quietly publishing a sitemap/robots.txt with a fake-looking URL.
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.example.com";
+
+export const contactEmail = "patrick.roith@aon.at";
+
+export const contactMailto = `mailto:${contactEmail}?subject=Anfrage%20%C3%BCber%20die%20Website`;

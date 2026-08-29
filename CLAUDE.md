@@ -19,7 +19,8 @@ hinweisen, dass der Name überall konsistent ersetzt werden muss, sobald final e
 - Deployment: Vercel (Preview-Deployment bei jedem Push)
 - Blog: MDX (`@next/mdx`), Artikel unter `app/blog/[slug]`, kein externes CMS
 - Rendering: Static Site Generation (SSG) — keine dynamischen Server-Daten pro Request nötig
-- Kontaktformular: Next.js Server Action oder einfache API-Route, kein Backend/DB-Overhead
+- Kontakt: kein Formular, sondern mailto-Links auf allen "Kontakt"-CTAs (Nav, Footer, Hero,
+  Blog-CTAs) über `lib/site.ts`'s `contactMailto`, öffnet das Mail-Programm des Besuchers direkt
 
 ## Struktur
 
@@ -32,14 +33,15 @@ One-Pager als Kernseite (Sections als eigene Komponenten in `app/components/`, z
 ├── Problem/Nutzenversprechen
 ├── Leistungen
 ├── Arbeitsweise/Prozess
-├── Referenzen/Portfolio
-└── Kontakt/CTA
+└── Referenzen/Portfolio
 
 /blog, /blog/[slug]
 /ueber-mich
 /impressum
 /datenschutz
 ```
+
+Kein eigener Kontakt-Bereich: alle "Kontakt"-CTAs sind mailto-Links (siehe Tech Stack).
 
 ## Design-Vorgaben (verbindlich)
 

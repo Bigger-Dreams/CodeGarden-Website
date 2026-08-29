@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { contactMailto } from "@/lib/site";
 
 const links = [
   { href: "/#leistungen", label: "Leistungen" },
@@ -33,9 +34,9 @@ export function Nav() {
               {link.label}
             </Link>
           ))}
-          <Link href="/#kontakt" className={ctaClass}>
+          <a href={contactMailto} className={ctaClass}>
             Kontakt
-          </Link>
+          </a>
         </nav>
 
         <button
@@ -74,9 +75,9 @@ export function Nav() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/#kontakt" onClick={() => setOpen(false)} className={ctaClass}>
+            <a href={contactMailto} onClick={() => setOpen(false)} className={ctaClass}>
               Kontakt
-            </Link>
+            </a>
           </nav>
         </div>
       )}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { contactMailto } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -23,7 +24,7 @@ export function Hero() {
 
           <div className="mt-10 flex flex-wrap items-center gap-6">
             <a
-              href="#kontakt"
+              href={contactMailto}
               className="inline-flex items-center justify-center rounded-sm bg-brass px-6 py-3 font-sans text-sm font-medium text-ink transition-colors hover:bg-brass-bright"
             >
               Projekt anfragen

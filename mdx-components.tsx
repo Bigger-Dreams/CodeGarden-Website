@@ -18,6 +18,14 @@ function MDXLink({
     );
   }
 
+  if (href?.startsWith("mailto:")) {
+    return (
+      <a href={href} className={className} {...props}>
+        {children}
+      </a>
+    );
+  }
+
   return (
     <a href={href} className={className} target="_blank" rel="noopener noreferrer" {...props}>
       {children}
