@@ -11,7 +11,11 @@ export function Problem() {
       className="bg-bone px-6 py-24 text-ink sm:px-12 lg:px-24"
     >
       <div className="mx-auto flex w-full max-w-3xl flex-col">
-        <p className="font-sans text-lg text-ink/70">Sie kennen das:</p>
+        <p className="font-sans text-xs uppercase tracking-[0.2em] text-brass-deep">
+          Das Problem
+        </p>
+
+        <p className="mt-6 font-sans text-lg text-ink/70">Sie kennen das:</p>
 
         <ul className="mt-6 flex flex-col gap-3">
           {symptoms.map((symptom) => (
