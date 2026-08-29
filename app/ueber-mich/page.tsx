@@ -5,46 +5,44 @@ const paragraphs = [
   "Für Sie als Kunde heißt das vor allem eines: weniger Reibung zwischen dem, was Sie wirklich brauchen, und dem, was am Ende umgesetzt wird. Mir geht es immer um das beste Ergebnis für die Nutzer:innen, weil das auch das beste Ergebnis für Ihr Unternehmen ist.",
 ];
 
-export function UeberMich() {
+export default function UeberMichPage() {
   return (
-    <section
-      id="ueber-mich"
-      className="bg-ink px-6 py-24 text-bone sm:px-12 lg:px-24"
-    >
-      <div className="mx-auto flex w-full max-w-6xl flex-col lg:flex-row lg:gap-16">
-        <div className="lg:w-64 lg:shrink-0">
-          <p className="font-sans text-xs uppercase tracking-[0.2em] text-brass">
-            Über mich
-          </p>
+    <main className="flex flex-1 flex-col bg-bone px-6 py-24 text-ink sm:px-12 lg:px-24">
+      <div className="mx-auto flex w-full max-w-2xl flex-col">
+        <h1 className="font-heading font-medium text-4xl tracking-tight text-ink sm:text-5xl">
+          Über mich
+        </h1>
 
-          <div className="mt-6 flex h-40 w-40 items-center justify-center rounded-sm border border-bone/15 bg-bone/[0.04]">
-            <span className="font-sans text-[10px] uppercase tracking-widest text-bone/40">
+        <div className="mt-10 flex items-center gap-5">
+          <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-sm border border-ink/15 bg-ink/[0.04]">
+            <span className="font-sans text-[9px] uppercase tracking-widest text-ink/40">
               Foto folgt
             </span>
           </div>
-
-          <p className="mt-4 font-heading font-medium text-lg text-bone">
-            Patrick Roith
-          </p>
-          <p className="mt-1 font-sans text-sm text-bone/60">
-            Wien · Frontend &amp; UI/UX
-          </p>
-          <span className="mt-3 inline-flex w-fit items-center gap-2 rounded-sm border border-bone/15 px-2 py-1 font-sans text-[10px] uppercase tracking-widest text-bone/40">
-            LinkedIn folgt
-          </span>
+          <div>
+            <p className="font-heading font-medium text-lg text-ink">
+              Patrick Roith
+            </p>
+            <p className="mt-1 font-sans text-sm text-ink/60">
+              Wien · Frontend &amp; UI/UX
+            </p>
+            <span className="mt-2 inline-flex w-fit items-center gap-2 rounded-sm border border-ink/15 px-2 py-1 font-sans text-[9px] uppercase tracking-widest text-ink/40">
+              LinkedIn folgt
+            </span>
+          </div>
         </div>
 
-        <div className="mt-12 flex max-w-2xl flex-col gap-6 lg:mt-0">
+        <div className="mt-10 flex flex-col gap-6">
           {paragraphs.map((paragraph, index) => (
             <p
               key={index}
-              className="font-sans text-base leading-relaxed text-bone/70"
+              className="font-sans text-base leading-relaxed text-ink/70"
             >
               {paragraph}
             </p>
           ))}
         </div>
       </div>
-    </section>
+    </main>
   );
 }

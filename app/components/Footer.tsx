@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const links = [
   { href: "/blog", label: "Blog" },
-  { href: "/#ueber-mich", label: "Über mich" },
+  { href: "/ueber-mich", label: "Über mich" },
   { href: "/#kontakt", label: "Kontakt" },
   { href: "/impressum", label: "Impressum" },
   { href: "/datenschutz", label: "Datenschutz" },

@@ -33,10 +33,10 @@ One-Pager als Kernseite (Sections als eigene Komponenten in `app/components/`, z
 ├── Leistungen
 ├── Arbeitsweise/Prozess
 ├── Referenzen/Portfolio
-├── Über mich
 └── Kontakt/CTA
 
 /blog, /blog/[slug]
+/ueber-mich
 /impressum
 /datenschutz
 ```
