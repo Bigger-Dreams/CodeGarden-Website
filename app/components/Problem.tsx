@@ -1,5 +1,5 @@
 const symptoms = [
-  "Die Website wirkt, als wäre sie vor zehn Jahren stehengeblieben.",
+  "Ihr digitaler Auftritt wirkt, als wäre er vor zehn Jahren stehengeblieben.",
   "Auf dem Handy findet niemand, was er sucht.",
   "Anfragen gehen unter, statt zu Aufträgen zu werden.",
 ];
@@ -26,14 +26,14 @@ export function Problem() {
         </ul>
 
         <h2 className="mt-16 max-w-2xl font-heading font-medium text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
-          Zeit für einen klaren, modernen,{" "}
-          <span className="text-brass-deep">vertrauenswürdigen</span> Auftritt,
-          der zu Ihrer Arbeit passt.
+          Zeit für einen klaren,{" "}
+          <span className="text-brass-deep">vertrauenswürdigen</span> Auftritt
+          für Ihr Unternehmen.
         </h2>
 
         <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-ink/70">
-          Ich gestalte und baue digitale Produkte, die Ihre Kompetenz
-          sichtbar machen, statt sie zu verstecken.
+          Ich gestalte und baue digitale Produkte, die das Können Ihres
+          Unternehmens sichtbar machen, statt es zu verstecken.
         </p>
       </div>
     </section>
