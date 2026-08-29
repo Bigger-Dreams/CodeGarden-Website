@@ -43,7 +43,7 @@ export default function BlogPage() {
           <Link
             key={article.slug}
             href={`/blog/${article.slug}`}
-            className="group flex flex-col rounded-sm border border-slate/40 p-6 transition-colors hover:border-brass-deep"
+            className="group flex flex-col rounded-2xl border border-slate/30 bg-ink/[0.06] p-6 transition-colors hover:border-brass-deep hover:bg-ink/10"
           >
             <h2 className="font-heading font-medium text-lg leading-snug text-ink transition-colors group-hover:text-brass-deep">
               {article.title}
