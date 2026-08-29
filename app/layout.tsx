@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Sora, IBM_Plex_Sans } from "next/font/google";
 import { Analytics } from "./components/Analytics";
 import { Footer } from "./components/Footer";
@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   title: "UI Company",
   description:
     "Ich entwickle Apps und Plattformen und optimiere Frontend sowie UI/UX für Unternehmen in Wien und Österreich.",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#17140f",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
