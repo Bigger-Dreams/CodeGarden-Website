@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Sora, IBM_Plex_Sans } from "next/font/google";
+import { Analytics } from "./components/Analytics";
 import { Footer } from "./components/Footer";
 import { Nav } from "./components/Nav";
 import "./globals.css";
@@ -17,7 +18,8 @@ const ibmPlexSans = IBM_Plex_Sans({
 
 export const metadata: Metadata = {
   title: "UI Company",
-  description: "Frontend- und UI/UX-Modernisierung für Wiener KMUs",
+  description:
+    "Ich entwickle Apps und Plattformen und optimiere Frontend sowie UI/UX für Unternehmen in Wien und Österreich.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -30,6 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Nav />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

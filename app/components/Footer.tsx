@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { CONSENT_KEY } from "@/lib/posthog";
 
 const links = [
   { href: "/blog", label: "Blog" },
@@ -20,7 +23,7 @@ export function Footer() {
             </p>
           </div>
 
-          <nav className="flex flex-wrap gap-x-6 gap-y-2">
+          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2">
             {links.map((link) => (
               <Link
                 key={link.href}
@@ -30,6 +33,16 @@ export function Footer() {
                 {link.label}
               </Link>
             ))}
+            <button
+              type="button"
+              onClick={() => {
+                window.localStorage.removeItem(CONSENT_KEY);
+                window.location.reload();
+              }}
+              className="font-sans text-sm text-bone/75 transition-colors hover:text-brass"
+            >
+              Cookie-Einstellungen
+            </button>
           </nav>
         </div>
 
