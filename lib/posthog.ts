@@ -10,11 +10,11 @@ export function initPostHog() {
   const key = process.env.NEXT_PUBLIC_POSTHOG_KEY;
   if (!key) return;
 
-  const host =
-    process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "https://eu.i.posthog.com";
-
   posthog.init(key, {
-    api_host: host,
+    // Routed through next.config.ts's rewrites to eu.i.posthog.com, so
+    // requests are first-party instead of going straight to PostHog's
+    // domain (official PostHog Next.js reverse-proxy guide).
+    api_host: "/ingest",
     autocapture: false,
     capture_pageview: false,
     disable_session_recording: true,
