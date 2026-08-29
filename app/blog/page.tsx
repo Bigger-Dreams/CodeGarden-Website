@@ -7,34 +7,53 @@ const articles = [
     description:
       "Woran Sie erkennen, dass Ihre Website modernisiert werden sollte, und was Sie konkret als Nächstes tun können.",
   },
+  {
+    slug: "ux-probleme-erkennen",
+    title: "UX-Probleme erkennen: Worauf Sie achten sollten",
+    description:
+      "Die wichtigsten Signale für UX-Probleme und wie Sie sie ohne eigenes UX-Team auswerten.",
+  },
+  {
+    slug: "conversion-rate-durch-ux-steigern",
+    title: "Conversion Rate durch UX steigern",
+    description:
+      "Konkrete Hebel bei Formularen, Anfrageprozessen und Call-to-Actions, ohne Redesign von Grund auf.",
+  },
+  {
+    slug: "kosten-frontend-modernisierung",
+    title: "Kosten Frontend Modernisierung",
+    description:
+      "Wovon der Preis tatsächlich abhängt, transparent erklärt, ohne Fantasiezahlen.",
+  },
 ];
 
 export default function BlogPage() {
   return (
-    <>
-      <h1 className="font-heading font-medium text-4xl tracking-tight text-ink sm:text-5xl">
-        Blog
+    <div className="mx-auto flex w-full max-w-6xl flex-col">
+      <h1 className="text-center font-heading font-medium text-4xl tracking-tight text-ink sm:text-5xl">
+        UI Company Blog
       </h1>
-      <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-ink/70">
-        Praktische Beiträge zu UI/UX, Frontend und was eine gute digitale
-        Präsenz ausmacht, für Entscheider:innen ohne eigenes Dev-Team.
+      <p className="mx-auto mt-6 max-w-2xl text-center font-sans text-lg leading-relaxed text-ink/70">
+        Alle Beiträge zu UI/UX, Frontend-Optimierung und was eine gute
+        digitale Präsenz für Unternehmen ausmacht.
       </p>
 
-      <ul className="mt-16 flex flex-col gap-10">
+      <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {articles.map((article) => (
-          <li key={article.slug} className="border-t border-slate/40 pt-6">
-            <Link
-              href={`/blog/${article.slug}`}
-              className="font-heading font-medium text-2xl text-ink transition-colors hover:text-brass-deep"
-            >
+          <Link
+            key={article.slug}
+            href={`/blog/${article.slug}`}
+            className="group flex flex-col rounded-sm border border-slate/40 p-6 transition-colors hover:border-brass-deep"
+          >
+            <h2 className="font-heading font-medium text-lg leading-snug text-ink transition-colors group-hover:text-brass-deep">
               {article.title}
-            </Link>
-            <p className="mt-2 max-w-xl font-sans text-base leading-relaxed text-ink/70">
+            </h2>
+            <p className="mt-3 font-sans text-sm leading-relaxed text-ink/70">
               {article.description}
             </p>
-          </li>
+          </Link>
         ))}
-      </ul>
-    </>
+      </div>
+    </div>
   );
 }
