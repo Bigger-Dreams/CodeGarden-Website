@@ -1,4 +1,5 @@
 import { contactMailto } from "@/lib/site";
+import { PhoneFrame } from "./PhoneFrame";
 import { ShowcasePlayer } from "./ShowcasePlayer";
 
 export function Hero() {
@@ -39,12 +40,14 @@ export function Hero() {
         </div>
 
         <div className="flex justify-end">
-          <ShowcasePlayer
-            webmSrc="/showcase.webm"
-            mp4Src="/showcase.mp4"
-            posterSrc="/poster.webp"
-            className="aspect-[1206/2622] w-[260px] object-cover sm:w-[320px]"
-          />
+          <PhoneFrame>
+            <ShowcasePlayer
+              webmSrc="/showcase.webm"
+              mp4Src="/showcase.mp4"
+              posterSrc="/poster.webp"
+              className="aspect-[1206/2622] w-[260px] object-cover sm:w-[320px]"
+            />
+          </PhoneFrame>
         </div>
       </div>
     </section>
