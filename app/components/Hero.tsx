@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { contactMailto } from "@/lib/site";
 import { PhoneFrame } from "./PhoneFrame";
-import { ShowcasePlayer } from "./ShowcasePlayer";
 
 export function Hero() {
   return (
@@ -41,11 +41,13 @@ export function Hero() {
 
         <div className="flex justify-end">
           <PhoneFrame>
-            <ShowcasePlayer
-              webmSrc="/showcase.webm"
-              mp4Src="/showcase.mp4"
-              posterSrc="/poster.webp"
-              className="aspect-[1206/2622] w-[260px] object-cover sm:w-[320px]"
+            <Image
+              src="/poster.webp"
+              alt="Prototyp-Screenshot einer App-Übersicht (Konzept, kein reales Produkt)"
+              width={640}
+              height={1392}
+              priority
+              className="w-[260px] object-cover sm:w-[320px]"
             />
           </PhoneFrame>
         </div>
