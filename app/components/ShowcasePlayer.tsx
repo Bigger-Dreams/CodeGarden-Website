@@ -41,18 +41,21 @@ export function ShowcasePlayer({
   }, []);
 
   return (
-    <video
-      ref={videoRef}
-      poster={posterSrc}
-      muted
-      loop
-      playsInline
-      preload="metadata"
-      aria-label="Prototyp-Demo einer App-Oberfläche (Konzept, kein reales Produkt)"
-      className={className}
-    >
-      <source src={webmSrc} type="video/webm" />
-      <source src={mp4Src} type="video/mp4" />
-    </video>
+    <>
+      <link rel="preload" as="image" href={posterSrc} fetchPriority="high" />
+      <video
+        ref={videoRef}
+        poster={posterSrc}
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-label="Prototyp-Demo einer App-Oberfläche (Konzept, kein reales Produkt)"
+        className={className}
+      >
+        <source src={webmSrc} type="video/webm" />
+        <source src={mp4Src} type="video/mp4" />
+      </video>
+    </>
   );
 }

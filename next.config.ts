@@ -26,6 +26,22 @@ const nextConfig: NextConfig = {
     ];
   },
   skipTrailingSlashRedirect: true,
+  // public/ assets aren't content-hashed, so a plain Vercel deploy serves them
+  // with max-age=0. A week-long cache with a revalidation window is a
+  // reasonable middle ground for the hero video/poster, which change rarely.
+  async headers() {
+    return [
+      {
+        source: "/:path(poster.webp|showcase.webm|showcase.mp4)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=604800, stale-while-revalidate=86400",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 const withMDX = createMDX({});

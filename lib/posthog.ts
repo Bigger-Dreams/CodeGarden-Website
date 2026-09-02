@@ -19,6 +19,11 @@ export function initPostHog() {
     // No cookies or localStorage — the distinct ID lives only in memory
     // for this page load and is discarded on reload/new tab.
     persistence: "memory",
+    // Skip loading the surveys/dead-clicks/web-vitals extension bundles —
+    // none of these are used, and each is a separate script request.
+    disable_surveys: true,
+    capture_dead_clicks: false,
+    capture_performance: false,
   });
 
   initialized = true;
