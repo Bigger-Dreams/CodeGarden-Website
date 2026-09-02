@@ -5,7 +5,7 @@ const services = [
   },
   {
     title: "Frontend-Entwicklung",
-    text: "Ich setze Ihr Projekt sauber und modern in Code um. Schnell, zuverlässig und auf jedem Gerät nutzbar.",
+    text: "Ich setze Ihr Projekt sauber und modern in Code um, schnell und zuverlässig auf jedem Gerät.",
   },
   {
     title: "Beratung & Konzeption",
