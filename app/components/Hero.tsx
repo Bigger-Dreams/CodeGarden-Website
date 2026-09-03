@@ -19,9 +19,8 @@ export function Hero() {
 
           <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-bone/75">
             Ich modernisiere Frontend, UX und UI bestehender Apps und
-            Plattformen, von der Beratung bis zum fertigen Code – damit
-            Nutzer:innen sie wieder gern verwenden und daraus mehr Anfragen
-            für Ihr Unternehmen werden.
+            Plattformen. Nutzer:innen finden sich zurecht, und aus Anfragen
+            werden wieder Aufträge.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-6">

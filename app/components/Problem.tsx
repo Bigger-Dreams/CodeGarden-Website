@@ -40,14 +40,13 @@ export function Problem() {
           <div className="flex flex-col justify-center">
             <h2 className="font-heading font-medium text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
               Zeit für eine App, die zu Ihrem Unternehmen{" "}
-              <span className="text-brass-deep">passt</span> – nicht dagegen
-              arbeitet.
+              <span className="text-brass-deep">passt</span>.
             </h2>
 
             <p className="mt-6 font-sans text-lg leading-relaxed text-ink/70">
               Ich überarbeite Frontend, UX und UI bestehender Apps und
               Plattformen, damit sich Nutzer:innen zurechtfinden und Ihr
-              Unternehmen professionell wirkt, statt angestaubt.
+              Unternehmen professionell wirkt.
             </p>
           </div>
         </div>
