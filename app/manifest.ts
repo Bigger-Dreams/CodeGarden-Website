@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Frontend- und UI/UX-Modernisierung für Unternehmen in Wien und Österreich.",
     start_url: "/",
     display: "standalone",
-    background_color: "#17140f",
-    theme_color: "#17140f",
+    background_color: "#1a1a1a",
+    theme_color: "#1a1a1a",
     icons: [
       {
         src: "/favicon.ico",
