@@ -30,12 +30,12 @@ export function Referenzen() {
               <Image
                 src="/referenz-uebersicht.webp"
                 alt="Übersicht-Screen einer Finanz-App: Gesamtvermögen, Konten und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)"
-                width={1200}
-                height={554}
+                width={1800}
+                height={821}
                 className="w-full"
               />
             </div>
-            <p className="mt-4 max-w-sm font-sans text-base leading-relaxed text-ink/70">
+            <p className="mt-4 font-sans text-base leading-relaxed text-ink/70">
               Übersicht-Screen mit Gesamtvermögen, Kontenübersicht und
               Schnellaktionen, aus einem eigenen Konzeptprojekt.
             </p>
@@ -54,12 +54,12 @@ export function Referenzen() {
               <Image
                 src="/referenz-depot.webp"
                 alt="Depot-Screen einer Finanz-App: Positionen, Watchlist und Preisalarme (Konzeptprojekt, kein Kundenauftrag)"
-                width={1200}
-                height={541}
+                width={1800}
+                height={821}
                 className="w-full"
               />
             </div>
-            <p className="mt-4 max-w-sm font-sans text-base leading-relaxed text-ink/70">
+            <p className="mt-4 font-sans text-base leading-relaxed text-ink/70">
               Depot-Ansicht mit einzelnen Positionen, Watchlist und
               Preisalarmen, aus demselben Konzeptprojekt.
             </p>
