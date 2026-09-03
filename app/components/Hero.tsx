@@ -12,15 +12,16 @@ export function Hero() {
           </p>
 
           <h1 className="mt-6 max-w-3xl font-heading font-medium text-5xl leading-[1.05] tracking-tight text-bone sm:text-6xl">
-            Digitale Produkte, die
+            Bestehende Apps, die
             <br />
-            <span className="text-brass">überzeugen.</span>
+            <span className="text-brass">wieder überzeugen.</span>
           </h1>
 
           <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-bone/75">
-            Ich entwickle neue Apps und Plattformen und optimiere Frontend
-            sowie UI/UX für Unternehmen, von der Strategie bis zum fertigen
-            Code.
+            Ich modernisiere Frontend, UX und UI bestehender Apps und
+            Plattformen, von der Beratung bis zum fertigen Code – damit
+            Nutzer:innen sie wieder gern verwenden und daraus mehr Anfragen
+            für Ihr Unternehmen werden.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-6">

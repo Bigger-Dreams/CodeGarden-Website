@@ -1,6 +1,6 @@
 const symptoms = [
-  "Ihr digitaler Auftritt wirkt, als wäre er vor zehn Jahren stehengeblieben.",
-  "Auf dem Handy findet niemand, was er sucht.",
+  "Ihre App oder Plattform wirkt, als wäre sie vor zehn Jahren stehengeblieben.",
+  "Nutzer:innen brechen mittendrin ab, weil sie nicht finden, was sie suchen.",
   "Anfragen gehen unter, statt zu Aufträgen zu werden.",
 ];
 
@@ -39,14 +39,15 @@ export function Problem() {
 
           <div className="flex flex-col justify-center">
             <h2 className="font-heading font-medium text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
-              Zeit für einen klaren,{" "}
-              <span className="text-brass-deep">vertrauenswürdigen</span>{" "}
-              Auftritt für Ihr Unternehmen.
+              Zeit für eine App, die zu Ihrem Unternehmen{" "}
+              <span className="text-brass-deep">passt</span> – nicht dagegen
+              arbeitet.
             </h2>
 
             <p className="mt-6 font-sans text-lg leading-relaxed text-ink/70">
-              Ich gestalte und baue digitale Produkte, die das Können Ihres
-              Unternehmens sichtbar machen, statt es zu verstecken.
+              Ich überarbeite Frontend, UX und UI bestehender Apps und
+              Plattformen, damit sich Nutzer:innen zurechtfinden und Ihr
+              Unternehmen professionell wirkt, statt angestaubt.
             </p>
           </div>
         </div>

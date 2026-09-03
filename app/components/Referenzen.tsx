@@ -11,9 +11,9 @@ export function Referenzen() {
           Referenzen
         </p>
         <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-ink/70">
-          Ein Einblick in ein eigenes Konzeptprojekt, eine Finanz-App, an der
-          ich Interface und Interaktionen entwickle. Echte Kundenprojekte
-          folgen hier, sobald sie abgeschlossen sind.
+          Ein Blick in mein eigenes Konzeptprojekt: eine Finanz-App, bei der
+          ich Interface und Interaktionen entwickelt habe. Echte
+          Kundenprojekte kommen dazu, sobald sie abgeschlossen sind.
         </p>
 
         <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2">
@@ -39,7 +39,7 @@ export function Referenzen() {
             </div>
             <p className="mt-4 font-sans text-base leading-relaxed text-ink/70">
               Übersicht-Screen mit Gesamtvermögen, Kontenübersicht und
-              Schnellaktionen, aus einem eigenen Konzeptprojekt.
+              Schnellaktionen.
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export function Referenzen() {
             </div>
             <p className="mt-4 font-sans text-base leading-relaxed text-ink/70">
               Depot-Ansicht mit einzelnen Positionen, Watchlist und
-              Preisalarmen, aus demselben Konzeptprojekt.
+              Preisalarmen.
             </p>
           </div>
         </div>

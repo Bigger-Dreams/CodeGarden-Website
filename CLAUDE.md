@@ -2,9 +2,11 @@
 
 ## Projektkontext
 
-Business-Website für ein Einzelunternehmen (Entwicklung neuer Apps/Plattformen sowie
-Frontend-/UI-UX-Optimierung als Dienstleistung). Zielgruppe: Unternehmen ohne eigenes Dev-Team,
-die digitale Produkte outsourcen. Fokus Wien/Österreich, kein DACH-Anspruch.
+Business-Website für ein Einzelunternehmen (Frontend-Entwicklung & UX/UI-Modernisierung
+bestehender Apps, Plattformen und Tools, inkl. gezielter Beratung & Konzeption, als
+Dienstleistung — siehe [ADR-0001](./docs/adr/0001-fokus-frontend-ux-ui-modernisierung.md)).
+Zielgruppe: Unternehmen ohne eigenes Dev-Team, die digitale Produkte outsourcen. Fokus
+Wien/Österreich, kein DACH-Anspruch.
 
 Positionierung: Personenmarke, nicht anonymes Studio. USP: Product-Management-Hintergrund +
 technische Umsetzung — versteht Business-Strategie UND Code, nicht nur eines von beidem.

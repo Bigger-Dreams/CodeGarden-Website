@@ -19,7 +19,7 @@ const ibmPlexSans = IBM_Plex_Sans({
 export const metadata: Metadata = {
   title: "UI Company",
   description:
-    "Ich entwickle Apps und Plattformen und optimiere Frontend sowie UI/UX für Unternehmen in Wien und Österreich.",
+    "Ich modernisiere Frontend, UX und UI bestehender Apps und Plattformen für Unternehmen in Wien und Österreich.",
 };
 
 export const viewport: Viewport = {
