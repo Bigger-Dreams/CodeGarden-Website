@@ -26,7 +26,7 @@ export function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-6">
             <a
               href={contactMailto}
-              className="inline-flex items-center justify-center rounded-sm bg-brass px-6 py-3 font-sans text-sm font-medium text-ink transition-colors hover:bg-brass-bright"
+              className="inline-flex items-center justify-center rounded-sm bg-brass px-6 py-3 font-sans text-sm font-medium text-bone transition-colors hover:bg-brass-bright"
             >
               Projekt anfragen
             </a>

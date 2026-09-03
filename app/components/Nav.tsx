@@ -12,7 +12,7 @@ const links = [
 ];
 
 const ctaClass =
-  "inline-flex items-center justify-center rounded-sm bg-brass px-5 py-2.5 font-sans text-sm font-medium text-ink transition-colors hover:bg-brass-bright";
+  "inline-flex items-center justify-center rounded-sm bg-brass px-5 py-2.5 font-sans text-sm font-medium text-bone transition-colors hover:bg-brass-bright";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
