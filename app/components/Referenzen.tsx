@@ -1,5 +1,21 @@
 import Image from "next/image";
 
+const projects = [
+  {
+    label: "Übersicht",
+    src: "/referenz-uebersicht.webp",
+    alt: "Übersicht-Screen einer Finanz-App: Gesamtvermögen, Konten und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
+    caption:
+      "Übersicht-Screen mit Gesamtvermögen, Kontenübersicht und Schnellaktionen.",
+  },
+  {
+    label: "Depot",
+    src: "/referenz-depot.webp",
+    alt: "Depot-Screen einer Finanz-App: Positionen, Watchlist und Preisalarme (Konzeptprojekt, kein Kundenauftrag)",
+    caption: "Depot-Ansicht mit einzelnen Positionen, Watchlist und Preisalarmen.",
+  },
+];
+
 export function Referenzen() {
   return (
     <section
@@ -16,58 +32,33 @@ export function Referenzen() {
           Kundenprojekte kommen dazu, sobald sie abgeschlossen sind.
         </p>
 
-        <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2">
-          <div>
-            <div className="mb-2 flex items-center justify-between">
-              <p className="font-sans text-[10px] uppercase tracking-widest text-ink/40">
-                Übersicht
+        <div className="mt-16 flex flex-col gap-16">
+          {projects.map((project) => (
+            <div key={project.label}>
+              <div className="overflow-hidden rounded-sm border border-ink/10">
+                <div className="flex items-center justify-between border-b border-ink/10 bg-ink/[0.03] px-5 py-3">
+                  <span className="font-sans text-[11px] uppercase tracking-widest text-ink/40">
+                    {project.label}
+                  </span>
+                  <span className="rounded-sm bg-ink px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-bone">
+                    Konzept
+                  </span>
+                </div>
+                <Image
+                  src={project.src}
+                  alt={project.alt}
+                  width={1800}
+                  height={821}
+                  sizes="(min-width: 1024px) 1152px, 100vw"
+                  quality={100}
+                  className="w-full"
+                />
+              </div>
+              <p className="mt-4 max-w-2xl font-sans text-base leading-relaxed text-ink/70">
+                {project.caption}
               </p>
-              <span className="rounded-sm bg-ink px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-bone">
-                Konzept
-              </span>
             </div>
-            <div className="overflow-hidden rounded-sm border border-ink/10">
-              <Image
-                src="/referenz-uebersicht.webp"
-                alt="Übersicht-Screen einer Finanz-App: Gesamtvermögen, Konten und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)"
-                width={1800}
-                height={821}
-                sizes="(min-width: 640px) 50vw, 100vw"
-                quality={90}
-                className="w-full"
-              />
-            </div>
-            <p className="mt-4 font-sans text-base leading-relaxed text-ink/70">
-              Übersicht-Screen mit Gesamtvermögen, Kontenübersicht und
-              Schnellaktionen.
-            </p>
-          </div>
-
-          <div>
-            <div className="mb-2 flex items-center justify-between">
-              <p className="font-sans text-[10px] uppercase tracking-widest text-ink/40">
-                Depot
-              </p>
-              <span className="rounded-sm bg-ink px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-bone">
-                Konzept
-              </span>
-            </div>
-            <div className="overflow-hidden rounded-sm border border-ink/10">
-              <Image
-                src="/referenz-depot.webp"
-                alt="Depot-Screen einer Finanz-App: Positionen, Watchlist und Preisalarme (Konzeptprojekt, kein Kundenauftrag)"
-                width={1800}
-                height={821}
-                sizes="(min-width: 640px) 50vw, 100vw"
-                quality={90}
-                className="w-full"
-              />
-            </div>
-            <p className="mt-4 font-sans text-base leading-relaxed text-ink/70">
-              Depot-Ansicht mit einzelnen Positionen, Watchlist und
-              Preisalarmen.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>
