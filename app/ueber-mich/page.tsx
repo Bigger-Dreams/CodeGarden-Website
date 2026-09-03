@@ -7,26 +7,26 @@ const paragraphs = [
 
 export default function UeberMichPage() {
   return (
-    <main className="flex flex-1 flex-col bg-bone px-6 py-24 text-ink sm:px-12 lg:px-24">
+    <main className="flex flex-1 flex-col bg-ink-soft px-6 py-24 text-bone sm:px-12 lg:px-24">
       <div className="mx-auto flex w-full max-w-2xl flex-col">
-        <h1 className="font-heading font-medium text-4xl tracking-tight text-ink sm:text-5xl">
+        <h1 className="font-heading font-medium text-4xl tracking-tight text-bone sm:text-5xl">
           Über mich
         </h1>
 
         <div className="mt-10 flex items-center gap-5">
-          <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-sm border border-ink/15 bg-ink/[0.04]">
-            <span className="font-sans text-[9px] uppercase tracking-widest text-ink/40">
+          <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-sm border border-bone/15 bg-bone/[0.04]">
+            <span className="font-sans text-[9px] uppercase tracking-widest text-bone/40">
               Foto folgt
             </span>
           </div>
           <div>
-            <p className="font-heading font-medium text-lg text-ink">
+            <p className="font-heading font-medium text-lg text-bone">
               Patrick Roith
             </p>
-            <p className="mt-1 font-sans text-sm text-ink/60">
+            <p className="mt-1 font-sans text-sm text-bone/60">
               Wien · Frontend &amp; UI/UX
             </p>
-            <span className="mt-2 inline-flex w-fit items-center gap-2 rounded-sm border border-ink/15 px-2 py-1 font-sans text-[9px] uppercase tracking-widest text-ink/40">
+            <span className="mt-2 inline-flex w-fit items-center gap-2 rounded-sm border border-bone/15 px-2 py-1 font-sans text-[9px] uppercase tracking-widest text-bone/40">
               LinkedIn folgt
             </span>
           </div>
@@ -36,7 +36,7 @@ export default function UeberMichPage() {
           {paragraphs.map((paragraph, index) => (
             <p
               key={index}
-              className="font-sans text-base leading-relaxed text-ink/70"
+              className="font-sans text-base leading-relaxed text-bone/70"
             >
               {paragraph}
             </p>
