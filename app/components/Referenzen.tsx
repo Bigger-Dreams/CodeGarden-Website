@@ -20,13 +20,13 @@ export function Referenzen() {
   return (
     <section
       id="referenzen"
-      className="bg-bone px-6 py-24 text-ink sm:px-12 lg:px-24"
+      className="bg-ink-soft px-6 py-24 text-bone sm:px-12 lg:px-24"
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col">
-        <p className="font-sans text-xs uppercase tracking-[0.2em] text-brass-deep">
+        <p className="font-sans text-xs uppercase tracking-[0.2em] text-brass">
           Referenzen
         </p>
-        <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-ink/70">
+        <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-bone/70">
           Ein Blick in mein eigenes Konzeptprojekt: eine Finanz-App, bei der
           ich Interface und Interaktionen entwickelt habe. Echte
           Kundenprojekte kommen dazu, sobald sie abgeschlossen sind.
@@ -36,12 +36,12 @@ export function Referenzen() {
       <div className="mx-auto mt-16 grid w-full max-w-[1400px] grid-cols-1 gap-8 sm:grid-cols-2">
         {projects.map((project) => (
           <div key={project.label}>
-            <div className="overflow-hidden rounded-sm border border-ink/10">
-              <div className="flex items-center justify-between border-b border-ink/10 bg-ink/[0.03] px-5 py-3">
-                <span className="font-sans text-[11px] uppercase tracking-widest text-ink/40">
+            <div className="overflow-hidden rounded-sm border border-bone/10">
+              <div className="flex items-center justify-between border-b border-bone/10 bg-bone/[0.03] px-5 py-3">
+                <span className="font-sans text-[11px] uppercase tracking-widest text-bone/40">
                   {project.label}
                 </span>
-                <span className="rounded-sm bg-ink px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-bone">
+                <span className="rounded-sm bg-brass px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-ink">
                   Konzept
                 </span>
               </div>
@@ -55,7 +55,7 @@ export function Referenzen() {
                 className="w-full"
               />
             </div>
-            <p className="mt-4 font-sans text-base leading-relaxed text-ink/70">
+            <p className="mt-4 font-sans text-base leading-relaxed text-bone/70">
               {project.caption}
             </p>
           </div>
