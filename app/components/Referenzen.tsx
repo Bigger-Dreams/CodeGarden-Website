@@ -32,6 +32,8 @@ export function Referenzen() {
                 alt="Übersicht-Screen einer Finanz-App: Gesamtvermögen, Konten und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)"
                 width={1800}
                 height={821}
+                sizes="(min-width: 640px) 50vw, 100vw"
+                quality={90}
                 className="w-full"
               />
             </div>
@@ -56,6 +58,8 @@ export function Referenzen() {
                 alt="Depot-Screen einer Finanz-App: Positionen, Watchlist und Preisalarme (Konzeptprojekt, kein Kundenauftrag)"
                 width={1800}
                 height={821}
+                sizes="(min-width: 640px) 50vw, 100vw"
+                quality={90}
                 className="w-full"
               />
             </div>
