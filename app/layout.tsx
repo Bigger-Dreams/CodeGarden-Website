@@ -17,7 +17,7 @@ const ibmPlexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "UI Company",
+  title: "CodeGarden",
   description:
     "Ich modernisiere Frontend, UX und UI bestehender Apps und Plattformen für Unternehmen in Wien und Österreich.",
 };

@@ -21,7 +21,7 @@ export function Nav() {
     <header className="sticky top-0 z-50 border-b border-slate/40 bg-ink px-6 sm:px-12 lg:px-24">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between py-5">
         <Link href="/" className="font-heading font-medium text-xl text-bone">
-          UI Company
+          CodeGarden
         </Link>
 
         <nav className="hidden items-center gap-8 sm:flex">

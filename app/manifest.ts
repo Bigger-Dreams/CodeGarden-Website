@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "UI Company",
-    short_name: "UI Company",
+    name: "CodeGarden",
+    short_name: "CodeGarden",
     description:
       "Frontend- und UI/UX-Modernisierung für Unternehmen in Wien und Österreich.",
     start_url: "/",

@@ -11,8 +11,9 @@ Wien/Österreich, kein DACH-Anspruch.
 Positionierung: Personenmarke, nicht anonymes Studio. USP: Product-Management-Hintergrund +
 technische Umsetzung — versteht Business-Strategie UND Code, nicht nur eines von beidem.
 
-**Name:** "UI Company" ist aktuell Platzhalter — finaler Name noch offen. Bei Textänderungen darauf
-hinweisen, dass der Name überall konsistent ersetzt werden muss, sobald final entschieden.
+**Name:** "CodeGarden" ist aktuell Interims-Platzhalter (vorher "UI Company") — finaler Name noch
+offen. Bei Textänderungen darauf hinweisen, dass der Name überall konsistent ersetzt werden muss,
+sobald final entschieden.
 
 ## Tech Stack
 
