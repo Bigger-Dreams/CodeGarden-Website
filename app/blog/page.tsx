@@ -5,7 +5,7 @@ export default function BlogPage() {
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-col">
       <h1 className="text-center font-heading font-medium text-4xl tracking-tight text-ink sm:text-5xl">
-        UI Company Blog
+        CodeGarden Blog
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-center font-sans text-lg leading-relaxed text-ink/70">
         Alle Beiträge zu UI/UX, Frontend-Optimierung und was eine gute
