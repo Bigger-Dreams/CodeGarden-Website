@@ -4,15 +4,28 @@ const projects = [
   {
     label: "Übersicht",
     src: "/referenz-uebersicht.webp",
-    alt: "Übersicht-Screen einer Finanz-App: Gesamtvermögen, Konten und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
+    width: 2494,
+    height: 1403,
+    alt: "Übersicht-Screen einer Finanz-App: Gesamtvermögen mit Konten-Kacheln und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
     caption:
-      "Übersicht-Screen mit Gesamtvermögen, Kontenübersicht und Schnellaktionen.",
+      "Gesamtvermögen auf einen Blick, mit Kontenübersicht und Schnellaktionen.",
+  },
+  {
+    label: "Konto",
+    src: "/referenz-konto.webp",
+    width: 2494,
+    height: 1403,
+    alt: "Konto-Screen einer Finanz-App: Gehalts-, Spar- und Verrechnungskonto sowie Überweisung per QR-Code (Konzeptprojekt, kein Kundenauftrag)",
+    caption:
+      "Kontenverwaltung mit Überweisung per QR-Code oder gespeichertem Empfänger.",
   },
   {
     label: "Depot",
     src: "/referenz-depot.webp",
-    alt: "Depot-Screen einer Finanz-App: Positionen, Watchlist und Preisalarme (Konzeptprojekt, kein Kundenauftrag)",
-    caption: "Depot-Ansicht mit einzelnen Positionen, Watchlist und Preisalarmen.",
+    width: 2494,
+    height: 1335,
+    alt: "Depot-Screen einer Finanz-App: Depotwert und einzelne Positionen (Konzeptprojekt, kein Kundenauftrag)",
+    caption: "Depotwert und einzelne Positionen im Überblick.",
   },
 ];
 
@@ -33,24 +46,29 @@ export function Referenzen() {
         </p>
       </div>
 
-      <div className="mx-auto mt-16 grid w-full max-w-[1400px] grid-cols-1 gap-8 sm:grid-cols-2">
+      <div className="mx-auto mt-16 grid w-full max-w-[1700px] grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <div key={project.label}>
             <div className="overflow-hidden rounded-sm border border-bone/10">
-              <div className="flex items-center justify-between border-b border-bone/10 bg-bone/[0.03] px-5 py-3">
+              <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 border-b border-bone/10 bg-bone/[0.03] px-4 py-3">
+                <div className="flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
+                </div>
                 <span className="font-sans text-[11px] uppercase tracking-widest text-bone/40">
                   {project.label}
                 </span>
-                <span className="rounded-sm bg-brass px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-ink">
+                <span className="justify-self-end rounded-sm bg-brass px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-ink">
                   Konzept
                 </span>
               </div>
               <Image
                 src={project.src}
                 alt={project.alt}
-                width={1800}
-                height={821}
-                sizes="(min-width: 1024px) 50vw, 100vw"
+                width={project.width}
+                height={project.height}
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 quality={100}
                 className="w-full"
               />
