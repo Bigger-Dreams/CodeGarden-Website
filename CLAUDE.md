@@ -81,3 +81,17 @@ Kein Ersatz für Rechtsberatung — bei rechtlichen Unsicherheiten im Text darau
 - Häufige Commits
 - Visuelles Feedback über Vercel-Preview-Links prüfen, bevor weitergearbeitet wird
 - `lib/`-Verzeichnis-Konvention für geteilte Utilities (types.ts, format.ts), falls relevant
+
+## Agent skills
+
+### Issue tracker
+
+GitHub Issues on `paroi1905/business_website`, via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default canonical labels (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context (`CONTEXT.md` + `docs/adr/` at repo root). See `docs/agents/domain.md`.
