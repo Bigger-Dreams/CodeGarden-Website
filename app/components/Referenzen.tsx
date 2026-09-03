@@ -31,35 +31,35 @@ export function Referenzen() {
           ich Interface und Interaktionen entwickelt habe. Echte
           Kundenprojekte kommen dazu, sobald sie abgeschlossen sind.
         </p>
+      </div>
 
-        <div className="mt-16 flex flex-col gap-16">
-          {projects.map((project) => (
-            <div key={project.label}>
-              <div className="overflow-hidden rounded-sm border border-ink/10">
-                <div className="flex items-center justify-between border-b border-ink/10 bg-ink/[0.03] px-5 py-3">
-                  <span className="font-sans text-[11px] uppercase tracking-widest text-ink/40">
-                    {project.label}
-                  </span>
-                  <span className="rounded-sm bg-ink px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-bone">
-                    Konzept
-                  </span>
-                </div>
-                <Image
-                  src={project.src}
-                  alt={project.alt}
-                  width={1800}
-                  height={821}
-                  sizes="(min-width: 1024px) 1152px, 100vw"
-                  quality={100}
-                  className="w-full"
-                />
+      <div className="mx-auto mt-16 grid w-full max-w-[1400px] grid-cols-1 gap-8 sm:grid-cols-2">
+        {projects.map((project) => (
+          <div key={project.label}>
+            <div className="overflow-hidden rounded-sm border border-ink/10">
+              <div className="flex items-center justify-between border-b border-ink/10 bg-ink/[0.03] px-5 py-3">
+                <span className="font-sans text-[11px] uppercase tracking-widest text-ink/40">
+                  {project.label}
+                </span>
+                <span className="rounded-sm bg-ink px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-bone">
+                  Konzept
+                </span>
               </div>
-              <p className="mt-4 max-w-2xl font-sans text-base leading-relaxed text-ink/70">
-                {project.caption}
-              </p>
+              <Image
+                src={project.src}
+                alt={project.alt}
+                width={1800}
+                height={821}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                quality={100}
+                className="w-full"
+              />
             </div>
-          ))}
-        </div>
+            <p className="mt-4 font-sans text-base leading-relaxed text-ink/70">
+              {project.caption}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
