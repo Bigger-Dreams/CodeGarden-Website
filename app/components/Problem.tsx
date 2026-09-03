@@ -1,6 +1,6 @@
 const symptoms = [
   "Ihre App oder Plattform wirkt, als wäre sie vor zehn Jahren stehengeblieben.",
-  "Nutzer:innen brechen mittendrin ab, weil sie nicht finden, was sie suchen.",
+  "User brechen mittendrin ab, weil sie nicht finden, was sie suchen.",
   "Anfragen gehen unter, statt zu Aufträgen zu werden.",
 ];
 
@@ -39,14 +39,13 @@ export function Problem() {
 
           <div className="flex flex-col justify-center">
             <h2 className="font-heading font-medium text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
-              Zeit für eine App, die zu Ihrem Unternehmen{" "}
-              <span className="text-brass-deep">passt</span>.
+              Zeit für eine App,
+              <br />
+              <span className="text-brass-deep">die zu Ihnen passt.</span>
             </h2>
 
             <p className="mt-6 font-sans text-lg leading-relaxed text-ink/70">
-              Ich überarbeite Frontend, UX und UI bestehender Apps und
-              Plattformen, damit sich Nutzer:innen zurechtfinden und Ihr
-              Unternehmen professionell wirkt.
+              Ich modernisiere Frontend, UX und UI bestehender Apps.
             </p>
           </div>
         </div>

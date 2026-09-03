@@ -12,14 +12,14 @@ export function Hero() {
           </p>
 
           <h1 className="mt-6 max-w-3xl font-heading font-medium text-5xl leading-[1.05] tracking-tight text-bone sm:text-6xl">
-            Bestehende Apps, die
+            Apps, mit denen
             <br />
-            <span className="text-brass">wieder überzeugen.</span>
+            <span className="text-brass">User gerne arbeiten.</span>
           </h1>
 
           <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-bone/75">
             Ich modernisiere Frontend, UX und UI bestehender Apps und
-            Plattformen. Nutzer:innen finden sich zurecht, und aus Anfragen
+            Plattformen. User finden sich zurecht, und aus Anfragen
             werden wieder Aufträge.
           </p>
 

@@ -20,7 +20,7 @@ export function Leistungen() {
           Leistungen
         </p>
         <p className="mt-6 max-w-xl font-heading font-medium text-3xl leading-tight tracking-tight text-bone sm:text-4xl">
-          Zwei Bausteine für eine App, die ankommt.
+          Das biete ich Ihnen an.
         </p>
 
         <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2">

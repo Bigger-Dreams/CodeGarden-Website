@@ -11,3 +11,7 @@ _Avoid_: "Apps & Plattformen von Grund auf" als eigenständiges drittes Angebot 
 **Referenzprojekt**:
 Ein selbst erstelltes Konzeptprojekt (kein abgeschlossenes Kundenprojekt), das UI/UX-Fähigkeiten zeigt und explizit als "Konzept" gelabelt wird.
 _Avoid_: "Kundenprojekt" für Arbeiten ohne echte Kundenfreigabe
+
+**User**:
+Die Endnutzer:innen der App oder Plattform eines Kunden. Bewusst der englische, kurze Begriff statt der gegenderten Langform, für einen lockeren, direkten Ton.
+_Avoid_: "Nutzer:innen" (zu steif für den gewünschten Ton), "Kunde"/"Sie" (das ist der Auftraggeber, nicht dessen Endnutzer:innen)
