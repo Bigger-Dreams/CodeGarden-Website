@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useRef, useState } from "react";
 
 const projects = [
   {
@@ -30,6 +33,24 @@ const projects = [
 ];
 
 export function Referenzen() {
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+
+  function goTo(index: number) {
+    const scroller = scrollerRef.current;
+    const slide = scroller?.children[index];
+    if (slide instanceof HTMLElement) {
+      slide.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+    }
+  }
+
+  function handleScroll() {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    const index = Math.round(scroller.scrollLeft / scroller.clientWidth);
+    setActive(Math.min(projects.length - 1, Math.max(0, index)));
+  }
+
   return (
     <section
       id="referenzen"
@@ -46,39 +67,95 @@ export function Referenzen() {
         </p>
       </div>
 
-      <div className="mx-auto mt-16 grid w-full max-w-[1700px] grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
-          <div key={project.label}>
-            <div className="overflow-hidden rounded-sm border border-bone/10">
-              <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 border-b border-bone/10 bg-bone/[0.03] px-4 py-3">
-                <div className="flex items-center gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
+      <div className="relative mx-auto mt-16 w-full max-w-[1400px]">
+        <div
+          ref={scrollerRef}
+          onScroll={handleScroll}
+          className="flex snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {projects.map((project) => (
+            <div key={project.label} className="w-full flex-shrink-0 snap-start">
+              <div className="overflow-hidden rounded-sm border border-bone/10">
+                <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 border-b border-bone/10 bg-bone/[0.03] px-4 py-3">
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
+                  </div>
+                  <span className="font-sans text-[11px] uppercase tracking-widest text-bone/40">
+                    {project.label}
+                  </span>
+                  <span className="justify-self-end rounded-sm bg-brass px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-ink">
+                    Konzept
+                  </span>
                 </div>
-                <span className="font-sans text-[11px] uppercase tracking-widest text-bone/40">
-                  {project.label}
-                </span>
-                <span className="justify-self-end rounded-sm bg-brass px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-ink">
-                  Konzept
-                </span>
+                <Image
+                  src={project.src}
+                  alt={project.alt}
+                  width={project.width}
+                  height={project.height}
+                  sizes="(min-width: 1450px) 1400px, 100vw"
+                  quality={100}
+                  className="w-full"
+                  priority={project.label === "Übersicht"}
+                />
               </div>
-              <Image
-                src={project.src}
-                alt={project.alt}
-                width={project.width}
-                height={project.height}
-                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                quality={100}
-                className="w-full"
-              />
+              <p className="mt-4 font-sans text-base leading-relaxed text-bone/70">
+                {project.caption}
+              </p>
             </div>
-            <p className="mt-4 font-sans text-base leading-relaxed text-bone/70">
-              {project.caption}
-            </p>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        <button
+          type="button"
+          onClick={() => goTo(active - 1)}
+          disabled={active === 0}
+          aria-label="Vorheriges Projekt"
+          className="absolute left-3 top-[38%] flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-bone/15 bg-ink-soft/90 text-bone transition-colors hover:bg-bone/10 disabled:pointer-events-none disabled:opacity-0"
+        >
+          <ChevronIcon className="h-4 w-4 rotate-180" />
+        </button>
+        <button
+          type="button"
+          onClick={() => goTo(active + 1)}
+          disabled={active === projects.length - 1}
+          aria-label="Nächstes Projekt"
+          className="absolute right-3 top-[38%] flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-bone/15 bg-ink-soft/90 text-bone transition-colors hover:bg-bone/10 disabled:pointer-events-none disabled:opacity-0"
+        >
+          <ChevronIcon className="h-4 w-4" />
+        </button>
+
+        <div className="mt-6 flex items-center justify-center gap-3">
+          {projects.map((project, index) => (
+            <button
+              key={project.label}
+              type="button"
+              onClick={() => goTo(index)}
+              aria-label={`${project.label} anzeigen`}
+              aria-current={index === active}
+              className={`h-2 w-2 rounded-full transition-colors ${
+                index === active ? "bg-brass" : "bg-bone/25 hover:bg-bone/40"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </section>
+  );
+}
+
+function ChevronIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }

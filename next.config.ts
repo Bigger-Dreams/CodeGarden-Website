@@ -27,9 +27,9 @@ const nextConfig: NextConfig = {
   },
   skipTrailingSlashRedirect: true,
   // Next.js only allows quality values explicitly listed here; the default
-  // is [75]. 90 is used by the Referenzen screenshots (app/components/Referenzen.tsx).
+  // is [75]. 100 is used by the Referenzen screenshots (app/components/Referenzen.tsx).
   images: {
-    qualities: [75, 90],
+    qualities: [75, 90, 100],
   },
   // public/ assets aren't content-hashed, so a plain Vercel deploy serves them
   // with max-age=0. A week-long cache with a revalidation window is a
