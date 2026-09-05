@@ -60,9 +60,13 @@ export function Problem() {
           <div aria-hidden="true" className="hidden w-px bg-bone/15 lg:block" />
 
           <div className="flex flex-col justify-center">
-            <p className="font-sans text-lg leading-relaxed text-bone/70">
-              Bei uns steht modernes, intuitives und effizientes Design im Vordergrund.
-            </p>
+            <h2 className="font-heading font-medium text-4xl leading-tight tracking-tight text-bone sm:text-5xl">
+              Bei uns steht{" "}
+              <span className="text-brass">
+                modernes, intuitives und effizientes Design
+              </span>{" "}
+              im Vordergrund.
+            </h2>
           </div>
         </div>
       </div>
