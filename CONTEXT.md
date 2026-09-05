@@ -5,8 +5,8 @@ Domain-Glossar für die Business-Website des Einzelunternehmens (Frontend-Entwic
 ## Language
 
 **Leistungen**:
-Die zwei Säulen des Angebots: (1) Frontend-Entwicklung / UX-UI-Modernisierung bestehender Apps, Plattformen und Tools (Userflows, UI-Elemente), (2) gezielte Beratung & Konzeption dazu.
-_Avoid_: "Apps & Plattformen von Grund auf" als eigenständiges drittes Angebot (Neuentwicklung komplett neuer Produkte) — nicht mehr Teil des Angebots, siehe [ADR-0001](./docs/adr/0001-fokus-frontend-ux-ui-modernisierung.md).
+Drei Bausteine des Angebots: (1) Beratung & Konzeption (Analyse bestehender Userflows und Tech-Stack, Priorisierung), (2) UI/UX-Modernisierung bestehender Apps/Plattformen, (3) Frontend-Neuentwicklung (neues Frontend gegen bestehende Backend-Systeme, über eine Schnittstellenschicht angebunden — das Backend selbst wird nicht angetastet).
+_Avoid_: "Apps & Plattformen von Grund auf" bzw. "komplette Neuentwicklung" für Punkt (3) — das meint ausdrücklich nicht die Neuentwicklung eines kompletten Produkts inkl. Backend/Infrastruktur, siehe [ADR-0001](./docs/adr/0001-fokus-frontend-ux-ui-modernisierung.md). Frontend-Neuentwicklung ersetzt nur die Frontend-Schicht, das Backend bleibt unverändert bestehen.
 
 **Referenzprojekt**:
 Ein selbst erstelltes Konzeptprojekt (kein abgeschlossenes Kundenprojekt), das UI/UX-Fähigkeiten zeigt und explizit als "Konzept" gelabelt wird.

@@ -12,15 +12,15 @@ export function Hero() {
           </p>
 
           <h1 className="mt-6 max-w-3xl font-heading font-medium text-5xl leading-[1.05] tracking-tight text-bone sm:text-6xl">
-            Apps, mit denen
+            Vom Konzept bis zum
             <br />
-            <span className="text-brass">User gerne arbeiten.</span>
+            <span className="text-brass">fertigen modernen Frontend.</span>
           </h1>
 
           <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-bone/75">
-            Ich modernisiere Frontend, UX und UI bestehender Apps und
-            Plattformen. User finden sich zurecht, und aus Anfragen
-            werden wieder Aufträge.
+            Ich modernisiere Apps und Plattformen für Unternehmen ohne
+            eigenes Dev-Team. Konzept, Design und Umsetzung von einer
+            Person.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-6">

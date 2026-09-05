@@ -60,10 +60,13 @@ export function Referenzen() {
         <p className="font-sans text-xs uppercase tracking-[0.2em] text-brass">
           Referenzen
         </p>
+        <h2 className="mt-6 font-heading font-medium text-3xl leading-tight tracking-tight text-bone sm:text-4xl">
+          Ein eigenes Konzeptprojekt.
+        </h2>
         <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-bone/70">
-          Ein Blick in mein eigenes Konzeptprojekt: eine Finanz-App, bei der
-          ich Interface und Interaktionen entwickelt habe. Echte
-          Kundenprojekte kommen dazu, sobald sie abgeschlossen sind.
+          Bei allen meinen Projekten lege ich Wert auf ein modernes
+          Interface und eine optimierte User Experience, damit Ihre User
+          gerne bleiben.
         </p>
       </div>
 

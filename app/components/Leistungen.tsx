@@ -1,13 +1,18 @@
 const services = [
   {
-    title: "Frontend & UX/UI-Modernisierung",
+    title: "Beratung & Konzeption",
+    text: "Ich kläre erst, was Sie brauchen, mit Blick auf Ihr Geschäft, nicht nur auf Pixel. Dazu gehört die Analyse Ihrer bestehenden Userflows, die Prüfung des aktuellen Tech-Stacks und eine klare Priorisierung, was zuerst angegangen wird.",
+    Icon: ChatIcon,
+  },
+  {
+    title: "UI/UX-Modernisierung",
     text: "Ich überarbeite Userflows und Interface Ihrer bestehenden App oder Plattform und setze beides sauber in Code um, zuverlässig auf jedem Gerät.",
     Icon: InterfaceIcon,
   },
   {
-    title: "Beratung & Konzeption",
-    text: "Ich kläre erst, was Sie brauchen: mit Blick auf Ihr Geschäft, nicht nur auf Pixel.",
-    Icon: ChatIcon,
+    title: "Frontend-Neuentwicklung",
+    text: "Ich entwickle Ihr Frontend neu und binde es über eine saubere Schnittstellenschicht an Ihre bestehenden Systeme an. Ihr Backend bleibt, wie es ist.",
+    Icon: CodeIcon,
   },
 ];
 
@@ -22,10 +27,10 @@ export function Leistungen() {
           Leistungen
         </p>
         <h2 className="mt-6 max-w-xl font-heading font-medium text-3xl leading-tight tracking-tight text-bone sm:text-4xl">
-          Das biete ich Ihnen an.
+          Konzept, Design und Umsetzung aus einer Hand.
         </h2>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
           {services.map((service) => (
             <div
               key={service.title}
@@ -78,6 +83,25 @@ function ChatIcon({ className }: { className?: string }) {
     >
       <path
         d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H9l-4 3.5v-3.5H5.5A1.5 1.5 0 0 1 4 14.5v-9Z"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function CodeIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className={className}
+      aria-hidden="true"
+    >
+      <path
+        d="M9 8l-4 4 4 4M15 8l4 4-4 4"
+        strokeLinecap="round"
         strokeLinejoin="round"
       />
     </svg>
