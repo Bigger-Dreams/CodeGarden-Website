@@ -11,7 +11,7 @@ export function Kontakt() {
           Anfrage zu Ihrem Projekt
         </p>
         <h2 className="mt-6 max-w-2xl font-heading font-medium text-3xl leading-tight tracking-tight text-bone sm:text-4xl">
-          Sie haben ein digitales Produkt, dessen Frontend modernisiert oder optimiert werden soll?
+          Sie haben ein digitales Produkt und brauchen Unterstützung?
         </h2>
         <a
           href={contactMailto}
