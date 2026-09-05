@@ -7,8 +7,6 @@ const projects = [
   {
     label: "Übersicht",
     src: "/referenz-uebersicht.webp",
-    width: 2494,
-    height: 1403,
     alt: "Übersicht-Screen einer Finanz-App: Gesamtvermögen mit Konten-Kacheln und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
     caption:
       "Gesamtvermögen auf einen Blick, mit Kontenübersicht und Schnellaktionen.",
@@ -16,8 +14,6 @@ const projects = [
   {
     label: "Konto",
     src: "/referenz-konto.webp",
-    width: 2494,
-    height: 1403,
     alt: "Konto-Screen einer Finanz-App: Gehalts-, Spar- und Verrechnungskonto sowie Überweisung per QR-Code (Konzeptprojekt, kein Kundenauftrag)",
     caption:
       "Kontenverwaltung mit Überweisung per QR-Code oder gespeichertem Empfänger.",
@@ -25,8 +21,6 @@ const projects = [
   {
     label: "Depot",
     src: "/referenz-depot.webp",
-    width: 2494,
-    height: 1335,
     alt: "Depot-Screen einer Finanz-App: Depotwert und einzelne Positionen (Konzeptprojekt, kein Kundenauftrag)",
     caption: "Depotwert und einzelne Positionen im Überblick.",
   },
@@ -67,7 +61,7 @@ export function Referenzen() {
         </p>
       </div>
 
-      <div className="relative mx-auto mt-16 w-full max-w-[1120px]">
+      <div className="relative mx-auto mt-16 w-full max-w-6xl">
         <div
           ref={scrollerRef}
           onScroll={handleScroll}
@@ -75,34 +69,30 @@ export function Referenzen() {
         >
           {projects.map((project) => (
             <div key={project.label} className="w-full flex-shrink-0 snap-start">
-              <div className="overflow-hidden rounded-sm border border-bone/10">
-                <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 border-b border-bone/10 bg-bone/[0.03] px-4 py-3">
-                  <div className="flex items-center gap-1.5">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-                  </div>
-                  <span className="font-sans text-[11px] uppercase tracking-widest text-bone/40">
-                    {project.label}
-                  </span>
-                  <span className="justify-self-end rounded-sm bg-brass px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-ink">
+              <div className="grid grid-cols-1 overflow-hidden rounded-sm border border-bone/10 lg:min-h-[440px] lg:grid-cols-[3fr_8fr]">
+                <div className="flex flex-col justify-center gap-4 p-8 sm:p-12">
+                  <span className="w-fit rounded-sm bg-brass px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-ink">
                     Konzept
                   </span>
+                  <h3 className="font-heading font-medium text-2xl text-bone sm:text-3xl">
+                    {project.label}
+                  </h3>
+                  <p className="font-sans text-base leading-relaxed text-bone/70">
+                    {project.caption}
+                  </p>
                 </div>
-                <Image
-                  src={project.src}
-                  alt={project.alt}
-                  width={project.width}
-                  height={project.height}
-                  sizes="(min-width: 1170px) 1120px, 100vw"
-                  quality={100}
-                  className="w-full"
-                  priority={project.label === "Übersicht"}
-                />
+                <div className="relative min-h-[320px]">
+                  <Image
+                    src={project.src}
+                    alt={project.alt}
+                    fill
+                    sizes="(min-width: 1024px) 73vw, 100vw"
+                    quality={100}
+                    className="object-cover"
+                    priority={project.label === "Übersicht"}
+                  />
+                </div>
               </div>
-              <p className="mt-4 font-sans text-base leading-relaxed text-bone/70">
-                {project.caption}
-              </p>
             </div>
           ))}
         </div>
