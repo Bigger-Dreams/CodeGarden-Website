@@ -1,17 +1,17 @@
 const services = [
   {
     title: "Beratung & Konzeption",
-    text: "Ich kläre erst, was Sie brauchen, mit Blick auf Ihr Geschäft, nicht nur auf Pixel. Dazu gehört die Analyse Ihrer bestehenden Userflows, die Prüfung des aktuellen Tech-Stacks und eine klare Priorisierung, was zuerst angegangen wird.",
+    text: "In der kostenlosten Erstberatung werden alle Anforderungen eingeholt, gemeinsam priorisiert und der Umfang des Projekts abgesteckt. Daraufhin wird ein passendes Konzept für Sie erstellt, dass alle Anfroderungen abdeckt",
     Icon: ChatIcon,
   },
   {
     title: "UI/UX-Modernisierung",
-    text: "Ich überarbeite Userflows und Interface Ihrer bestehenden App oder Plattform und setze beides sauber in Code um, zuverlässig auf jedem Gerät.",
+    text: "Wir arbeiten ausschließlich mit modernen Designs, die eine verbesserte User Experience und ein modernes User Interface auf Desktop und Mobile garantieren.",
     Icon: InterfaceIcon,
   },
   {
     title: "Frontend-Neuentwicklung",
-    text: "Ich entwickle Ihr Frontend neu und binde es über eine saubere Schnittstellenschicht an Ihre bestehenden Systeme an. Ihr Backend bleibt, wie es ist.",
+    text: "Die Entwicklung des Frontend wird mit Next.js und React umgesetzt. Die Schnittstellen zum Backend an Ihre bestehenden Systeme an ist eine klare Anforderung, die voraussgesetzt ist.",
     Icon: CodeIcon,
   },
 ];
@@ -24,10 +24,10 @@ export function Leistungen() {
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col">
         <p className="font-sans text-xs uppercase tracking-[0.2em] text-brass">
-          Leistungen
+          Unsere Leistungen im Überblick:
         </p>
         <h2 className="mt-6 max-w-xl font-heading font-medium text-3xl leading-tight tracking-tight text-bone sm:text-4xl">
-          Konzept, Design und Umsetzung aus einer Hand.
+          Konzept, Design und Umsetzung einfach aus einer Hand.
         </h2>
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
@@ -48,7 +48,7 @@ export function Leistungen() {
         </div>
 
         <p className="mt-16 font-sans text-sm text-bone/50">
-          Pauschalpreis nach Projektumfang, auf Anfrage.
+          Die Preise sind pro Porjektumfang unterschiedlich und werden nach dem ersten Beratungsgespräch übermittelt.
         </p>
       </div>
     </section>

@@ -12,15 +12,14 @@ export function Hero() {
           </p>
 
           <h1 className="mt-6 max-w-3xl font-heading font-medium text-5xl leading-[1.05] tracking-tight text-bone sm:text-6xl">
-            Vom Konzept bis zum
+            UI/UX Optimierung und Frontend Entwicklung
             <br />
-            <span className="text-brass">fertigen modernen Frontend.</span>
+            <span className="text-brass">aus einer Hand.</span>
           </h1>
 
           <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-bone/75">
-            Ich modernisiere Apps und Plattformen für Unternehmen ohne
-            eigenes Dev-Team. Konzept, Design und Umsetzung von einer
-            Person.
+            Wir konzipieren und entwickeln digitale Produkte, um User
+            die beste Erfahrung auf Ihrer Plattform bieten zu können.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-6">
@@ -28,7 +27,7 @@ export function Hero() {
               href={contactMailto}
               className="inline-flex items-center justify-center rounded-sm bg-brass px-6 py-3 font-sans text-sm font-medium text-ink transition-colors hover:bg-brass-bright"
             >
-              Projekt anfragen
+              Jetzt anfragen
             </a>
             <a
               href="#leistungen"

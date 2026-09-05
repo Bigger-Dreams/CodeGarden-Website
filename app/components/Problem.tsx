@@ -1,23 +1,23 @@
 const symptoms = [
   {
-    title: "Veraltetes Interface.",
+    title: "User Interface",
     text: "Das Design entspricht nicht mehr aktuellen Standards und wirkt neben der Konkurrenz nicht mehr zeitgemäß.",
   },
   {
-    title: "Komplizierte Userflows.",
-    text: "Zu viele Schritte bis zum Ziel, unklare Navigation, kein erkennbarer nächster Schritt.",
+    title: "User Exerpience.",
+    text: "Zu viele Schritte, damit User ans Ziel kommen, keine intuitiven Userflows, hohe Drop-Off Rate.",
   },
   {
-    title: "Fehlende Mobile-Optimierung.",
-    text: "Die Oberfläche wurde für Desktop gebaut und funktioniert am Handy nur eingeschränkt.",
+    title: "Mobile First.",
+    text: "Das Frontend wurde für den Desktop gebaut und funktioniert am Handy nur eingeschränkt.",
   },
   {
     title: "Schwache Performance.",
-    text: "Lange Ladezeiten und träge Interaktionen kosten Nutzer, bevor der Inhalt überhaupt sichtbar ist.",
+    text: "Durch lange Ladezeiten und träge Interaktionen verlieren Sie Nutzer, bevor der Inhalt überhaupt sichtbar ist.",
   },
   {
-    title: "Veralteter Tech-Stack.",
-    text: "Alte Frameworks bremsen jede Weiterentwicklung und erschweren die Wartung.",
+    title: "Frontend Tech-Stack.",
+    text: "Alte Frameworks bremsen jede Weiterentwicklung, erschweren die Wartung und verursachen zusätzliche Kosten.",
   },
 ];
 
@@ -29,13 +29,13 @@ export function Problem() {
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col">
         <p className="font-sans text-xs uppercase tracking-[0.2em] text-brass">
-          Status quo
+          Aktuelle Situation
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-[1fr_auto_1fr] lg:gap-16">
           <div className="flex flex-col">
             <p className="font-sans text-lg text-bone/70">
-              Woran erkennen Sie Modernisierungsbedarf?
+              Wann sind Sie bei uns genau richtig?
             </p>
 
             <ul className="mt-6 flex flex-col gap-3">
@@ -61,7 +61,7 @@ export function Problem() {
 
           <div className="flex flex-col justify-center">
             <p className="font-sans text-lg leading-relaxed text-bone/70">
-              Ich modernisiere Frontend, UX und UI bestehender Apps.
+              Bei uns steht modernes, intuitives und effizientes Design im Vordergrund.
             </p>
           </div>
         </div>

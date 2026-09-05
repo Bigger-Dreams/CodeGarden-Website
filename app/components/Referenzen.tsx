@@ -58,16 +58,13 @@ export function Referenzen() {
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col">
         <p className="font-sans text-xs uppercase tracking-[0.2em] text-brass">
-          Referenzen
+          Unsere Referenzprojekt auf einen Blick!
         </p>
         <h2 className="mt-6 font-heading font-medium text-3xl leading-tight tracking-tight text-bone sm:text-4xl">
-          Ein eigenes Konzeptprojekt.
-        </h2>
-        <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-bone/70">
-          Bei allen meinen Projekten lege ich Wert auf ein modernes
+           Bei allen meinen Projekten lege ich Wert auf ein modernes
           Interface und eine optimierte User Experience, damit Ihre User
           gerne bleiben.
-        </p>
+        </h2>
       </div>
 
       <div className="relative mx-auto mt-16 w-full max-w-[1400px]">
