@@ -69,7 +69,7 @@ export function Referenzen() {
         >
           {projects.map((project) => (
             <div key={project.label} className="w-full flex-shrink-0 snap-start">
-              <div className="grid grid-cols-1 overflow-hidden rounded-sm border border-bone/10 lg:min-h-[440px] lg:grid-cols-[3fr_8fr]">
+              <div className="grid grid-cols-1 rounded-sm border border-bone/10 lg:min-h-[440px] lg:grid-cols-[2fr_3fr]">
                 <div className="flex flex-col justify-center gap-4 p-8 sm:p-12">
                   <span className="w-fit rounded-sm bg-brass px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-ink">
                     Konzept
@@ -81,16 +81,18 @@ export function Referenzen() {
                     {project.caption}
                   </p>
                 </div>
-                <div className="relative min-h-[320px]">
-                  <Image
-                    src={project.src}
-                    alt={project.alt}
-                    fill
-                    sizes="(min-width: 1024px) 73vw, 100vw"
-                    quality={100}
-                    className="object-cover"
-                    priority={project.label === "Übersicht"}
-                  />
+                <div className="relative min-h-[320px] p-4 sm:p-6">
+                  <div className="relative h-full w-full overflow-hidden rounded-sm">
+                    <Image
+                      src={project.src}
+                      alt={project.alt}
+                      fill
+                      sizes="(min-width: 1024px) 60vw, 100vw"
+                      quality={100}
+                      className="object-cover"
+                      priority={project.label === "Übersicht"}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
