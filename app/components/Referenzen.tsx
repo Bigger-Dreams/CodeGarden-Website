@@ -6,23 +6,17 @@ import { useRef, useState } from "react";
 const projects = [
   {
     label: "Übersicht",
-    src: "/referenz-uebersicht.webp",
-    alt: "Übersicht-Screen einer Finanz-App: Gesamtvermögen mit Konten-Kacheln und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
+    src: "/referenz-mockup-1.webp",
+    alt: "Laptop-Mockup der Finanz-App-Übersicht: Gesamtvermögen mit Konten-Kacheln und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
     caption:
       "Gesamtvermögen auf einen Blick, mit Kontenübersicht und Schnellaktionen.",
   },
   {
-    label: "Konto",
-    src: "/referenz-konto.webp",
-    alt: "Konto-Screen einer Finanz-App: Gehalts-, Spar- und Verrechnungskonto sowie Überweisung per QR-Code (Konzeptprojekt, kein Kundenauftrag)",
+    label: "Übersicht",
+    src: "/referenz-mockup-2.webp",
+    alt: "Laptop-Mockup der Finanz-App-Übersicht auf einem Schreibtisch: Gesamtvermögen mit Konten-Kacheln und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
     caption:
-      "Kontenverwaltung mit Überweisung per QR-Code oder gespeichertem Empfänger.",
-  },
-  {
-    label: "Depot",
-    src: "/referenz-depot.webp",
-    alt: "Depot-Screen einer Finanz-App: Depotwert und einzelne Positionen (Konzeptprojekt, kein Kundenauftrag)",
-    caption: "Depotwert und einzelne Positionen im Überblick.",
+      "Gesamtvermögen auf einen Blick, mit Kontenübersicht und Schnellaktionen.",
   },
 ];
 
@@ -67,8 +61,8 @@ export function Referenzen() {
           onScroll={handleScroll}
           className="flex snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
-          {projects.map((project) => (
-            <div key={project.label} className="w-full flex-shrink-0 snap-start">
+          {projects.map((project, index) => (
+            <div key={project.src} className="w-full flex-shrink-0 snap-start">
               <div className="grid grid-cols-1 rounded-sm border border-bone/10 lg:min-h-[440px] lg:grid-cols-[2fr_3fr]">
                 <div className="flex flex-col justify-center gap-4 p-8 sm:p-12">
                   <span className="w-fit rounded-sm bg-brass px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-ink">
@@ -90,7 +84,7 @@ export function Referenzen() {
                       sizes="(min-width: 1024px) 60vw, 100vw"
                       quality={100}
                       className="object-cover"
-                      priority={project.label === "Übersicht"}
+                      priority={index === 0}
                     />
                   </div>
                 </div>
@@ -121,7 +115,7 @@ export function Referenzen() {
         <div className="mt-6 flex items-center justify-center gap-3">
           {projects.map((project, index) => (
             <button
-              key={project.label}
+              key={project.src}
               type="button"
               onClick={() => goTo(index)}
               aria-label={`${project.label} anzeigen`}
