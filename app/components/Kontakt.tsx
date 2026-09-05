@@ -8,7 +8,7 @@ export function Kontakt() {
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col items-start">
         <p className="font-sans text-xs uppercase tracking-[0.2em] text-brass">
-          Anfrage zum Ihrem Projekt
+          Anfrage zu Ihrem Projekt
         </p>
         <h2 className="mt-6 max-w-2xl font-heading font-medium text-3xl leading-tight tracking-tight text-bone sm:text-4xl">
           Sie haben ein digitales Produkt, dessen Frontend modernisiert oder optimiert werden soll?

@@ -1,10 +1,10 @@
 const symptoms = [
   {
-    title: "User Interface",
+    title: "User Interface.",
     text: "Das Design entspricht nicht mehr aktuellen Standards und wirkt neben der Konkurrenz nicht mehr zeitgemäß.",
   },
   {
-    title: "User Exerpience.",
+    title: "User Experience.",
     text: "Zu viele Schritte, damit User ans Ziel kommen, keine intuitiven Userflows, hohe Drop-Off Rate.",
   },
   {

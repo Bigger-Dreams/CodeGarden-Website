@@ -1,7 +1,7 @@
 const services = [
   {
     title: "Beratung & Konzeption",
-    text: "In der kostenlosten Erstberatung werden alle Anforderungen eingeholt, gemeinsam priorisiert und der Umfang des Projekts abgesteckt. Daraufhin wird ein passendes Konzept für Sie erstellt, dass alle Anfroderungen abdeckt",
+    text: "In der kostenlosen Erstberatung werden alle Anforderungen eingeholt, gemeinsam priorisiert und der Umfang des Projekts abgesteckt. Daraufhin wird ein passendes Konzept für Sie erstellt, das alle Anforderungen abdeckt.",
     Icon: ChatIcon,
   },
   {
@@ -11,7 +11,7 @@ const services = [
   },
   {
     title: "Frontend-Neuentwicklung",
-    text: "Die Entwicklung des Frontend wird mit Next.js und React umgesetzt. Die Schnittstellen zum Backend an Ihre bestehenden Systeme an ist eine klare Anforderung, die voraussgesetzt ist.",
+    text: "Die Entwicklung des Frontend wird mit Next.js und React umgesetzt. Die Schnittstelle zum Backend an Ihre bestehenden Systeme ist eine klare Anforderung, die vorausgesetzt ist.",
     Icon: CodeIcon,
   },
 ];
@@ -48,7 +48,7 @@ export function Leistungen() {
         </div>
 
         <p className="mt-16 font-sans text-sm text-bone/50">
-          Die Preise sind pro Porjektumfang unterschiedlich und werden nach dem ersten Beratungsgespräch übermittelt.
+          Die Preise sind pro Projektumfang unterschiedlich und werden nach dem ersten Beratungsgespräch übermittelt.
         </p>
       </div>
     </section>

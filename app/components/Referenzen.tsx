@@ -57,17 +57,17 @@ export function Referenzen() {
       className="bg-ink-soft px-6 py-24 text-bone sm:px-12 lg:px-24"
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col">
-        <p className="font-sans text-xs uppercase tracking-[0.2em] text-brass">
-          Unsere Referenzprojekt auf einen Blick!
-        </p>
         <h2 className="mt-6 font-heading font-medium text-3xl leading-tight tracking-tight text-bone sm:text-4xl">
-           Bei allen meinen Projekten lege ich Wert auf ein modernes
+          Unser Referenzprojekt auf einen Blick!
+        </h2>
+        <p className="font-sans text-lg text-bone/70">
+          Bei allen meinen Projekten lege ich Wert auf ein modernes
           Interface und eine optimierte User Experience, damit Ihre User
           gerne bleiben.
-        </h2>
+        </p>
       </div>
 
-      <div className="relative mx-auto mt-16 w-full max-w-[1400px]">
+      <div className="relative mx-auto mt-16 w-full max-w-[1120px]">
         <div
           ref={scrollerRef}
           onScroll={handleScroll}
@@ -94,7 +94,7 @@ export function Referenzen() {
                   alt={project.alt}
                   width={project.width}
                   height={project.height}
-                  sizes="(min-width: 1450px) 1400px, 100vw"
+                  sizes="(min-width: 1170px) 1120px, 100vw"
                   quality={100}
                   className="w-full"
                   priority={project.label === "Übersicht"}
