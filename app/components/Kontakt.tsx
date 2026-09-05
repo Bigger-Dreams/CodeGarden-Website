@@ -6,7 +6,7 @@ export function Kontakt() {
       id="kontakt"
       className="bg-ink px-6 py-24 text-bone sm:px-12 lg:px-24"
     >
-      <div className="mx-auto flex w-full max-w-6xl flex-col items-start">
+      <div className="mx-auto flex w-full max-w-6xl flex-col items-center rounded-sm bg-bone/[0.06] px-6 py-16 text-center sm:px-16">
         <p className="font-sans text-xs uppercase tracking-[0.2em] text-brass">
           Anfrage zu Ihrem Projekt
         </p>
