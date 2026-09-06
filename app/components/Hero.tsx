@@ -38,7 +38,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="flex justify-end">
+        <div className="flex justify-center lg:justify-end">
           <PhoneFrame>
             <Image
               src="/poster.webp"
