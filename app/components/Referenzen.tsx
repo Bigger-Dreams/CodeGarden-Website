@@ -9,7 +9,7 @@ const projects = [
     src: "/referenz-mockup-1.webp",
     alt: "Laptop-Mockup der Finanz-App-Übersicht: Gesamtvermögen mit Konten-Kacheln und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
     caption:
-      "Modernes User Interfacec mit optimierter User Experience für Bank Kunden, um die wichtigsten Informationen auf einen Blick zu erhalten.",
+      "Modernes User Interface mit optimierter User Experience für Bank Kunden, um die wichtigsten Informationen auf einen Blick zu erhalten.",
   },
   {
     label: "Banking Mobile App",
