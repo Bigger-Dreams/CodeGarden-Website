@@ -38,7 +38,7 @@ export function FAQ() {
       className="bg-ink px-6 py-24 text-bone sm:px-12 lg:px-24"
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col">
-        <p className="font-sans text-xs uppercase tracking-[0.2em] text-brass">
+        <p className="font-sans text-sm uppercase tracking-[0.2em] text-brass">
           FAQ
         </p>
         <h2 className="mt-6 max-w-xl font-heading font-medium text-3xl leading-tight tracking-tight text-bone sm:text-4xl">

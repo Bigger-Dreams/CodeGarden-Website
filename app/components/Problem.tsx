@@ -28,7 +28,7 @@ export function Problem() {
       className="bg-ink-soft px-6 py-24 text-bone sm:px-12 lg:px-24"
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col">
-        <p className="font-sans text-xs uppercase tracking-[0.2em] text-brass">
+        <p className="font-sans text-sm uppercase tracking-[0.2em] text-brass">
           Aktuelle Situation
         </p>
 
