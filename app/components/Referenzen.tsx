@@ -5,18 +5,18 @@ import { useRef, useState } from "react";
 
 const projects = [
   {
-    label: "Übersicht",
+    label: "Banking WebApp",
     src: "/referenz-mockup-1.webp",
     alt: "Laptop-Mockup der Finanz-App-Übersicht: Gesamtvermögen mit Konten-Kacheln und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
     caption:
-      "Gesamtvermögen auf einen Blick, mit Kontenübersicht und Schnellaktionen.",
+      "Modernes User Interfacec mit optimierter User Experience für Bank Kunden, um die wichtigsten Informationen auf einen Blick zu erhalten.",
   },
   {
-    label: "Übersicht",
-    src: "/referenz-mockup-2.webp",
+    label: "Banking Mobile App",
+    src: "/referenz-banking-app.svg",
     alt: "Laptop-Mockup der Finanz-App-Übersicht auf einem Schreibtisch: Gesamtvermögen mit Konten-Kacheln und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
     caption:
-      "Gesamtvermögen auf einen Blick, mit Kontenübersicht und Schnellaktionen.",
+      "Übersichtliches Mobile-Design mit den wichtigsten Funktionen auf einen Blick.",
   },
 ];
 
@@ -45,13 +45,15 @@ export function Referenzen() {
       className="bg-ink-soft px-6 py-24 text-bone sm:px-12 lg:px-24"
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col">
+        <p className="font-sans text-lg uppercase tracking-[0.2em] text-brass">
+          Referenzprojekte
+        </p>
         <h2 className="mt-6 font-heading font-medium text-3xl leading-tight tracking-tight text-bone sm:text-4xl">
-          Unser Referenzprojekt auf einen Blick!
+          So könnte Ihr Projekt aussehen.
         </h2>
         <p className="font-sans text-lg text-bone/70">
-          Bei allen meinen Projekten lege ich Wert auf ein modernes
-          Interface und eine optimierte User Experience, damit Ihre User
-          gerne bleiben.
+          Bei allen Projekten ist ein modernes User
+          Interface und eine optimierte User Experience das Ziel.
         </p>
       </div>
 
@@ -66,7 +68,7 @@ export function Referenzen() {
               <div className="grid grid-cols-1 rounded-sm border border-bone/10 lg:min-h-[440px] lg:grid-cols-[2fr_3fr]">
                 <div className="flex flex-col justify-center gap-4 p-8 sm:p-12">
                   <span className="w-fit rounded-sm bg-brass px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-ink">
-                    Konzept
+                    Prototype
                   </span>
                   <h3 className="font-heading font-medium text-2xl text-bone sm:text-3xl">
                     {project.label}
