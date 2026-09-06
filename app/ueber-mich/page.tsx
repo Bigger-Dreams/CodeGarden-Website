@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const paragraphs = [
   "CodeGarden ist eine kleine Wiener Agentur für Frontend-Entwicklung und UI/UX-Modernisierung. Wir arbeiten mit Unternehmen, die eine bestehende Website, App oder Plattform haben, aber kein eigenes Dev-Team dafür. Sie wollen ihre digitalen Produkte gezielt verbessern, ohne gleich alles neu bauen zu müssen.",
   "Gegründet habe ich CodeGarden als Einzelunternehmer. Mitgebracht habe ich einen Hintergrund aus mehreren Jahren Product Management bei Fintech-Startups und in Corporate-Umgebungen. Diese unterschiedlichen Kontexte haben mir gezeigt, wie verschieden Produktarbeit je nach Unternehmensgröße und -kultur aussehen kann, und worauf es trotzdem immer ankommt, wenn aus einer Idee ein digitales Produkt werden soll, das Menschen gerne benutzen. Wie gut eine Idee technisch umsetzbar ist, entscheidet dabei selten allein. Öfter sind es andere Dinge: wie klar eine Anwendung wirkt, wie schnell sich jemand zurechtfindet, ob jemand nach fünf Sekunden versteht, was zu tun ist.",
@@ -15,10 +17,14 @@ export default function UeberMichPage() {
         </h1>
 
         <div className="mt-10 flex items-center gap-5">
-          <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-sm border border-bone/15 bg-bone/[0.04]">
-            <span className="font-sans text-[9px] uppercase tracking-widest text-bone/40">
-              Foto folgt
-            </span>
+          <div className="relative h-36 w-36 shrink-0 overflow-hidden rounded-full border border-bone/15">
+            <Image
+              src="/patrick-portrait.webp"
+              alt="Portrait von Patrick Roith"
+              fill
+              sizes="144px"
+              className="object-cover"
+            />
           </div>
           <div>
             <p className="font-heading font-medium text-lg text-bone">
@@ -27,9 +33,6 @@ export default function UeberMichPage() {
             <p className="mt-1 font-sans text-sm text-bone/60">
               Wien · Frontend &amp; UI/UX
             </p>
-            <span className="mt-2 inline-flex w-fit items-center gap-2 rounded-sm border border-bone/15 px-2 py-1 font-sans text-[9px] uppercase tracking-widest text-bone/40">
-              LinkedIn folgt
-            </span>
           </div>
         </div>
 
