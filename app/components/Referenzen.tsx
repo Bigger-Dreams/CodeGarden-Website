@@ -5,30 +5,18 @@ import { useRef, useState } from "react";
 
 const projects = [
   {
-    label: "Übersicht",
-    src: "/referenz-uebersicht.webp",
-    width: 2494,
-    height: 1403,
-    alt: "Übersicht-Screen einer Finanz-App: Gesamtvermögen mit Konten-Kacheln und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
+    label: "Banking WebApp",
+    src: "/referenz-mockup-1.webp",
+    alt: "Laptop-Mockup der Finanz-App-Übersicht: Gesamtvermögen mit Konten-Kacheln und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
     caption:
-      "Gesamtvermögen auf einen Blick, mit Kontenübersicht und Schnellaktionen.",
+      "Modernes User Interfacec mit optimierter User Experience für Bank Kunden, um die wichtigsten Informationen auf einen Blick zu erhalten.",
   },
   {
-    label: "Konto",
-    src: "/referenz-konto.webp",
-    width: 2494,
-    height: 1403,
-    alt: "Konto-Screen einer Finanz-App: Gehalts-, Spar- und Verrechnungskonto sowie Überweisung per QR-Code (Konzeptprojekt, kein Kundenauftrag)",
+    label: "Banking Mobile App",
+    src: "/referenz-banking-app.svg",
+    alt: "Laptop-Mockup der Finanz-App-Übersicht auf einem Schreibtisch: Gesamtvermögen mit Konten-Kacheln und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
     caption:
-      "Kontenverwaltung mit Überweisung per QR-Code oder gespeichertem Empfänger.",
-  },
-  {
-    label: "Depot",
-    src: "/referenz-depot.webp",
-    width: 2494,
-    height: 1335,
-    alt: "Depot-Screen einer Finanz-App: Depotwert und einzelne Positionen (Konzeptprojekt, kein Kundenauftrag)",
-    caption: "Depotwert und einzelne Positionen im Überblick.",
+      "Übersichtliches Mobile-Design mit den wichtigsten Funktionen auf einen Blick.",
   },
 ];
 
@@ -57,52 +45,52 @@ export function Referenzen() {
       className="bg-ink-soft px-6 py-24 text-bone sm:px-12 lg:px-24"
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col">
+        <p className="font-sans text-lg uppercase tracking-[0.2em] text-brass">
+          Referenzprojekte
+        </p>
         <h2 className="mt-6 font-heading font-medium text-3xl leading-tight tracking-tight text-bone sm:text-4xl">
-          Unser Referenzprojekt auf einen Blick!
+          So könnte Ihr Projekt aussehen.
         </h2>
         <p className="font-sans text-lg text-bone/70">
-          Bei allen meinen Projekten lege ich Wert auf ein modernes
-          Interface und eine optimierte User Experience, damit Ihre User
-          gerne bleiben.
+          Bei allen Projekten ist ein modernes User
+          Interface und eine optimierte User Experience das Ziel.
         </p>
       </div>
 
-      <div className="relative mx-auto mt-16 w-full max-w-[1120px]">
+      <div className="relative mx-auto mt-16 w-full max-w-6xl">
         <div
           ref={scrollerRef}
           onScroll={handleScroll}
           className="flex snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
-          {projects.map((project) => (
-            <div key={project.label} className="w-full flex-shrink-0 snap-start">
-              <div className="overflow-hidden rounded-sm border border-bone/10">
-                <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 border-b border-bone/10 bg-bone/[0.03] px-4 py-3">
-                  <div className="flex items-center gap-1.5">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-                  </div>
-                  <span className="font-sans text-[11px] uppercase tracking-widest text-bone/40">
+          {projects.map((project, index) => (
+            <div key={project.src} className="w-full flex-shrink-0 snap-start">
+              <div className="grid grid-cols-1 rounded-sm border border-bone/10 lg:min-h-[440px] lg:grid-cols-[2fr_3fr]">
+                <div className="flex flex-col justify-center gap-4 p-8 sm:p-12">
+                  <span className="w-fit rounded-sm bg-brass px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-ink">
+                    Prototype
+                  </span>
+                  <h3 className="font-heading font-medium text-2xl text-bone sm:text-3xl">
                     {project.label}
-                  </span>
-                  <span className="justify-self-end rounded-sm bg-brass px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-ink">
-                    Konzept
-                  </span>
+                  </h3>
+                  <p className="font-sans text-base leading-relaxed text-bone/70">
+                    {project.caption}
+                  </p>
                 </div>
-                <Image
-                  src={project.src}
-                  alt={project.alt}
-                  width={project.width}
-                  height={project.height}
-                  sizes="(min-width: 1170px) 1120px, 100vw"
-                  quality={100}
-                  className="w-full"
-                  priority={project.label === "Übersicht"}
-                />
+                <div className="relative min-h-[320px] p-4 sm:p-6">
+                  <div className="relative h-full w-full overflow-hidden rounded-sm">
+                    <Image
+                      src={project.src}
+                      alt={project.alt}
+                      fill
+                      sizes="(min-width: 1024px) 60vw, 100vw"
+                      quality={100}
+                      className="object-cover"
+                      priority={index === 0}
+                    />
+                  </div>
+                </div>
               </div>
-              <p className="mt-4 font-sans text-base leading-relaxed text-bone/70">
-                {project.caption}
-              </p>
             </div>
           ))}
         </div>
@@ -129,7 +117,7 @@ export function Referenzen() {
         <div className="mt-6 flex items-center justify-center gap-3">
           {projects.map((project, index) => (
             <button
-              key={project.label}
+              key={project.src}
               type="button"
               onClick={() => goTo(index)}
               aria-label={`${project.label} anzeigen`}

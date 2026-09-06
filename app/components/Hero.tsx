@@ -7,7 +7,7 @@ export function Hero() {
     <section className="flex min-h-screen items-center bg-ink px-6 py-24 text-bone sm:px-12 lg:px-24">
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-[1fr_auto]">
         <div className="flex flex-col">
-          <p className="font-sans text-xs uppercase tracking-[0.2em] text-brass">
+          <p className="font-sans text-lg uppercase tracking-[0.2em] text-brass">
             Wien · Frontend &amp; UI/UX
           </p>
 
@@ -18,7 +18,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-bone/75">
-            Wir konzipieren und entwickeln digitale Produkte, um User
+            Wir konzipieren und entwickeln digitale Produkte mit KI, um User
             die beste Erfahrung auf Ihrer Plattform bieten zu können.
           </p>
 
