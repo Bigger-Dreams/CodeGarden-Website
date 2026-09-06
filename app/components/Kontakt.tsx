@@ -7,7 +7,7 @@ export function Kontakt() {
       className="bg-ink-soft px-6 py-24 text-bone sm:px-12 lg:px-24"
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center rounded-sm bg-bone/[0.06] px-6 py-16 text-center sm:px-16">
-        <p className="font-sans text-sm uppercase tracking-[0.2em] text-brass">
+        <p className="font-sans text-lg uppercase tracking-[0.2em] text-brass">
           Kontakt
         </p>
         <h2 className="mt-6 font-heading font-medium text-3xl leading-tight tracking-tight text-bone sm:text-4xl">
