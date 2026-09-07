@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Business-Website: Architektur",
+    "quality_profile": "showcase"
+  },
+  "layout": {
+    "mode": "grid",
+    "cols": 6,
+    "gapX": 80,
+    "gapY": 60,
+    "cellW": 150,
+    "cellH": 64
+  },
+  "components": [
+    { "id": "developer", "type": "external", "label": "Entwickler", "sublabel": "lokale Session", "row": 1, "col": 0 },
+    { "id": "github", "type": "external", "label": "GitHub Repo", "sublabel": "main", "row": 3, "col": 0 },
+    { "id": "vercelBuild", "type": "cloud", "label": "Vercel Build", "sublabel": "next build (SSG)", "row": 2, "col": 1 },
+    { "id": "vercelEdge", "type": "cloud", "label": "Vercel Edge Network", "sublabel": "Preview & Production", "row": 2, "col": 2 },
+    { "id": "onePager", "type": "frontend", "label": "One-Pager /", "sublabel": "Hero → Kontakt", "row": 0, "col": 3 },
+    { "id": "blog", "type": "frontend", "label": "/blog/[slug]", "sublabel": "MDX-Artikel", "row": 1, "col": 3 },
+    { "id": "legalPages", "type": "frontend", "label": "Impressum, Datenschutz", "row": 3, "col": 3, "size": [170, 64] },
+    { "id": "uebermich", "type": "frontend", "label": "/ueber-mich", "row": 4, "col": 3 },
+    { "id": "visitor", "type": "external", "label": "Website-Besucher", "sublabel": "Browser", "row": 2, "col": 4 },
+    { "id": "mailClient", "type": "external", "label": "Mail-Programm", "sublabel": "mailto:", "row": 2, "col": 5 }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "Vercel", "wraps": ["vercelBuild", "vercelEdge"] },
+    { "kind": "region", "label": "Next.js App Router (SSG)", "wraps": ["onePager", "blog", "legalPages", "uebermich"] }
+  ],
+  "connections": [
+    { "id": "push", "from": "developer", "to": "github", "label": "git push", "fromSide": "bottom", "toSide": "top", "labelDy": 24 },
+    { "id": "trigger", "from": "github", "to": "vercelBuild", "label": "Preview-Deployment" },
+    { "id": "static-output", "from": "vercelBuild", "to": "vercelEdge", "label": "Static Output" },
+    { "id": "serve-onepager", "from": "vercelEdge", "to": "onePager", "variant": "dashed" },
+    { "id": "serve-blog", "from": "vercelEdge", "to": "blog", "variant": "dashed" },
+    { "id": "serve-legal", "from": "vercelEdge", "to": "legalPages", "variant": "dashed" },
+    { "id": "serve-uebermich", "from": "vercelEdge", "to": "uebermich", "variant": "dashed" },
+    { "id": "serve", "from": "vercelEdge", "to": "visitor", "label": "HTTPS" },
+    { "id": "contact-cta", "from": "visitor", "to": "mailClient", "label": "mailto (kein Formular)", "labelDy": -24 }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Deployment", "items": ["Vercel: Preview-Deployment bei jedem Push", "Next.js SSG – keine dynamischen Server-Daten pro Request"] },
+    { "dot": "emerald", "title": "Content", "items": ["Blog-Artikel als MDX, kein externes CMS", "Rechtliche Pflichtseiten: Impressum, Datenschutz"] },
+    { "dot": "rose", "title": "Kontakt", "items": ["Kein Kontaktformular – mailto-Links öffnen direkt das Mail-Programm"] }
+  ]
+}
