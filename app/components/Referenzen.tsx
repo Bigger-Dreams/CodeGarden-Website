@@ -77,7 +77,7 @@ export function Referenzen() {
                     {project.caption}
                   </p>
                 </div>
-                <div className="relative min-h-[320px] p-4 sm:p-6">
+                <div className="relative aspect-[3/2] w-full p-4 sm:p-6 lg:aspect-auto lg:h-full lg:min-h-[320px]">
                   <div className="relative h-full w-full overflow-hidden rounded-sm">
                     <Image
                       src={project.src}
@@ -85,7 +85,7 @@ export function Referenzen() {
                       fill
                       sizes="(min-width: 1024px) 60vw, 100vw"
                       quality={100}
-                      className="object-cover"
+                      className="object-contain lg:object-cover"
                       priority={index === 0}
                     />
                   </div>
