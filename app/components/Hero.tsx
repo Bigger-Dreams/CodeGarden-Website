@@ -12,14 +12,14 @@ export function Hero() {
           </p>
 
           <h1 className="mt-6 max-w-3xl font-heading font-medium text-5xl leading-[1.05] tracking-tight text-bone sm:text-6xl">
-            UI/UX Optimierung und Frontend Entwicklung
+            Produktberatung und Frontend Entwicklung
             <br />
             <span className="text-brass">aus einer Hand.</span>
           </h1>
 
           <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-bone/75">
-            Wir konzipieren und entwickeln digitale Produkte mit KI, um User
-            die beste Erfahrung auf Ihrer Plattform bieten zu können.
+            Wir konzipieren, entwickeln digitale Produkte mit KI, um die 
+            User Experience und das User Interface auf Ihrer Plattform zu optimieren.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-6">
