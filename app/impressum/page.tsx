@@ -1,3 +1,13 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Impressum",
+  description: "Impressum von CodeGarden.",
+  alternates: {
+    canonical: "/impressum",
+  },
+};
+
 export default function ImpressumPage() {
   return (
     <main className="flex flex-1 flex-col bg-ink-soft px-6 py-24 text-bone sm:px-12 lg:px-24">
@@ -59,9 +69,9 @@ export default function ImpressumPage() {
 
         <p className="mt-10 rounded-sm border border-brass/40 bg-brass/10 px-4 py-3 font-sans text-sm leading-relaxed text-bone/70">
           Platzhaltertext für die gewerberechtlichen Angaben und die
-          UID-Nummer. Kein Ersatz für Rechtsberatung. Ich stimme die
-          finalen Angaben vor der Veröffentlichung mit einer Rechtsberatung
-          ab.
+          UID-Nummer. Kein Ersatz für Rechtsberatung. Die finalen Angaben
+          werden vor der Veröffentlichung mit einer Rechtsberatung
+          abgestimmt.
         </p>
       </div>
     </main>

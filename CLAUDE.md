@@ -8,8 +8,12 @@ Dienstleistung — siehe [ADR-0001](./docs/adr/0001-fokus-frontend-ux-ui-moderni
 Zielgruppe: Unternehmen ohne eigenes Dev-Team, die digitale Produkte outsourcen. Fokus
 Wien/Österreich, kein DACH-Anspruch.
 
-Positionierung: Personenmarke, nicht anonymes Studio. USP: Product-Management-Hintergrund +
-technische Umsetzung — versteht Business-Strategie UND Code, nicht nur eines von beidem.
+Positionierung: Auftritt als Agentur ("Über uns", "wir" durchgängig, Patrick Roith + punktuelle
+Freelancer:innen), nicht als reine Einzelkämpfer-Personenmarke. Name und Foto von Patrick bleiben
+trotzdem sichtbar (z. B. `/ueber-uns`) als Gründer-Referenz — das Einzelunternehmen bleibt die
+rechtliche Realität (siehe Impressum), wird auf der Website aber nicht als Kontrast zur
+Agentur-Sprache betont. USP: Product-Management-Hintergrund + technische Umsetzung — versteht
+Business-Strategie UND Code, nicht nur eines von beidem.
 
 **Name:** "CodeGarden" ist aktuell Interims-Platzhalter (vorher "UI Company") — finaler Name noch
 offen. Bei Textänderungen darauf hinweisen, dass der Name überall konsistent ersetzt werden muss,
@@ -39,7 +43,7 @@ One-Pager als Kernseite (Sections als eigene Komponenten in `app/components/`, z
 └── Referenzen/Portfolio
 
 /blog, /blog/[slug]
-/ueber-mich
+/ueber-uns
 /impressum
 /datenschutz
 ```

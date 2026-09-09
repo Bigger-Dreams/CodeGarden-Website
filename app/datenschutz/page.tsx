@@ -1,3 +1,13 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Datenschutz",
+  description: "Datenschutzerklärung von CodeGarden.",
+  alternates: {
+    canonical: "/datenschutz",
+  },
+};
+
 export default function DatenschutzPage() {
   return (
     <main className="flex flex-1 flex-col bg-ink-soft px-6 py-24 text-bone sm:px-12 lg:px-24">
@@ -135,9 +145,9 @@ export default function DatenschutzPage() {
         <p className="mt-10 rounded-sm border border-brass/40 bg-brass/10 px-4 py-3 font-sans text-sm leading-relaxed text-bone/70">
           Platzhaltertext für Punkte, die vom künftigen Funktionsumfang der
           Website abhängen, etwa bei Einführung eines Kontaktformulars oder
-          Newsletters. Kein Ersatz für Rechtsberatung. Ich stimme die
-          finalen Angaben vor der Veröffentlichung mit einer Rechtsberatung
-          ab.
+          Newsletters. Kein Ersatz für Rechtsberatung. Die finalen Angaben
+          werden vor der Veröffentlichung mit einer Rechtsberatung
+          abgestimmt.
         </p>
       </div>
     </main>

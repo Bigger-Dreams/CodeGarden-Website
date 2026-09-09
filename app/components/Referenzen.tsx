@@ -49,7 +49,7 @@ export function Referenzen() {
           Referenzprojekte
         </p>
         <h2 className="mt-6 font-heading font-medium text-3xl leading-tight tracking-tight text-bone sm:text-4xl">
-          So könnte Ihr Projekt aussehen.
+          So könnte Ihr Produkt aussehen.
         </h2>
         <p className="font-sans text-lg text-bone/70">
           Bei allen Projekten ist ein modernes User

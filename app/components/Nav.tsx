@@ -7,7 +7,7 @@ const links = [
   { href: "/#leistungen", label: "Leistungen" },
   { href: "/#referenzen", label: "Referenzen" },
   { href: "/blog", label: "Blog" },
-  { href: "/ueber-mich", label: "Über mich" },
+  { href: "/ueber-uns", label: "Über uns" },
 ];
 
 const ctaClass =

@@ -14,7 +14,7 @@ export function Kontakt() {
           Sie sind an einer Zusammenarbeit interessiert?
         </h2>
         <p className="font-sans text-lg text-bone/70">
-          Wenn Sie Interesse haben Ihr Produkt zu optimieren, dann schicken Sie mir eine E-Mail mit den wichtigsten Informationen.
+          Haben Sie Interesse, Ihr Produkt zu optimieren? Schicken Sie uns eine E-Mail mit den wichtigsten Informationen.
         </p>
         <a
           href={contactMailto}

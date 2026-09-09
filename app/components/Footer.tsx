@@ -3,7 +3,7 @@ import { contactMailto } from "@/lib/site";
 
 const links = [
   { href: "/blog", label: "Blog" },
-  { href: "/ueber-mich", label: "Über mich" },
+  { href: "/ueber-uns", label: "Über uns" },
   { href: contactMailto, label: "Kontakt", external: true },
   { href: "/impressum", label: "Impressum" },
   { href: "/datenschutz", label: "Datenschutz" },

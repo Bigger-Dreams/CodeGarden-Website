@@ -2,7 +2,7 @@ const faqs = [
   {
     question: "Muss mein Produkt komplett neu gebaut werden?",
     answer:
-      "Nicht zwingend. Oft reicht eine gezielte Modernisierung von Frontend und UX/UI. Ob eine Überarbeitung reicht oder ein Neuaufbau sinnvoller ist, kläre ich in der Erstberatung.",
+      "Nicht zwingend. Oft reicht eine gezielte Modernisierung von Frontend und UX/UI. Ob eine Überarbeitung reicht oder ein Neuaufbau sinnvoller ist, klären wir in der Erstberatung.",
   },
   {
     question: "Können Sie auch nur einen einzelnen Bereich überarbeiten?",
@@ -17,7 +17,7 @@ const faqs = [
   {
     question: "Wie entsteht der Projektpreis?",
     answer:
-      "Nach der Erstberatung, auf Basis des vereinbarten Umfangs. Einen pauschalen Stundensatz nenne ich bewusst nicht, weil der tatsächliche Aufwand stark vom Projekt abhängt.",
+      "Nach der Erstberatung, auf Basis des vereinbarten Umfangs. Einen pauschalen Stundensatz nennen wir bewusst nicht, weil der tatsächliche Aufwand stark vom Projekt abhängt.",
   },
   {
     question: "Was brauchen Sie für eine erste Einschätzung?",
@@ -27,7 +27,7 @@ const faqs = [
   {
     question: "Übernehmen Sie auch Backend-Entwicklung?",
     answer:
-      "Nein, mein Fokus liegt bewusst auf Frontend, UX und UI. Backend-Anbindungen erfolgen über bestehende Schnittstellen zu Ihren Systemen.",
+      "Nein, unser Fokus liegt bewusst auf Frontend, UX und UI. Backend-Anbindungen erfolgen über bestehende Schnittstellen zu Ihren Systemen.",
   },
 ];
 

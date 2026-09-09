@@ -1,5 +1,21 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { articles } from "@/lib/blog";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Praktische Artikel zu UI/UX, Frontend-Modernisierung und digitalen Produkten für Unternehmen.",
+  alternates: {
+    canonical: "/blog",
+  },
+  openGraph: {
+    title: "CodeGarden Blog",
+    description:
+      "Praktische Artikel zu UI/UX, Frontend-Modernisierung und digitalen Produkten für Unternehmen.",
+    url: "/blog",
+  },
+};
 
 export default function BlogPage() {
   return (

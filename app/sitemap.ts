@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${siteUrl}/ueber-mich`,
+      url: `${siteUrl}/ueber-uns`,
       changeFrequency: "yearly",
       priority: 0.5,
     },
