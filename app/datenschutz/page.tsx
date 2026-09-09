@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Datenschutz",
-  description: "Datenschutzerklärung von CodeGarden.",
+  description:
+    "Datenschutzerklärung von CodeGarden mit Informationen zu Hosting, Kontaktaufnahme, Analyse und Betroffenenrechten nach DSGVO.",
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: "/datenschutz",
   },

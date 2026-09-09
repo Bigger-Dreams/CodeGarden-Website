@@ -1,0 +1,31 @@
+# CodeGarden
+
+> CodeGarden ist eine Wiener Agentur für Frontend-Entwicklung, UI/UX-Modernisierung und Produktberatung für bestehende digitale Produkte.
+
+CodeGarden unterstützt Unternehmen in Wien und Österreich, die bestehende Websites, Apps, Plattformen oder interne Tools verbessern möchten, ohne ein eigenes Dev-Team aufzubauen. Der Fokus liegt auf verständlicher Konzeption, sauberer Frontend-Umsetzung und besseren Nutzererlebnissen.
+
+## Leistungen
+
+- Frontend-Entwicklung für Websites, Apps, Plattformen und Tools
+- UI/UX-Modernisierung bestehender digitaler Produkte
+- Beratung und Konzeption an der Schnittstelle von Business, Produkt und Code
+- Umsetzung mit Fokus auf Bedienbarkeit, Performance und Conversion
+
+## Zielgruppe
+
+Unternehmen ohne eigenes Entwicklungsteam oder mit begrenzten internen Kapazitäten, die digitale Produkte outsourcen oder gezielt modernisieren möchten. Fokus: Wien und Österreich.
+
+## Wichtige Seiten
+
+- Startseite: /
+- Leistungen: /#leistungen
+- Arbeitsweise: /#ablauf
+- Referenzen: /#referenzen
+- Blog: /blog
+- Über uns: /ueber-uns
+- Impressum: /impressum
+- Datenschutz: /datenschutz
+
+## Kontakt
+
+E-Mail: patrick.roith@aon.at

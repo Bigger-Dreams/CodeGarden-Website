@@ -1,17 +1,30 @@
-export const metadata = {
+import { ArticleJsonLd } from "@/app/components/JsonLd";
+
+export const article = {
+  slug: "conversion-rate-durch-ux-steigern",
   title: "Conversion Rate durch UX steigern: Die wichtigsten Hebel",
   description:
     "Wie Sie die Conversion Rate durch UX steigern: konkrete Hebel bei Formularen, Anfrageprozessen und Call-to-Actions, ohne Redesign von Grund auf.",
+  publishedTime: "2026-01-24",
+  modifiedTime: "2026-01-24",
+};
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
   alternates: {
     canonical: "/blog/conversion-rate-durch-ux-steigern",
   },
   openGraph: {
-    title: "Conversion Rate durch UX steigern: Die wichtigsten Hebel",
-    description:
-      "Wie Sie die Conversion Rate durch UX steigern: konkrete Hebel bei Formularen, Anfrageprozessen und Call-to-Actions, ohne Redesign von Grund auf.",
+    title: article.title,
+    description: article.description,
     url: "/blog/conversion-rate-durch-ux-steigern",
   },
 };
+
+<ArticleJsonLd {...article} />
+
+<p className="mb-8 font-sans text-sm text-bone/50">Veröffentlicht am 24. Jänner 2026 · Patrick Roith</p>
 
 # Conversion Rate durch UX steigern: Die wichtigsten Hebel
 

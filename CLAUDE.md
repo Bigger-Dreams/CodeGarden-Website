@@ -57,16 +57,18 @@ Kein eigener Kontakt-Bereich: alle "Kontakt"-CTAs sind mailto-Links (siehe Tech 
   keine Scroll-Trigger-/Parallax-Effekte. **Bewusste Ausnahme:** Hero (`app/components/Hero.tsx`)
   nutzt `framer-motion` für eine einmalige, gestaffelte Eintritts-Animation beim Laden (kein Scroll-
   Trigger, respektiert `prefers-reduced-motion` via `MotionConfig`). **Erweiterte Ausnahme:** der
-  Hero-Hintergrund hat zusätzlich einen dezenten animierten Idle-Look: eine Aurora aus mehreren
-  flachen `brass`/`brass-bright`/`brass-deep`-Farbflächen hinter dem Phone, mit kontrolliertem Blur,
-  ohne CSS-Gradient, UI-Elemente oder Outline-Ringe, mit sehr langsamen Opacity-/Scale-/Positionsloops.
+  Hero-Hintergrund hat zusätzlich einen minimalen animierten Idle-Look: einen einzelnen weichen
+  `brass-bright`-Farbklecks auf der rechten Seite hinter dem Phone, ohne CSS-Gradient, UI-Elemente
+  oder Outline-Ringe, mit kontrolliertem Blur und sehr langsamem Opacity-/Scale-Loop.
   Nur Markenfarbe + Neutraltöne (kein `rust`) — jede Fläche bleibt eine flache Farbe. Liegt hinter
   dem Content (`z-10` auf dem Content-Wrapper), `pointer-events-none`, `aria-hidden`, respektiert
   `prefers-reduced-motion` explizit via `useReducedMotion`. **Weitere Hero-Ausnahme:** Das
   Hero-Mockup (`hero-app-1.webp`, ohne zusätzlichen `PhoneFrame`, da das Bild den Frame bereits
-  enthält) darf nach dem einmaligen Spring-Einflug sanft idle schweben (leichtes Auf-Ab +
-  Mini-Rotation, 8–12s Loop), respektiert ebenfalls `prefers-reduced-motion`. Diese Ausnahmen gelten
-  nur für den Hero, nicht als Präzedenzfall für weitere Sections.
+  enthält) darf nach kurzer Verzögerung einmalig von oben mit Fade-in und Spring-Bounce einfliegen
+  und danach sanft idle schweben (leichtes Auf-Ab + Mini-Rotation, 8–12s Loop). Unter dem Mockup darf
+  eine sofort sichtbare, dezente flache `brass`-Bodenfläche den Lande-Eindruck unterstützen. Beides
+  respektiert `prefers-reduced-motion`. Diese Ausnahmen gelten nur für den Hero, nicht als
+  Präzedenzfall für weitere Sections.
 - **Font Pairing:** Headline in Sora (markanter Grotesk statt Serif), Body in IBM Plex Sans,
   eingebunden über `next/font`
 - Design muss selbst als Beweis für UI/UX-Fähigkeiten funktionieren — kein Template-Look

@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Impressum von CodeGarden.",
+  description:
+    "Impressum von CodeGarden mit Angaben gemäß § 5 ECG, Kontaktinformationen und rechtlichen Hinweisen für Österreich.",
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: "/impressum",
   },

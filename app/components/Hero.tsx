@@ -1,8 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { motion, MotionConfig, useReducedMotion, type Variants } from "framer-motion";
-import { useState } from "react";
+import {
+  motion,
+  MotionConfig,
+  useAnimationControls,
+  useReducedMotion,
+  type Variants,
+} from "framer-motion";
+import { useEffect } from "react";
 import { contactMailto } from "@/lib/site";
 
 const container: Variants = {
@@ -24,28 +30,50 @@ const item: Variants = {
   },
 };
 
-const phoneItem: Variants = {
-  hidden: { opacity: 0, scale: 0.85, rotate: 8, x: 40 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    rotate: 0,
-    x: 0,
-    transition: { type: "spring", stiffness: 170, damping: 11 },
-  },
-};
-
-const reveal: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-  },
-};
-
 export function Hero() {
-  const [frameSettled, setFrameSettled] = useState(false);
+  const phoneControls = useAnimationControls();
   const shouldReduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function runPhoneAnimation() {
+      if (shouldReduceMotion) {
+        phoneControls.set({ opacity: 1, scale: 1, y: 0, rotate: 0 });
+        return;
+      }
+
+      await phoneControls.start({
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        rotate: 0,
+        transition: {
+          delay: 1.2,
+          type: "spring",
+          bounce: 0.42,
+          duration: 1.35,
+        },
+      });
+
+      if (!isMounted) return;
+
+      await phoneControls.start({
+        opacity: 1,
+        scale: 1,
+        y: [0, -10, 0],
+        rotate: [0, -0.8, 0.6, 0],
+        transition: { duration: 10, repeat: Infinity, ease: "easeInOut" },
+      });
+    }
+
+    runPhoneAnimation();
+
+    return () => {
+      isMounted = false;
+      phoneControls.stop();
+    };
+  }, [phoneControls, shouldReduceMotion]);
 
   return (
     <MotionConfig reducedMotion="user">
@@ -55,55 +83,13 @@ export function Hero() {
           className="pointer-events-none absolute inset-0 overflow-hidden"
         >
           <motion.div
-            className="absolute right-[-18%] top-[-14%] h-[42rem] w-[42rem] rounded-full bg-brass-bright/60 blur-[64px]"
+            className="absolute right-[-8%] top-[18%] h-[30rem] w-[30rem] rounded-full bg-brass-bright/30 blur-[44px] will-change-transform"
             animate={
               shouldReduceMotion
-                ? { x: 0, y: 0, scale: 1, opacity: 0.52 }
-                : {
-                    x: [0, -46, -16, 0],
-                    y: [0, 30, 52, 0],
-                    scale: [1, 1.18, 1.08, 1],
-                    opacity: [0.4, 0.68, 0.5, 0.4],
-                  }
+                ? { scale: 1, opacity: 0.26 }
+                : { scale: [1, 1.08, 1], opacity: [0.2, 0.34, 0.2] }
             }
-            transition={{ duration: 42, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div
-            className="absolute right-[-1%] top-[22%] h-[34rem] w-[34rem] rounded-full bg-brass/55 blur-[52px]"
-            animate={
-              shouldReduceMotion
-                ? { x: 0, y: 0, scale: 1, opacity: 0.48 }
-                : {
-                    x: [0, 38, 12, 0],
-                    y: [0, -24, 26, 0],
-                    scale: [1, 1.12, 1.2, 1],
-                    opacity: [0.34, 0.56, 0.42, 0.34],
-                  }
-            }
-            transition={{ duration: 50, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div
-            className="absolute bottom-[-18%] right-[8%] h-[30rem] w-[48rem] rounded-full bg-brass-deep/44 blur-[68px]"
-            animate={
-              shouldReduceMotion
-                ? { x: 0, y: 0, scale: 1, opacity: 0.4 }
-                : {
-                    x: [0, -28, 24, 0],
-                    y: [0, -34, -14, 0],
-                    scale: [1, 1.16, 1.08, 1],
-                    opacity: [0.28, 0.46, 0.34, 0.28],
-                  }
-            }
-            transition={{ duration: 58, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div
-            className="absolute right-[18%] top-[42%] h-[22rem] w-[22rem] rounded-full bg-brass-bright/46 blur-[42px]"
-            animate={
-              shouldReduceMotion
-                ? { y: 0, scale: 1, opacity: 0.38 }
-                : { y: [0, -22, 0], scale: [1, 1.14, 1], opacity: [0.28, 0.48, 0.28] }
-            }
-            transition={{ duration: 34, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 32, repeat: Infinity, ease: "easeInOut" }}
           />
         </div>
         <motion.div
@@ -156,36 +142,26 @@ export function Hero() {
             </motion.div>
           </div>
 
-          <motion.div
-            variants={phoneItem}
-            onAnimationComplete={() => setFrameSettled(true)}
-            className="flex justify-center lg:justify-end"
-          >
-            <motion.div
-              animate={
-                frameSettled && !shouldReduceMotion
-                  ? { y: [0, -10, 0], rotate: [0, -0.8, 0.6, 0] }
-                  : { y: 0, rotate: 0 }
-              }
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-            >
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative pb-7">
+              <div className="absolute bottom-0 left-1/2 h-5 w-56 -translate-x-1/2 rounded-full bg-brass/25 sm:w-72" />
               <motion.div
-                initial="hidden"
-                animate={frameSettled ? "visible" : "hidden"}
-                variants={reveal}
-                className="relative w-[280px] sm:w-[340px]"
+                initial={{ opacity: 0, scale: 0.96, y: -220, rotate: 0 }}
+                animate={phoneControls}
               >
-                <Image
-                  src="/hero-app-1.webp"
-                  alt="Prototyp-Screenshot einer App-Übersicht (Konzept, kein reales Produkt)"
-                  width={760}
-                  height={1498}
-                  priority
-                  className="w-full object-contain"
-                />
+                <div className="relative z-10 w-[280px] sm:w-[340px]">
+                  <Image
+                    src="/hero-app-1.webp"
+                    alt="Prototyp-Screenshot einer App-Übersicht (Konzept, kein reales Produkt)"
+                    width={760}
+                    height={1498}
+                    priority
+                    className="w-full object-contain"
+                  />
+                </div>
               </motion.div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </motion.div>
       </section>
     </MotionConfig>

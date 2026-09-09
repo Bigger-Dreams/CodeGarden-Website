@@ -1,17 +1,30 @@
-export const metadata = {
+import { ArticleJsonLd } from "@/app/components/JsonLd";
+
+export const article = {
+  slug: "website-veraltet-was-tun",
   title: "Website veraltet: Was tun?",
   description:
     "Website veraltet? Diese Anzeichen zeigen Handlungsbedarf, und so gehen Sie Schritt für Schritt vor, um sie zu modernisieren.",
+  publishedTime: "2026-01-10",
+  modifiedTime: "2026-01-10",
+};
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
   alternates: {
     canonical: "/blog/website-veraltet-was-tun",
   },
   openGraph: {
-    title: "Website veraltet: Was tun?",
-    description:
-      "Website veraltet? Diese Anzeichen zeigen Handlungsbedarf, und so gehen Sie Schritt für Schritt vor, um sie zu modernisieren.",
+    title: article.title,
+    description: article.description,
     url: "/blog/website-veraltet-was-tun",
   },
 };
+
+<ArticleJsonLd {...article} />
+
+<p className="mb-8 font-sans text-sm text-bone/50">Veröffentlicht am 10. Jänner 2026 · Patrick Roith</p>
 
 # Website veraltet: Was tun?
 

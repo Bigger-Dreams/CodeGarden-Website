@@ -1,17 +1,30 @@
-export const metadata = {
+import { ArticleJsonLd } from "@/app/components/JsonLd";
+
+export const article = {
+  slug: "kosten-frontend-modernisierung",
   title: "Kosten Frontend Modernisierung: Wovon der Preis abhängt",
   description:
     "Die Kosten einer Frontend Modernisierung hängen von wenigen, klar benennbaren Faktoren ab. Eine transparente Einordnung ohne Fantasiezahlen.",
+  publishedTime: "2026-01-31",
+  modifiedTime: "2026-01-31",
+};
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
   alternates: {
     canonical: "/blog/kosten-frontend-modernisierung",
   },
   openGraph: {
-    title: "Kosten Frontend Modernisierung: Wovon der Preis abhängt",
-    description:
-      "Die Kosten einer Frontend Modernisierung hängen von wenigen, klar benennbaren Faktoren ab. Eine transparente Einordnung ohne Fantasiezahlen.",
+    title: article.title,
+    description: article.description,
     url: "/blog/kosten-frontend-modernisierung",
   },
 };
+
+<ArticleJsonLd {...article} />
+
+<p className="mb-8 font-sans text-sm text-bone/50">Veröffentlicht am 31. Jänner 2026 · Patrick Roith</p>
 
 # Kosten Frontend Modernisierung: Wovon der Preis abhängt
 

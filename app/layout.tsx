@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Sora, IBM_Plex_Sans } from "next/font/google";
 import { siteUrl } from "@/lib/site";
 import { Analytics } from "./components/Analytics";
+import { SiteJsonLd } from "./components/JsonLd";
 import { Footer } from "./components/Footer";
 import { Nav } from "./components/Nav";
 import "./globals.css";
@@ -23,16 +24,41 @@ export const metadata: Metadata = {
     default: "CodeGarden | Frontend & UI/UX aus Wien",
     template: "%s | CodeGarden",
   },
+  authors: [{ name: "Patrick Roith" }],
+  creator: "Patrick Roith",
+  publisher: "CodeGarden",
+  keywords: [
+    "Frontend Entwicklung Wien",
+    "UI UX Modernisierung",
+    "Frontend Modernisierung",
+    "UX Audit",
+    "Website modernisieren Österreich",
+  ],
   description:
-    "Wir modernisieren Frontend, UX und UI bestehender Apps und Plattformen für Unternehmen in Wien und Österreich.",
+    "Wir modernisieren Frontend, UX und UI bestehender Apps und Plattformen für Unternehmen in Wien und Österreich – verständlich geplant und sauber umgesetzt.",
   openGraph: {
     title: "CodeGarden | Frontend & UI/UX aus Wien",
     description:
-      "Frontend- und UI/UX-Modernisierung für bestehende digitale Produkte in Wien und Österreich.",
+      "Wir modernisieren Frontend, UX und UI bestehender Apps und Plattformen für Unternehmen in Wien und Österreich – verständlich geplant und sauber umgesetzt.",
     url: "/",
     siteName: "CodeGarden",
     locale: "de_AT",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "CodeGarden – Frontend & UI/UX aus Wien",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CodeGarden | Frontend & UI/UX aus Wien",
+    description:
+      "Wir modernisieren Frontend, UX und UI bestehender Apps und Plattformen für Unternehmen in Wien und Österreich – verständlich geplant und sauber umgesetzt.",
+    images: ["/twitter-image"],
   },
   alternates: {
     canonical: "/",
@@ -50,6 +76,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${sora.variable} ${ibmPlexSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <SiteJsonLd />
         <Nav />
         {children}
         <Footer />

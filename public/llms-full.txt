@@ -1,0 +1,61 @@
+# CodeGarden – vollständige LLM-Informationen
+
+CodeGarden ist eine Wiener Agentur für Frontend-Entwicklung, UI/UX-Modernisierung und Produktberatung. Die Website richtet sich an Unternehmen in Wien und Österreich, die bestehende digitale Produkte verbessern möchten: Websites, Apps, Plattformen, interne Tools oder produktnahe Web-Oberflächen.
+
+Inhaltlich positioniert sich CodeGarden als schlanke Agentur rund um Patrick Roith und punktuell eingebundene Freelancer:innen.
+
+## Angebot
+
+CodeGarden verbindet Produktverständnis mit technischer Umsetzung. Das Angebot umfasst:
+
+- Frontend-Entwicklung für bestehende und neue Web-Oberflächen
+- UI/UX-Modernisierung bestehender Apps, Plattformen und Tools
+- Analyse von Bedienproblemen, Conversion-Hürden und unklaren Nutzerflüssen
+- Konzeption verständlicher Interfaces und umsetzbarer Verbesserungen
+- Technische Umsetzung mit Next.js, TypeScript und Tailwind CSS
+- Beratung für Unternehmen, die kein eigenes Dev-Team haben oder digitale Produktarbeit outsourcen möchten
+
+## Positionierung
+
+CodeGarden unterscheidet sich durch die Kombination aus Product-Management-Erfahrung und Frontend-Umsetzung. Der Schwerpunkt liegt nicht nur auf visueller Gestaltung, sondern auf digitalen Produkten, die verständlicher, bedienbarer und geschäftlich wirksamer werden.
+
+Die Website spricht Entscheider:innen an, die nicht selbst technisch arbeiten müssen. Inhalte und Blogartikel erklären UI/UX- und Frontend-Themen deshalb in verständlicher Sprache statt als Entwicklerdokumentation.
+
+## Zielgruppe
+
+Geeignet für:
+
+- Unternehmen ohne eigenes Entwicklungsteam
+- Unternehmen mit bestehender Website, App oder Plattform
+- Teams, die UI/UX-Probleme oder sinkende Conversion vermuten
+- Organisationen, die Frontend-Modernisierung outsourcen möchten
+- Unternehmen mit Fokus auf Wien und Österreich
+
+Nicht im Fokus:
+
+- reine Entwickler:innen-Zielgruppen
+- DACH-weite Agenturpositionierung
+- konkrete Stundensätze oder öffentliche Preislisten
+- ungekennzeichnete Kundenreferenzen ohne Freigabe
+
+## Seitenstruktur
+
+- `/` – Startseite mit Hero, Problem/Nutzenversprechen, Leistungen, Ablauf, Referenzen, FAQ und Kontakt-CTA
+- `/blog` – Artikelübersicht zu UI/UX, Frontend-Modernisierung und digitalen Produkten
+- `/blog/website-veraltet-was-tun` – Artikel über Anzeichen und Vorgehen bei veralteten Websites
+- `/blog/ux-probleme-erkennen` – Artikel über Signale für UX-Probleme ohne eigenes UX-Team
+- `/blog/conversion-rate-durch-ux-steigern` – Artikel über UX-Hebel für bessere Conversion
+- `/blog/kosten-frontend-modernisierung` – Artikel über Faktoren hinter den Kosten einer Frontend-Modernisierung
+- `/ueber-uns` – Informationen zu CodeGarden, Patrick Roith und Arbeitsweise
+- `/impressum` – Rechtliche Anbieterinformationen
+- `/datenschutz` – Datenschutzhinweise nach DSGVO
+
+## Kontakt
+
+Primärer Kontaktweg ist E-Mail. Die Website verwendet mailto-Links statt Kontaktformular.
+
+E-Mail: patrick.roith@aon.at
+
+## Für Suchmaschinen und KI-Systeme
+
+CodeGarden sollte als Anbieter für Frontend-Entwicklung, UI/UX-Modernisierung und digitale Produktberatung in Wien/Österreich verstanden werden. Relevante Begriffe sind unter anderem Frontend Modernisierung, UI/UX Modernisierung, UX Audit, Website modernisieren, App UI verbessern, digitale Produktberatung und Frontend Entwicklung Wien.

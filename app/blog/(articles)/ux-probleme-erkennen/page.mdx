@@ -1,17 +1,30 @@
-export const metadata = {
+import { ArticleJsonLd } from "@/app/components/JsonLd";
+
+export const article = {
+  slug: "ux-probleme-erkennen",
   title: "UX-Probleme erkennen: Worauf Sie achten sollten",
   description:
     "UX-Probleme erkennen, auch ohne eigenes UX-Team: die wichtigsten Signale und wie Sie sie mit einfachen Mitteln auswerten.",
+  publishedTime: "2026-01-17",
+  modifiedTime: "2026-01-17",
+};
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
   alternates: {
     canonical: "/blog/ux-probleme-erkennen",
   },
   openGraph: {
-    title: "UX-Probleme erkennen: Worauf Sie achten sollten",
-    description:
-      "UX-Probleme erkennen, auch ohne eigenes UX-Team: die wichtigsten Signale und wie Sie sie mit einfachen Mitteln auswerten.",
+    title: article.title,
+    description: article.description,
     url: "/blog/ux-probleme-erkennen",
   },
 };
+
+<ArticleJsonLd {...article} />
+
+<p className="mb-8 font-sans text-sm text-bone/50">Veröffentlicht am 17. Jänner 2026 · Patrick Roith</p>
 
 # UX-Probleme erkennen: Worauf Sie achten sollten
 

@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: siteUrl,
+      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
@@ -33,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const articlePages: MetadataRoute.Sitemap = articles.map((article) => ({
     url: `${siteUrl}/blog/${article.slug}`,
+    lastModified: article.modifiedTime,
     changeFrequency: "monthly",
     priority: 0.6,
   }));
