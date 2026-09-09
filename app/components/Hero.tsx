@@ -55,53 +55,53 @@ export function Hero() {
           className="pointer-events-none absolute inset-0 overflow-hidden"
         >
           <motion.div
-            className="absolute right-[-16%] top-[-12%] h-[36rem] w-[36rem] rounded-full bg-brass-bright/45 blur-[68px]"
+            className="absolute right-[-18%] top-[-14%] h-[42rem] w-[42rem] rounded-full bg-brass-bright/60 blur-[64px]"
             animate={
               shouldReduceMotion
-                ? { x: 0, y: 0, scale: 1, opacity: 0.42 }
+                ? { x: 0, y: 0, scale: 1, opacity: 0.52 }
                 : {
-                    x: [0, -42, -14, 0],
-                    y: [0, 28, 48, 0],
-                    scale: [1, 1.16, 1.06, 1],
-                    opacity: [0.3, 0.52, 0.38, 0.3],
+                    x: [0, -46, -16, 0],
+                    y: [0, 30, 52, 0],
+                    scale: [1, 1.18, 1.08, 1],
+                    opacity: [0.4, 0.68, 0.5, 0.4],
                   }
             }
             transition={{ duration: 42, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute right-[2%] top-[24%] h-[30rem] w-[30rem] rounded-full bg-brass/40 blur-[58px]"
+            className="absolute right-[-1%] top-[22%] h-[34rem] w-[34rem] rounded-full bg-brass/55 blur-[52px]"
             animate={
               shouldReduceMotion
-                ? { x: 0, y: 0, scale: 1, opacity: 0.36 }
+                ? { x: 0, y: 0, scale: 1, opacity: 0.48 }
                 : {
-                    x: [0, 34, 10, 0],
-                    y: [0, -22, 24, 0],
-                    scale: [1, 1.1, 1.18, 1],
-                    opacity: [0.24, 0.42, 0.32, 0.24],
+                    x: [0, 38, 12, 0],
+                    y: [0, -24, 26, 0],
+                    scale: [1, 1.12, 1.2, 1],
+                    opacity: [0.34, 0.56, 0.42, 0.34],
                   }
             }
             transition={{ duration: 50, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute bottom-[-16%] right-[12%] h-[26rem] w-[42rem] rounded-full bg-brass-deep/34 blur-[72px]"
+            className="absolute bottom-[-18%] right-[8%] h-[30rem] w-[48rem] rounded-full bg-brass-deep/44 blur-[68px]"
             animate={
               shouldReduceMotion
-                ? { x: 0, y: 0, scale: 1, opacity: 0.32 }
+                ? { x: 0, y: 0, scale: 1, opacity: 0.4 }
                 : {
-                    x: [0, -24, 22, 0],
-                    y: [0, -30, -12, 0],
-                    scale: [1, 1.14, 1.06, 1],
-                    opacity: [0.2, 0.36, 0.26, 0.2],
+                    x: [0, -28, 24, 0],
+                    y: [0, -34, -14, 0],
+                    scale: [1, 1.16, 1.08, 1],
+                    opacity: [0.28, 0.46, 0.34, 0.28],
                   }
             }
             transition={{ duration: 58, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute right-[20%] top-[44%] h-[18rem] w-[18rem] rounded-full bg-brass-bright/32 blur-[48px]"
+            className="absolute right-[18%] top-[42%] h-[22rem] w-[22rem] rounded-full bg-brass-bright/46 blur-[42px]"
             animate={
               shouldReduceMotion
-                ? { y: 0, scale: 1, opacity: 0.28 }
-                : { y: [0, -20, 0], scale: [1, 1.12, 1], opacity: [0.18, 0.34, 0.18] }
+                ? { y: 0, scale: 1, opacity: 0.38 }
+                : { y: [0, -22, 0], scale: [1, 1.14, 1], opacity: [0.28, 0.48, 0.28] }
             }
             transition={{ duration: 34, repeat: Infinity, ease: "easeInOut" }}
           />
