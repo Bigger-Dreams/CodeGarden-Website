@@ -57,9 +57,9 @@ Kein eigener Kontakt-Bereich: alle "Kontakt"-CTAs sind mailto-Links (siehe Tech 
   keine Scroll-Trigger-/Parallax-Effekte. **Bewusste Ausnahme:** Hero (`app/components/Hero.tsx`)
   nutzt `framer-motion` für eine einmalige, gestaffelte Eintritts-Animation beim Laden (kein Scroll-
   Trigger, respektiert `prefers-reduced-motion` via `MotionConfig`). **Erweiterte Ausnahme:** der
-  Hero-Hintergrund hat zusätzlich einen minimalen animierten Idle-Look: einen einzelnen weichen
-  `brass-bright`-Farbklecks auf der rechten Seite hinter dem Phone, ohne CSS-Gradient, UI-Elemente
-  oder Outline-Ringe, mit kontrolliertem Blur und sehr langsamem Opacity-/Scale-Loop.
+  Hero-Hintergrund darf zusätzlich einen einzelnen statischen, weichen `brass-bright`-Farbklecks auf
+  der rechten Seite hinter dem Phone nutzen, ohne CSS-Gradient, UI-Elemente oder Outline-Ringe, mit
+  kontrolliertem Blur.
   Nur Markenfarbe + Neutraltöne (kein `rust`) — jede Fläche bleibt eine flache Farbe. Liegt hinter
   dem Content (`z-10` auf dem Content-Wrapper), `pointer-events-none`, `aria-hidden`, respektiert
   `prefers-reduced-motion` explizit via `useReducedMotion`. **Weitere Hero-Ausnahme:** Das

@@ -1,79 +1,32 @@
 "use client";
 
 import Image from "next/image";
-import {
-  motion,
-  MotionConfig,
-  useAnimationControls,
-  useReducedMotion,
-  type Variants,
-} from "framer-motion";
-import { useEffect } from "react";
+import { motion, MotionConfig, useReducedMotion, type Variants } from "framer-motion";
 import { contactMailto } from "@/lib/site";
+
+const easing = [0.25, 0.1, 0.25, 1] as const;
 
 const container: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.05,
+      staggerChildren: 0.16,
+      delayChildren: 0.15,
     },
   },
 };
 
 const item: Variants = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 0, y: 18 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.85, ease: easing },
   },
 };
 
 export function Hero() {
-  const phoneControls = useAnimationControls();
   const shouldReduceMotion = useReducedMotion();
-
-  useEffect(() => {
-    let isMounted = true;
-
-    async function runPhoneAnimation() {
-      if (shouldReduceMotion) {
-        phoneControls.set({ opacity: 1, scale: 1, y: 0, rotate: 0 });
-        return;
-      }
-
-      await phoneControls.start({
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        rotate: 0,
-        transition: {
-          delay: 1.2,
-          type: "spring",
-          bounce: 0.42,
-          duration: 1.35,
-        },
-      });
-
-      if (!isMounted) return;
-
-      await phoneControls.start({
-        opacity: 1,
-        scale: 1,
-        y: [0, -10, 0],
-        rotate: [0, -0.8, 0.6, 0],
-        transition: { duration: 10, repeat: Infinity, ease: "easeInOut" },
-      });
-    }
-
-    runPhoneAnimation();
-
-    return () => {
-      isMounted = false;
-      phoneControls.stop();
-    };
-  }, [phoneControls, shouldReduceMotion]);
 
   return (
     <MotionConfig reducedMotion="user">
@@ -82,15 +35,7 @@ export function Hero() {
           aria-hidden
           className="pointer-events-none absolute inset-0 overflow-hidden"
         >
-          <motion.div
-            className="absolute right-[-8%] top-[18%] h-[30rem] w-[30rem] rounded-full bg-brass-bright/30 blur-[44px] will-change-transform"
-            animate={
-              shouldReduceMotion
-                ? { scale: 1, opacity: 0.26 }
-                : { scale: [1, 1.08, 1], opacity: [0.2, 0.34, 0.2] }
-            }
-            transition={{ duration: 32, repeat: Infinity, ease: "easeInOut" }}
-          />
+          <div className="absolute right-[6%] top-[12%] h-[26rem] w-[26rem] rounded-full bg-brass-bright/30 blur-[130px]" />
         </div>
         <motion.div
           initial="hidden"
@@ -127,12 +72,15 @@ export function Hero() {
               variants={item}
               className="mt-10 flex flex-wrap items-center gap-6"
             >
-              <a
+              <motion.a
                 href={contactMailto}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.15, ease: "easeOut" }}
                 className="inline-flex items-center justify-center rounded-sm bg-brass px-6 py-3 font-sans text-sm font-medium text-ink transition-colors hover:bg-brass-bright"
               >
-                Jetzt anfragen
-              </a>
+                Projekt anfragen
+              </motion.a>
               <a
                 href="#leistungen"
                 className="font-sans text-sm text-bone/75 transition-colors hover:text-brass"
@@ -146,19 +94,47 @@ export function Hero() {
             <div className="relative pb-7">
               <div className="absolute bottom-0 left-1/2 h-5 w-56 -translate-x-1/2 rounded-full bg-brass/25 sm:w-72" />
               <motion.div
-                initial={{ opacity: 0, scale: 0.96, y: -220, rotate: 0 }}
-                animate={phoneControls}
+                initial={
+                  shouldReduceMotion
+                    ? { opacity: 1, scale: 1, y: 0 }
+                    : { opacity: 0, scale: 0.97, y: -90 }
+                }
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={
+                  shouldReduceMotion
+                    ? { duration: 0 }
+                    : {
+                        delay: 0.65,
+                        type: "spring",
+                        bounce: 0.18,
+                        duration: 0.9,
+                      }
+                }
               >
-                <div className="relative z-10 w-[280px] sm:w-[340px]">
-                  <Image
-                    src="/hero-app-1.webp"
-                    alt="Prototyp-Screenshot einer App-Übersicht (Konzept, kein reales Produkt)"
-                    width={760}
-                    height={1498}
-                    priority
-                    className="w-full object-contain"
-                  />
-                </div>
+                <motion.div
+                  animate={
+                    shouldReduceMotion
+                      ? { y: 0, rotate: 0 }
+                      : { y: [0, -10, 0], rotate: [0, -0.8, 0.6, 0] }
+                  }
+                  transition={{
+                    delay: 1.7,
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <div className="relative z-10 w-[280px] sm:w-[340px]">
+                    <Image
+                      src="/hero-app-1.webp"
+                      alt="Prototyp-Screenshot einer App-Übersicht (Konzept, kein reales Produkt)"
+                      width={760}
+                      height={1498}
+                      priority
+                      className="w-full object-contain"
+                    />
+                  </div>
+                </motion.div>
               </motion.div>
             </div>
           </div>

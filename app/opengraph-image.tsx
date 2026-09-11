@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
 export const alt = "CodeGarden – Frontend & UI/UX aus Wien";
@@ -8,6 +10,9 @@ export const size = {
 export const contentType = "image/png";
 
 export default function Image() {
+  const logoSvg = readFileSync(join(process.cwd(), "public/logo.svg")).toString("base64");
+  const logoUrl = `data:image/svg+xml;base64,${logoSvg}`;
+
   return new ImageResponse(
     (
       <div
@@ -46,22 +51,13 @@ export default function Image() {
             CodeGarden plant und entwickelt bessere Interfaces für Unternehmen in Wien und Österreich.
           </div>
         </div>
-        <div
-          style={{
-            alignItems: "center",
-            background: "#2f98b0",
-            borderRadius: 24,
-            color: "#1a1a1a",
-            display: "flex",
-            fontSize: 34,
-            fontWeight: 700,
-            height: 96,
-            justifyContent: "center",
-            width: 96,
-          }}
-        >
-          CG
-        </div>
+        <img
+          src={logoUrl}
+          alt=""
+          width={112}
+          height={112}
+          style={{ height: 112, objectFit: "contain", width: 112 }}
+        />
       </div>
     ),
     size,
