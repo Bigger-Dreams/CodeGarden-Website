@@ -64,9 +64,9 @@ export function Referenzen() {
           className="flex snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {projects.map((project, index) => (
-            <div key={project.src} className="w-full flex-shrink-0 snap-start">
-              <div className="grid grid-cols-1 rounded-sm border border-bone/10 lg:min-h-[440px] lg:grid-cols-[2fr_3fr]">
-                <div className="flex flex-col justify-center gap-4 p-8 sm:p-12">
+            <div key={project.src} className="flex w-full flex-shrink-0 snap-start">
+              <div className="grid h-full w-full grid-cols-1 rounded-sm border border-bone/10 lg:min-h-[440px] lg:grid-cols-[2fr_3fr]">
+                <div className="flex min-h-[330px] flex-col justify-center gap-4 p-8 sm:min-h-[360px] sm:p-12 lg:min-h-0">
                   <span className="w-fit rounded-sm bg-brass px-2 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-ink">
                     Prototype
                   </span>
