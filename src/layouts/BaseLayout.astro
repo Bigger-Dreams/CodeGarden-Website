@@ -13,9 +13,10 @@ type Props = {
   ogImage?: string;
   ogImageAlt?: string;
   type?: "website" | "article";
+  noindex?: boolean;
 };
 
-const { title, description, canonical, ogImage, ogImageAlt, type } =
+const { title, description, canonical, ogImage, ogImageAlt, type, noindex } =
   Astro.props;
 ---
 
@@ -28,6 +29,7 @@ const { title, description, canonical, ogImage, ogImageAlt, type } =
 
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
 
     <link rel="preconnect" href="https://assets.calendly.com" />
     <link rel="preconnect" href="https://calendly.com" />
@@ -45,6 +47,7 @@ const { title, description, canonical, ogImage, ogImageAlt, type } =
       ogImage={ogImage}
       ogImageAlt={ogImageAlt}
       type={type}
+      noindex={noindex}
     />
   </head>
   <body class="min-h-full flex flex-col">

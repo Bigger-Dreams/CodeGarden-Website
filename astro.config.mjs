@@ -7,9 +7,30 @@ import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 
+// Priorität/changefreq je Route nachgebildet aus dem Next-Stand (app/sitemap.ts).
+// Legal-Seiten (Impressum/Datenschutz) bleiben trotz robots noindex Teil der
+// Sitemap, wie im Original.
+function serializeSitemapEntry(item) {
+  const path = new URL(item.url).pathname.replace(/\/$/, "") || "/";
+
+  if (path === "/") return { ...item, changefreq: "monthly", priority: 1 };
+  if (path === "/blog") return { ...item, changefreq: "weekly", priority: 0.8 };
+  if (path === "/ueber-uns") return { ...item, changefreq: "yearly", priority: 0.5 };
+  if (path === "/impressum") return { ...item, changefreq: "yearly", priority: 0.3 };
+  if (path === "/datenschutz") return { ...item, changefreq: "yearly", priority: 0.3 };
+  if (path.startsWith("/blog/")) return { ...item, changefreq: "monthly", priority: 0.6 };
+
+  return item;
+}
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), mdx(), sitemap()],
+  site: 'https://codegarden.at',
+  integrations: [
+    react(),
+    mdx(),
+    sitemap({ serialize: serializeSitemapEntry }),
+  ],
   adapter: vercel(),
   vite: {
     plugins: [tailwindcss()],

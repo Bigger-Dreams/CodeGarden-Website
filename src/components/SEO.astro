@@ -8,17 +8,17 @@ type Props = {
   ogImage?: string;
   ogImageAlt?: string;
   type?: "website" | "article";
+  noindex?: boolean;
 };
 
 const {
   title = "CodeGarden | Frontend & UI/UX aus Wien",
   description = "Wir modernisieren Frontend, UX und UI bestehender Apps und Plattformen für Unternehmen in Wien und Österreich – verständlich geplant und sauber umgesetzt.",
   canonical = "/",
-  // TODO(Paket 8): satori/resvg-Build-Skript erzeugt public/og-image.png,
-  // ersetzt app/opengraph-image.tsx + app/twitter-image.tsx.
   ogImage = "/og-image.png",
   ogImageAlt = "CodeGarden – Frontend & UI/UX aus Wien",
   type = "website",
+  noindex = false,
 } = Astro.props;
 
 const canonicalUrl = new URL(canonical, siteUrl).toString();
@@ -36,6 +36,7 @@ const keywords = [
 <title>{title}</title>
 <meta name="description" content={description} />
 <meta name="keywords" content={keywords.join(", ")} />
+{noindex && <meta name="robots" content="noindex, follow" />}
 <meta name="author" content="Patrick Roith" />
 <meta name="creator" content="Patrick Roith" />
 <meta name="publisher" content="CodeGarden" />
