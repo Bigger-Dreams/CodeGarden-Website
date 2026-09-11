@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { CalendlyPopupLink } from "./CalendlyPopupLink";
 
 const links = [
   { href: "/#leistungen", label: "Leistungen" },
@@ -45,9 +46,9 @@ export function Nav() {
               {link.label}
             </Link>
           ))}
-          <Link href="/#kontakt" className={ctaClass}>
+          <CalendlyPopupLink className={ctaClass}>
             Jetzt anfragen
-          </Link>
+          </CalendlyPopupLink>
         </nav>
 
         <button
@@ -89,9 +90,9 @@ export function Nav() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/#kontakt" onClick={() => setOpen(false)} className={ctaClass}>
+            <CalendlyPopupLink onClick={() => setOpen(false)} className={ctaClass}>
               Jetzt anfragen
-            </Link>
+            </CalendlyPopupLink>
           </nav>
         </div>
       )}

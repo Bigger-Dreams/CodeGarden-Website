@@ -17,7 +17,7 @@ export default function DatenschutzPage() {
   return (
     <main className="flex flex-1 flex-col bg-ink-soft px-6 py-24 text-bone sm:px-12 lg:px-24">
       <div className="mx-auto flex w-full max-w-2xl flex-col">
-        <h1 className="font-heading font-medium text-4xl tracking-tight text-bone sm:text-5xl">
+        <h1 className="break-words font-heading font-medium text-4xl tracking-tight text-bone hyphens-auto sm:text-5xl">
           Datenschutzerklärung
         </h1>
         <p className="mt-6 font-sans text-base leading-relaxed text-bone/70">
@@ -105,12 +105,33 @@ export default function DatenschutzPage() {
         </p>
 
         <h2 className="mt-10 font-heading font-medium text-xl text-bone">
+          Terminbuchung über Calendly
+        </h2>
+        <p className="mt-3 font-sans text-base leading-relaxed text-bone/70">
+          Für die Terminbuchung ist auf der Website ein Popup-Widget von
+          Calendly LLC eingebunden. Wenn Sie das Widget öffnen und nutzen, werden die
+          von Ihnen eingegebenen Angaben, etwa Name, E-Mail-Adresse und
+          Terminwunsch, an Calendly übermittelt und zur Organisation des
+          Termins verarbeitet. Dabei kann es zu einer Datenübertragung in die
+          USA kommen. Grundlage ist Art. 6 Abs. 1 lit. b DSGVO
+          (vorvertragliche Kommunikation bzw. Terminvereinbarung). Weitere
+          Informationen finden sich in der Datenschutzerklärung von Calendly
+          unter{" "}
+          <a
+            href="https://calendly.com/privacy"
+            className="text-brass underline decoration-brass/40 underline-offset-2 transition-colors hover:text-bone"
+          >
+            calendly.com/privacy
+          </a>
+          .
+        </p>
+
+        <h2 className="mt-10 font-heading font-medium text-xl text-bone">
           Kontaktaufnahme
         </h2>
         <p className="mt-3 font-sans text-base leading-relaxed text-bone/70">
-          Diese Website hat aktuell kein Kontaktformular. Eine
-          Kontaktaufnahme ist ausschließlich per E-Mail an die oben genannte
-          Adresse möglich. Dabei übermittelte Daten werden nur zur
+          Eine Kontaktaufnahme per E-Mail an die oben genannte Adresse ist
+          weiterhin möglich. Dabei übermittelte Daten werden nur zur
           Bearbeitung der jeweiligen Anfrage verwendet (Art. 6 Abs. 1 lit. b
           DSGVO) und nicht an Dritte weitergegeben.
         </p>

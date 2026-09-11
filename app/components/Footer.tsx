@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { contactMailto } from "@/lib/site";
+import { CalendlyPopupLink } from "./CalendlyPopupLink";
 
 const links = [
   { href: "/blog", label: "Blog" },
   { href: "/ueber-uns", label: "Über uns" },
-  { href: contactMailto, label: "Kontakt", external: true },
+  { href: "/#kontakt", label: "Kontakt", calendly: true },
   { href: "/impressum", label: "Impressum" },
   { href: "/datenschutz", label: "Datenschutz" },
 ];
@@ -26,10 +26,10 @@ export function Footer() {
 
           <nav className="flex flex-wrap items-center gap-x-6 gap-y-2">
             {links.map((link) =>
-              link.external ? (
-                <a key={link.href} href={link.href} className={linkClassName}>
+              link.calendly ? (
+                <CalendlyPopupLink key={link.href} className={linkClassName}>
                   {link.label}
-                </a>
+                </CalendlyPopupLink>
               ) : (
                 <Link key={link.href} href={link.href} className={linkClassName}>
                   {link.label}

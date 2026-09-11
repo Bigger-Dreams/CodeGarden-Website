@@ -26,8 +26,10 @@ sobald final entschieden.
 - Deployment: Vercel (Preview-Deployment bei jedem Push)
 - Blog: MDX (`@next/mdx`), Artikel unter `app/blog/[slug]`, kein externes CMS
 - Rendering: Static Site Generation (SSG) — keine dynamischen Server-Daten pro Request nötig
-- Kontakt: kein Formular, sondern mailto-Links auf allen "Kontakt"-CTAs (Nav, Footer, Hero,
-  Blog-CTAs) über `lib/site.ts`'s `contactMailto`, öffnet das Mail-Programm des Besuchers direkt
+- Kontakt: kein eigenes Formular und keine mailto-CTAs mehr. Kontakt-CTAs (Nav, Footer, Hero,
+  Kontakt-Section, Blog-CTAs) öffnen über `CalendlyPopupLink` das Calendly-Popup mit
+  `lib/site.ts`'s `calendlyUrl`. `contactMailto` bleibt nur als zentrale E-Mail-Fallback-/
+  Rechtskontakt-Konstante bestehen.
 
 ## Struktur
 
@@ -48,7 +50,7 @@ One-Pager als Kernseite (Sections als eigene Komponenten in `app/components/`, z
 /datenschutz
 ```
 
-Kein eigener Kontakt-Bereich: alle "Kontakt"-CTAs sind mailto-Links (siehe Tech Stack).
+Kontakt erfolgt über die Kontakt-Section und alle Kontakt-CTAs per Calendly-Popup (siehe Tech Stack).
 
 ## Design-Vorgaben (verbindlich)
 

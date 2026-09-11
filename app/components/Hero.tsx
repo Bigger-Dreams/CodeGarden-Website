@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, MotionConfig, useReducedMotion, type Variants } from "framer-motion";
-import { contactMailto } from "@/lib/site";
+import { CalendlyPopupLink } from "./CalendlyPopupLink";
 
 const easing = [0.25, 0.1, 0.25, 1] as const;
 
@@ -72,15 +72,15 @@ export function Hero() {
               variants={item}
               className="mt-10 flex flex-wrap items-center gap-6"
             >
-              <motion.a
-                href={contactMailto}
+              <motion.div
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.15, ease: "easeOut" }}
-                className="inline-flex items-center justify-center rounded-sm bg-brass px-6 py-3 font-sans text-sm font-medium text-ink transition-colors hover:bg-brass-bright"
               >
-                Erstgespräch vereinbaren
-              </motion.a>
+                <CalendlyPopupLink className="inline-flex items-center justify-center rounded-sm bg-brass px-6 py-3 font-sans text-sm font-medium text-ink transition-colors hover:bg-brass-bright">
+                  Erstgespräch vereinbaren
+                </CalendlyPopupLink>
+              </motion.div>
               <a
                 href="#leistungen"
                 className="font-sans text-sm text-bone/75 transition-colors hover:text-brass"
