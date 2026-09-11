@@ -2,6 +2,8 @@
 
 > CodeGarden ist eine Wiener Agentur für Frontend-Entwicklung, UI/UX-Modernisierung und Produktberatung für bestehende digitale Produkte.
 
+Website: https://codegarden.at
+
 CodeGarden unterstützt Unternehmen in Wien und Österreich, die bestehende Websites, Apps, Plattformen oder interne Tools verbessern möchten, ohne ein eigenes Dev-Team aufzubauen. Der Fokus liegt auf verständlicher Konzeption, sauberer Frontend-Umsetzung und besseren Nutzererlebnissen.
 
 ## Leistungen
@@ -17,14 +19,14 @@ Unternehmen ohne eigenes Entwicklungsteam oder mit begrenzten internen Kapazitä
 
 ## Wichtige Seiten
 
-- Startseite: /
+- Startseite: https://codegarden.at/
 - Leistungen: /#leistungen
 - Arbeitsweise: /#ablauf
 - Referenzen: /#referenzen
-- Blog: /blog
-- Über uns: /ueber-uns
-- Impressum: /impressum
-- Datenschutz: /datenschutz
+- Blog: https://codegarden.at/blog
+- Über uns: https://codegarden.at/ueber-uns
+- Impressum: https://codegarden.at/impressum
+- Datenschutz: https://codegarden.at/datenschutz
 
 ## Kontakt
 

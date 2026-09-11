@@ -15,9 +15,9 @@ rechtliche Realität (siehe Impressum), wird auf der Website aber nicht als Kont
 Agentur-Sprache betont. USP: Product-Management-Hintergrund + technische Umsetzung — versteht
 Business-Strategie UND Code, nicht nur eines von beidem.
 
-**Name:** "CodeGarden" ist aktuell Interims-Platzhalter (vorher "UI Company") — finaler Name noch
-offen. Bei Textänderungen darauf hinweisen, dass der Name überall konsistent ersetzt werden muss,
-sobald final entschieden.
+**Name/Domain:** CodeGarden mit kanonischer Domain `https://codegarden.at`. Bei Änderungen an
+Domain oder Name müssen `lib/site.ts`, `.env.example`, Vercel `NEXT_PUBLIC_SITE_URL`, Sitemap,
+Robots, Metadata/Canonicals, OG/Twitter-Images und LLM-Dateien konsistent geprüft werden.
 
 ## Tech Stack
 

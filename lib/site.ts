@@ -1,9 +1,7 @@
-// Set NEXT_PUBLIC_SITE_URL once a real domain is live (Vercel project settings
-// for production, .env.local for local dev). The fallback below is a reserved
-// placeholder domain (example.com) so an unconfigured deploy fails obviously
-// instead of quietly publishing a sitemap/robots.txt with a fake-looking URL.
+// Canonical production URL. Keep NEXT_PUBLIC_SITE_URL in Vercel set to the same
+// value so metadata, OpenGraph images, sitemap.xml and robots.txt stay aligned.
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.example.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://codegarden.at";
 
 export const contactEmail = "patrick.roith@aon.at";
 

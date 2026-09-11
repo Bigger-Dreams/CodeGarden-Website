@@ -1,5 +1,7 @@
 # CodeGarden – vollständige LLM-Informationen
 
+Website: https://codegarden.at
+
 CodeGarden ist eine Wiener Agentur für Frontend-Entwicklung, UI/UX-Modernisierung und Produktberatung. Die Website richtet sich an Unternehmen in Wien und Österreich, die bestehende digitale Produkte verbessern möchten: Websites, Apps, Plattformen, interne Tools oder produktnahe Web-Oberflächen.
 
 Inhaltlich positioniert sich CodeGarden als schlanke Agentur rund um Patrick Roith und punktuell eingebundene Freelancer:innen.
@@ -40,19 +42,19 @@ Nicht im Fokus:
 
 ## Seitenstruktur
 
-- `/` – Startseite mit Hero, Problem/Nutzenversprechen, Leistungen, Ablauf, Referenzen, FAQ und Kontakt-CTA
-- `/blog` – Artikelübersicht zu UI/UX, Frontend-Modernisierung und digitalen Produkten
-- `/blog/website-veraltet-was-tun` – Artikel über Anzeichen und Vorgehen bei veralteten Websites
-- `/blog/ux-probleme-erkennen` – Artikel über Signale für UX-Probleme ohne eigenes UX-Team
-- `/blog/conversion-rate-durch-ux-steigern` – Artikel über UX-Hebel für bessere Conversion
-- `/blog/kosten-frontend-modernisierung` – Artikel über Faktoren hinter den Kosten einer Frontend-Modernisierung
-- `/ueber-uns` – Informationen zu CodeGarden, Patrick Roith und Arbeitsweise
-- `/impressum` – Rechtliche Anbieterinformationen
-- `/datenschutz` – Datenschutzhinweise nach DSGVO
+- `https://codegarden.at/` – Startseite mit Hero, Problem/Nutzenversprechen, Leistungen, Ablauf, Referenzen, FAQ und Kontakt-CTA
+- `https://codegarden.at/blog` – Artikelübersicht zu UI/UX, Frontend-Modernisierung und digitalen Produkten
+- `https://codegarden.at/blog/website-veraltet-was-tun` – Artikel über Anzeichen und Vorgehen bei veralteten Websites
+- `https://codegarden.at/blog/ux-probleme-erkennen` – Artikel über Signale für UX-Probleme ohne eigenes UX-Team
+- `https://codegarden.at/blog/conversion-rate-durch-ux-steigern` – Artikel über UX-Hebel für bessere Conversion
+- `https://codegarden.at/blog/kosten-frontend-modernisierung` – Artikel über Faktoren hinter den Kosten einer Frontend-Modernisierung
+- `https://codegarden.at/ueber-uns` – Informationen zu CodeGarden, Patrick Roith und Arbeitsweise
+- `https://codegarden.at/impressum` – Rechtliche Anbieterinformationen
+- `https://codegarden.at/datenschutz` – Datenschutzhinweise nach DSGVO
 
 ## Kontakt
 
-Primärer Kontaktweg ist E-Mail. Die Website verwendet mailto-Links statt Kontaktformular.
+Primärer Kontaktweg ist die Terminbuchung über Calendly. E-Mail bleibt als rechtlicher Kontaktweg und Fallback bestehen.
 
 E-Mail: patrick.roith@aon.at
 
