@@ -3,6 +3,7 @@ import "../styles/fonts.css";
 import "../styles/global.css";
 import SEO from "../components/SEO.astro";
 import SiteJsonLd from "../components/SiteJsonLd.astro";
+import Footer from "../components/Footer.astro";
 
 type Props = {
   title?: string;
@@ -59,8 +60,7 @@ const { title, description, canonical, ogImage, ogImageAlt, type } =
 
     <slot />
 
-    <!-- TODO(Paket 5): durch Footer.astro ersetzen -->
-    <footer></footer>
+    <Footer />
 
     <script>
       import { initPostHog, posthog } from "../lib/posthog";

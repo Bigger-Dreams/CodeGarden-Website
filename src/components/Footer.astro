@@ -1,0 +1,49 @@
+---
+import { calendlyUrl } from "../lib/site";
+
+const links = [
+  { href: "/blog", label: "Blog" },
+  { href: "/ueber-uns", label: "Über uns" },
+  { href: calendlyUrl, label: "Kontakt", calendly: true },
+  { href: "/impressum", label: "Impressum" },
+  { href: "/datenschutz", label: "Datenschutz" },
+];
+
+const linkClassName =
+  "font-sans text-sm text-bone/75 transition-colors hover:text-brass";
+---
+
+<footer class="bg-ink px-6 py-16 text-bone sm:px-12 lg:px-24">
+  <div class="mx-auto flex w-full max-w-6xl flex-col gap-10">
+    <div class="flex flex-col justify-between gap-8 sm:flex-row sm:items-start">
+      <div>
+        <p class="font-heading font-medium text-xl text-bone">CodeGarden</p>
+        <p class="mt-1 font-sans text-sm text-bone/60">
+          Wien · Frontend &amp; UI/UX
+        </p>
+      </div>
+
+      <nav class="flex flex-wrap items-center gap-x-6 gap-y-2">
+        {
+          links.map((link) =>
+            link.calendly ? (
+              <a href={link.href} class={linkClassName} data-calendly-trigger>
+                {link.label}
+              </a>
+            ) : (
+              <a href={link.href} class={linkClassName}>
+                {link.label}
+              </a>
+            ),
+          )
+        }
+      </nav>
+    </div>
+
+    <div class="border-t border-slate/40 pt-6">
+      <p class="font-sans text-xs text-bone/50">
+        © 2026 CodeGarden. Alle Rechte vorbehalten.
+      </p>
+    </div>
+  </div>
+</footer>

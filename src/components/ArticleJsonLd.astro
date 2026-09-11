@@ -1,0 +1,44 @@
+---
+import { siteUrl } from "../lib/site";
+
+type Props = {
+  title: string;
+  description: string;
+  slug: string;
+  publishedTime: string;
+  modifiedTime?: string;
+};
+
+const {
+  title,
+  description,
+  slug,
+  publishedTime,
+  modifiedTime = publishedTime,
+} = Astro.props;
+
+const url = `${siteUrl}/blog/${slug}`;
+const data = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description,
+  url,
+  datePublished: publishedTime,
+  dateModified: modifiedTime,
+  inLanguage: "de-AT",
+  author: {
+    "@type": "Person",
+    name: "Patrick Roith",
+  },
+  publisher: {
+    "@id": `${siteUrl}/#organization`,
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": url,
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(data)} is:inline />
