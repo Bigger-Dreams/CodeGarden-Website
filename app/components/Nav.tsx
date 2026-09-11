@@ -22,9 +22,15 @@ export function Nav() {
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between py-5">
         <Link
           href="/"
-          className="flex items-center gap-2.5 font-heading font-medium text-xl text-bone"
+          className="flex items-center gap-3 font-heading font-medium text-2xl text-bone"
         >
-          <Image src="/icon.svg" alt="" width={28} height={28} className="rounded-md" />
+          <Image
+            src="/logo.svg"
+            alt=""
+            width={44}
+            height={44}
+            className="h-11 w-11 object-contain"
+          />
           CodeGarden
         </Link>
 
