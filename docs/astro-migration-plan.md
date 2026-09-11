@@ -114,7 +114,6 @@ Die Analyse des Bestands ergab drei nennenswerte technische Altlasten, die die M
 42. Optional: Lighthouse-Vergleich beider Production-Builds
 43. Alte Next.js-Dateien entfernen, die während der Migration paketweise als Referenz stehen geblieben sind: `app/`, `lib/` (alt), `mdx-components.tsx`, `next.config.ts`, `next-env.d.ts`, `tsconfig.json`s Next-Ausschlüsse bereinigen
 44. Restliche Next-Spuren in Doku/Config aktualisieren, die nicht bereits paketweise erledigt wurden (u. a. `README.md`, CLAUDE.md-Tech-Stack-Abschnitt)
-45. PR gegen `main` erstellen, zur Review
 
 Alle Anpassungen, die nicht den eigentlichen Merge nach `main` betreffen, gehören hierher — nicht nach Paket 11.
 
@@ -122,6 +121,7 @@ Alle Anpassungen, die nicht den eigentlichen Merge nach `main` betreffen, gehör
 
 ## Paket 11 — Merge nach main
 
+45. PR gegen `main` erstellen, zur Review
 46. Nach erfolgreichem PR-Review: Merge nach `main`, Vercel promoted automatisch auf Produktion, danach `git worktree remove`
 
 ---
