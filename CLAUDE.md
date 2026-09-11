@@ -16,7 +16,7 @@ Agentur-Sprache betont. USP: Product-Management-Hintergrund + technische Umsetzu
 Business-Strategie UND Code, nicht nur eines von beidem.
 
 **Name/Domain:** CodeGarden mit kanonischer Domain `https://codegarden.at`. Bei Änderungen an
-Domain oder Name müssen `lib/site.ts`, `.env.example`, Vercel `NEXT_PUBLIC_SITE_URL`, Sitemap,
+Domain oder Name müssen `src/lib/site.ts`, `.env.example`, Vercel `PUBLIC_SITE_URL`, Sitemap,
 Robots, Metadata/Canonicals, OG/Twitter-Images und LLM-Dateien konsistent geprüft werden.
 
 ## Tech Stack

@@ -1,5 +1,6 @@
 // Canonical production URL. Keep PUBLIC_SITE_URL in Vercel set to the same
-// value so metadata, OpenGraph images, sitemap.xml and robots.txt stay aligned.
+// value so metadata, OpenGraph images, sitemap-index.xml and robots.txt stay
+// aligned.
 // import.meta.env statt process.env: diese Datei wird auch von Hero.tsx (React-
 // Island) und src/scripts/calendly.ts in den Browser gebündelt, wo `process`
 // nicht existiert.

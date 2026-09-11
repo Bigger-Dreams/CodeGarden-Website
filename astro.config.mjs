@@ -26,6 +26,9 @@ function serializeSitemapEntry(item) {
 // https://astro.build/config
 export default defineConfig({
   site: 'https://codegarden.at',
+  output: 'static',
+  // Nächstliegendes Äquivalent zu next.config.ts's skipTrailingSlashRedirect.
+  trailingSlash: 'ignore',
   integrations: [
     react(),
     mdx(),
