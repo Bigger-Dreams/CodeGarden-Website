@@ -105,14 +105,24 @@ Die Analyse des Bestands ergab drei nennenswerte technische Altlasten, die die M
 
 **Kritische Dateien:** `next.config.ts`, `.env.example`, `lib/site.ts`, `lib/posthog.ts`, `CLAUDE.md`
 
-## Paket 10 — QA & Cutover
+## Paket 10 — QA & Bereinigung
 
 38. Beide Worktree-Dev-Server parallel laufen lassen, Route für Route visuell vergleichen: `/`, `/blog`, alle 4 Artikel, `/ueber-uns`, `/impressum`, `/datenschutz`
 39. Funktionale Checks: Hero-Animation (auch mit "reduce motion"), Nav-Mobile-Menu, Referenzen-Carousel, ShowcasePlayer Play/Pause, CalendlyPopupLink an allen CTA-Stellen
 40. SEO-Checks: Sitemap-Inhalt vergleichen, `robots.txt` vergleichen, OG-Bild pixelgleich prüfen, JSON-LD validieren (Google Rich Results Test)
 41. Auf Vercel-Preview deployen (automatisch bei Push) und `/ingest`-Proxy + Cache-Header dort verifizieren (lässt sich lokal nicht vollständig testen)
 42. Optional: Lighthouse-Vergleich beider Production-Builds
-43. Nach erfolgreicher QA: PR-Review, Merge nach `main`, Vercel promoted automatisch auf Produktion, danach `git worktree remove`
+43. Alte Next.js-Dateien entfernen, die während der Migration paketweise als Referenz stehen geblieben sind: `app/`, `lib/` (alt), `mdx-components.tsx`, `next.config.ts`, `next-env.d.ts`, `tsconfig.json`s Next-Ausschlüsse bereinigen
+44. Restliche Next-Spuren in Doku/Config aktualisieren, die nicht bereits paketweise erledigt wurden (u. a. `README.md`, CLAUDE.md-Tech-Stack-Abschnitt)
+45. PR gegen `main` erstellen, zur Review
+
+Alle Anpassungen, die nicht den eigentlichen Merge nach `main` betreffen, gehören hierher — nicht nach Paket 11.
+
+---
+
+## Paket 11 — Merge nach main
+
+46. Nach erfolgreichem PR-Review: Merge nach `main`, Vercel promoted automatisch auf Produktion, danach `git worktree remove`
 
 ---
 
@@ -121,4 +131,4 @@ Die Analyse des Bestands ergab drei nennenswerte technische Altlasten, die die M
 - Lokaler visueller/funktionaler Vergleich beider Worktree-Dev-Server (Paket 10, Schritte 38–39)
 - SEO-Artefakt-Diff: Sitemap, robots.txt, OG-Bild, JSON-LD (Schritt 40)
 - Vercel-Preview-Deployment für alles, was nur auf der Plattform testbar ist: PostHog-Proxy, Cache-Header (Schritt 41)
-- Erst nach grünem Licht auf allen drei Ebenen: Merge nach `main`
+- Erst nach grünem Licht auf allen drei Ebenen und abgeschlossener Bereinigung (Paket 10): Merge nach `main` (Paket 11)
