@@ -1,0 +1,42 @@
+---
+import { contactEmail, siteUrl } from "../lib/site";
+
+const data = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": `${siteUrl}/#organization`,
+    name: "CodeGarden",
+    url: siteUrl,
+    email: contactEmail,
+    areaServed: ["Wien", "Österreich"],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Wien",
+      addressCountry: "AT",
+    },
+    founder: {
+      "@type": "Person",
+      name: "Patrick Roith",
+    },
+    serviceType: [
+      "Frontend-Entwicklung",
+      "UI/UX-Modernisierung",
+      "Produktberatung",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
+    name: "CodeGarden",
+    url: siteUrl,
+    inLanguage: "de-AT",
+    publisher: {
+      "@id": `${siteUrl}/#organization`,
+    },
+  },
+];
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(data)} is:inline />

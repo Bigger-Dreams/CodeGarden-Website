@@ -1,0 +1,74 @@
+---
+import "../styles/fonts.css";
+import "../styles/global.css";
+import SEO from "../components/SEO.astro";
+import SiteJsonLd from "../components/SiteJsonLd.astro";
+
+type Props = {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  type?: "website" | "article";
+};
+
+const { title, description, canonical, ogImage, ogImageAlt, type } =
+  Astro.props;
+---
+
+<html lang="de" class="h-full antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1a1a1a" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+
+    <link rel="preconnect" href="https://assets.calendly.com" />
+    <link rel="preconnect" href="https://calendly.com" />
+    <link rel="dns-prefetch" href="https://assets.calendly.com" />
+    <link rel="dns-prefetch" href="https://calendly.com" />
+    <link
+      href="https://assets.calendly.com/assets/external/widget.css"
+      rel="stylesheet"
+    />
+
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      ogImage={ogImage}
+      ogImageAlt={ogImageAlt}
+      type={type}
+    />
+  </head>
+  <body class="min-h-full flex flex-col">
+    <SiteJsonLd />
+    <script is:inline>
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual";
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      }
+    </script>
+
+    <!-- TODO(Paket 6): durch Nav.astro (Vanilla-JS Mobile-Menu) ersetzen -->
+    <header></header>
+
+    <slot />
+
+    <!-- TODO(Paket 5): durch Footer.astro ersetzen -->
+    <footer></footer>
+
+    <script>
+      import { initPostHog, posthog } from "../lib/posthog";
+      if (initPostHog()) posthog.capture("$pageview");
+    </script>
+    <script
+      is:inline
+      src="https://assets.calendly.com/assets/external/widget.js"
+    ></script>
+  </body>
+</html>
