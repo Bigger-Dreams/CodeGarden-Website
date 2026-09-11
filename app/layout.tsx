@@ -4,6 +4,7 @@ import { Sora, IBM_Plex_Sans } from "next/font/google";
 import { siteUrl } from "@/lib/site";
 import { Analytics } from "./components/Analytics";
 import { SiteJsonLd } from "./components/JsonLd";
+import { ScrollToTopOnReload } from "./components/ScrollToTopOnReload";
 import { Footer } from "./components/Footer";
 import { Nav } from "./components/Nav";
 import "./globals.css";
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="min-h-full flex flex-col">
         <SiteJsonLd />
+        <ScrollToTopOnReload />
         <Nav />
         {children}
         <Footer />
