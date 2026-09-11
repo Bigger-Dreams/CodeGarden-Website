@@ -64,7 +64,7 @@ export function Hero() {
               variants={item}
               className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-bone/75"
             >
-              Wir konzipieren, entwickeln digitale Produkte mit KI, um die
+              Wir konzipieren und entwickeln digitale Produkte, um die
               User Experience und das User Interface auf Ihrer Plattform zu optimieren.
             </motion.p>
 
