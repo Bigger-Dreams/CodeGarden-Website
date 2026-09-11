@@ -17,10 +17,6 @@
 .astro/
 dist/
 
-# next.js (legacy, removed once migration is complete)
-/.next/
-/out/
-
 # production
 /build
 
@@ -43,4 +39,3 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts

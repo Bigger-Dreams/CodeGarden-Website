@@ -5,7 +5,7 @@ import eslintPluginAstro from "eslint-plugin-astro";
 import reactHooks from "eslint-plugin-react-hooks";
 
 export default defineConfig([
-  globalIgnores(["dist/**", ".astro/**", ".vercel/**", "app/**", "lib/**"]),
+  globalIgnores(["dist/**", ".astro/**", ".vercel/**"]),
   tseslint.configs.recommended,
   eslintPluginAstro.configs.recommended,
   {

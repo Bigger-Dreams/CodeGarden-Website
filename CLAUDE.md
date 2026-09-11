@@ -21,20 +21,26 @@ Robots, Metadata/Canonicals, OG/Twitter-Images und LLM-Dateien konsistent geprü
 
 ## Tech Stack
 
-- Next.js (App Router), TypeScript
-- Tailwind CSS
-- Deployment: Vercel (Preview-Deployment bei jedem Push)
-- Blog: MDX (`@next/mdx`), Artikel unter `app/blog/[slug]`, kein externes CMS
+- Astro, TypeScript. Einzige React-Insel: `src/components/Hero.tsx` (wegen framer-motion),
+  eingebunden mit `client:load`. Alle anderen Sections sind statische `.astro`-Komponenten,
+  Interaktivität (Nav-Menu, Referenzen-Carousel, ShowcasePlayer, Calendly-Popup) läuft über
+  Vanilla-`<script>` bzw. `src/scripts/`.
+- Tailwind CSS v4 über `@tailwindcss/vite`
+- Deployment: Vercel (Preview-Deployment bei jedem Push), Konfiguration in `vercel.json`
+  (PostHog-`/ingest`-Proxy, Cache-Header)
+- Blog: MDX über Astro Content Collections (`src/content.config.ts`), Artikel unter
+  `src/content/blog/*.mdx`, gerendert über `src/pages/blog/[slug].astro`, kein externes CMS
 - Rendering: Static Site Generation (SSG) — keine dynamischen Server-Daten pro Request nötig
 - Kontakt: kein eigenes Formular und keine mailto-CTAs mehr. Kontakt-CTAs (Nav, Footer, Hero,
-  Kontakt-Section, Blog-CTAs) öffnen über `CalendlyPopupLink` das Calendly-Popup mit
-  `lib/site.ts`'s `calendlyUrl`. `contactMailto` bleibt nur als zentrale E-Mail-Fallback-/
-  Rechtskontakt-Konstante bestehen.
+  Kontakt-Section, Blog-CTAs) sind `<a data-calendly-trigger>`-Links; ein gemeinsamer,
+  in `BaseLayout.astro` eingebundener Loader (`src/scripts/calendly.ts`) öffnet daraus das
+  Calendly-Popup mit `src/lib/site.ts`'s `calendlyUrl`. `contactMailto` bleibt nur als zentrale
+  E-Mail-Fallback-/Rechtskontakt-Konstante bestehen.
 
 ## Struktur
 
-One-Pager als Kernseite (Sections als eigene Komponenten in `app/components/`, zusammengesetzt in
-`app/page.tsx`), ergänzt um eigene Routen für Blog und rechtliche Pflichtseiten.
+One-Pager als Kernseite (Sections als eigene Komponenten in `src/components/`, zusammengesetzt in
+`src/pages/index.astro`), ergänzt um eigene Routen für Blog und rechtliche Pflichtseiten.
 
 ```
 / (One-Pager)
@@ -56,10 +62,10 @@ Kontakt erfolgt über die Kontakt-Section und alle Kontakt-CTAs per Calendly-Pop
 
 - **Markenfarben:** Primärfarbe ist `brass` = `#41867A`; abgeleitete Akzente sind
   `brass-bright` = `#5FA89C` und `brass-deep` = `#2E6259`. Bei Farbänderungen Logo-SVGs,
-  Tailwind-Theme (`app/globals.css`) und OG-Image konsistent aktualisieren.
+  Tailwind-Theme (`src/styles/global.css`) und OG-Image konsistent aktualisieren.
 - **Keine Gradients** — keine Gradient-Utilities in der Tailwind-Config definieren, flache Farbflächen
 - **Wenig bis keine Animation** — höchstens `transition-colors` für Hover-States, kein `framer-motion`,
-  keine Scroll-Trigger-/Parallax-Effekte. **Bewusste Ausnahme:** Hero (`app/components/Hero.tsx`)
+  keine Scroll-Trigger-/Parallax-Effekte. **Bewusste Ausnahme:** Hero (`src/components/Hero.tsx`)
   nutzt `framer-motion` für eine einmalige, gestaffelte Eintritts-Animation beim Laden (kein Scroll-
   Trigger, respektiert `prefers-reduced-motion` via `MotionConfig`). **Erweiterte Ausnahme:** der
   Hero-Hintergrund darf zusätzlich einen einzelnen statischen, weichen `brass-bright`-Farbklecks auf
@@ -75,7 +81,7 @@ Kontakt erfolgt über die Kontakt-Section und alle Kontakt-CTAs per Calendly-Pop
   respektiert `prefers-reduced-motion`. Diese Ausnahmen gelten nur für den Hero, nicht als
   Präzedenzfall für weitere Sections.
 - **Font Pairing:** Headline in Sora (markanter Grotesk statt Serif), Body in IBM Plex Sans,
-  eingebunden über `next/font`
+  self-hosted über `@fontsource-variable/*` (`src/styles/fonts.css`)
 - Design muss selbst als Beweis für UI/UX-Fähigkeiten funktionieren — kein Template-Look
 
 ## Content-Regeln — was NICHT auf der Seite steht

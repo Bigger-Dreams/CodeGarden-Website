@@ -15,11 +15,6 @@
     "*.mjs"
   ],
   "exclude": [
-    "dist",
-    "app",
-    "lib",
-    "mdx-components.tsx",
-    "next.config.ts",
-    "next-env.d.ts"
+    "dist"
   ]
 }
