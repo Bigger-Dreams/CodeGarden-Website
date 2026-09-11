@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Sora, IBM_Plex_Sans } from "next/font/google";
 import { siteUrl } from "@/lib/site";
 import { Analytics } from "./components/Analytics";
@@ -75,12 +76,26 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="de"
       className={`${sora.variable} ${ibmPlexSans.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="preconnect" href="https://assets.calendly.com" />
+        <link rel="preconnect" href="https://calendly.com" />
+        <link rel="dns-prefetch" href="https://assets.calendly.com" />
+        <link rel="dns-prefetch" href="https://calendly.com" />
+        <link
+          href="https://assets.calendly.com/assets/external/widget.css"
+          rel="stylesheet"
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <SiteJsonLd />
         <Nav />
         {children}
         <Footer />
         <Analytics />
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
