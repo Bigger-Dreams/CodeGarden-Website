@@ -13,7 +13,11 @@
 # testing
 /coverage
 
-# next.js
+# astro
+.astro/
+dist/
+
+# next.js (legacy, removed once migration is complete)
 /.next/
 /out/
 
