@@ -36,7 +36,7 @@ export default function DatenschutzPage() {
           <br />
           1090 Wien, Österreich
           <br />
-          E-Mail: patrick.roith@aon.at
+          E-Mail: office@codegarden.at
         </p>
 
         <h2 className="mt-10 font-heading font-medium text-xl text-bone">

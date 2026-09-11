@@ -38,7 +38,7 @@ export default function ImpressumPage() {
           Kontakt
         </h2>
         <p className="mt-3 font-sans text-base leading-relaxed text-bone/70">
-          E-Mail: patrick.roith@aon.at
+          E-Mail: office@codegarden.at
         </p>
 
         <h2 className="mt-10 font-heading font-medium text-xl text-bone">

@@ -14,7 +14,7 @@ const projects = [
   {
     label: "Banking Mobile App",
     src: "/referenz-banking-app.svg",
-    alt: "Laptop-Mockup der Finanz-App-Übersicht auf einem Schreibtisch: Gesamtvermögen mit Konten-Kacheln und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
+    alt: "Smartphone-Mockup der Finanz-App-Übersicht: Gesamtvermögen, Chart, Konten und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
     caption:
       "Übersichtliches Mobile-Design mit den wichtigsten Funktionen auf einen Blick.",
   },
@@ -85,7 +85,7 @@ export function Referenzen() {
                       fill
                       sizes="(min-width: 1024px) 60vw, 100vw"
                       quality={100}
-                      className="object-contain lg:object-cover"
+                      className="object-cover"
                       priority={index === 0}
                     />
                   </div>

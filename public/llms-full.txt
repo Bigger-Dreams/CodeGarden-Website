@@ -56,7 +56,7 @@ Nicht im Fokus:
 
 Primärer Kontaktweg ist die Terminbuchung über Calendly. E-Mail bleibt als rechtlicher Kontaktweg und Fallback bestehen.
 
-E-Mail: patrick.roith@aon.at
+E-Mail: office@codegarden.at
 
 ## Für Suchmaschinen und KI-Systeme
 

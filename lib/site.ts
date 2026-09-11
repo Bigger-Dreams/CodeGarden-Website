@@ -3,7 +3,7 @@
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://codegarden.at";
 
-export const contactEmail = "patrick.roith@aon.at";
+export const contactEmail = "office@codegarden.at";
 
 export const contactMailto = `mailto:${contactEmail}?subject=Anfrage%20%C3%BCber%20die%20Website`;
 
