@@ -53,7 +53,7 @@ export function Hero() {
 
             <motion.h1
               variants={item}
-              className="mt-6 max-w-3xl font-heading font-medium text-5xl leading-[1.05] tracking-tight text-bone sm:text-6xl"
+              className="mt-6 max-w-3xl font-heading font-medium text-4xl leading-[1.05] tracking-tight text-bone sm:text-6xl"
             >
               Produktberatung und Frontend Entwicklung
               <br />
@@ -79,7 +79,7 @@ export function Hero() {
                 transition={{ duration: 0.15, ease: "easeOut" }}
                 className="inline-flex items-center justify-center rounded-sm bg-brass px-6 py-3 font-sans text-sm font-medium text-ink transition-colors hover:bg-brass-bright"
               >
-                Projekt anfragen
+                Erstgespräch vereinbaren
               </motion.a>
               <a
                 href="#leistungen"
@@ -92,7 +92,7 @@ export function Hero() {
 
           <div className="flex justify-center lg:justify-end">
             <div className="relative pb-7">
-              <div className="absolute bottom-0 left-1/2 h-5 w-56 -translate-x-1/2 rounded-full bg-brass/25 sm:w-72" />
+              <div className="absolute bottom-0 left-1/2 h-5 w-48 -translate-x-1/2 rounded-full bg-brass/25 min-[380px]:w-56 sm:w-72" />
               <motion.div
                 initial={
                   shouldReduceMotion
@@ -124,7 +124,7 @@ export function Hero() {
                     ease: "easeInOut",
                   }}
                 >
-                  <div className="relative z-10 w-[280px] sm:w-[340px]">
+                  <div className="relative z-10 w-[240px] min-[380px]:w-[280px] sm:w-[340px]">
                     <Image
                       src="/hero-app-1.webp"
                       alt="Prototyp-Screenshot einer App-Übersicht (Konzept, kein reales Produkt)"

@@ -92,7 +92,7 @@ export function FAQ() {
               className="group rounded-sm bg-bone/[0.06] px-6 py-5 open:pb-5"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 marker:content-none">
-                <h3 className="font-sans text-lg font-medium text-bone">
+                <h3 className="min-w-0 font-sans text-base font-medium text-bone sm:text-lg">
                   {faq.question}
                 </h3>
                 <span

@@ -22,14 +22,15 @@ export function Nav() {
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between py-5">
         <Link
           href="/"
-          className="flex items-center gap-3 font-heading font-medium text-2xl text-bone"
+          onClick={() => setOpen(false)}
+          className="flex items-center gap-3 font-heading font-medium text-xl text-bone sm:text-2xl"
         >
           <Image
             src="/logo.svg"
             alt=""
             width={44}
             height={44}
-            className="h-11 w-11 object-contain"
+            className="h-9 w-9 object-contain sm:h-11 sm:w-11"
           />
           CodeGarden
         </Link>
@@ -73,7 +74,10 @@ export function Nav() {
       </div>
 
       {open && (
-        <div id="mobile-menu" className="border-t border-slate/40 py-6 sm:hidden">
+        <div
+          id="mobile-menu"
+          className="absolute left-0 right-0 top-full border-t border-slate/40 bg-ink px-6 py-8 shadow-2xl shadow-black/30 sm:hidden"
+        >
           <nav className="flex flex-col items-start gap-5">
             {links.map((link) => (
               <Link

@@ -30,7 +30,7 @@ export default function Image() {
       >
         <div
           style={{
-            background: "#4fbbd1",
+            background: "#41867A",
             borderRadius: 999,
             height: 420,
             opacity: 0.22,
@@ -41,7 +41,7 @@ export default function Image() {
           }}
         />
         <div style={{ display: "flex", flexDirection: "column", gap: 28, maxWidth: 760 }}>
-          <div style={{ color: "#4fbbd1", fontSize: 28, letterSpacing: 4 }}>
+          <div style={{ color: "#41867A", fontSize: 28, letterSpacing: 4 }}>
             WIEN · FRONTEND & UI/UX
           </div>
           <div style={{ fontSize: 72, fontWeight: 600, lineHeight: 1.05 }}>

@@ -52,6 +52,9 @@ Kein eigener Kontakt-Bereich: alle "Kontakt"-CTAs sind mailto-Links (siehe Tech 
 
 ## Design-Vorgaben (verbindlich)
 
+- **Markenfarben:** Primärfarbe ist `brass` = `#41867A`; abgeleitete Akzente sind
+  `brass-bright` = `#5FA89C` und `brass-deep` = `#2E6259`. Bei Farbänderungen Logo-SVGs,
+  Tailwind-Theme (`app/globals.css`) und OG-Image konsistent aktualisieren.
 - **Keine Gradients** — keine Gradient-Utilities in der Tailwind-Config definieren, flache Farbflächen
 - **Wenig bis keine Animation** — höchstens `transition-colors` für Hover-States, kein `framer-motion`,
   keine Scroll-Trigger-/Parallax-Effekte. **Bewusste Ausnahme:** Hero (`app/components/Hero.tsx`)
