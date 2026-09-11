@@ -1,0 +1,22 @@
+---
+const { href, ...rest } = Astro.props;
+
+const className =
+  "text-brass underline decoration-brass/40 underline-offset-2 transition-colors hover:text-bone";
+
+const isExternal = !(
+  href?.startsWith("/") ||
+  href?.startsWith("#") ||
+  href?.startsWith("mailto:")
+);
+---
+
+<a
+  href={href}
+  class={className}
+  target={isExternal ? "_blank" : undefined}
+  rel={isExternal ? "noopener noreferrer" : undefined}
+  {...rest}
+>
+  <slot />
+</a>
