@@ -3,6 +3,7 @@ import "../styles/fonts.css";
 import "../styles/global.css";
 import SEO from "../components/SEO.astro";
 import SiteJsonLd from "../components/SiteJsonLd.astro";
+import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 
 type Props = {
@@ -55,8 +56,7 @@ const { title, description, canonical, ogImage, ogImageAlt, type } =
       }
     </script>
 
-    <!-- TODO(Paket 6): durch Nav.astro (Vanilla-JS Mobile-Menu) ersetzen -->
-    <header></header>
+    <Nav />
 
     <slot />
 
@@ -65,6 +65,9 @@ const { title, description, canonical, ogImage, ogImageAlt, type } =
     <script>
       import { initPostHog, posthog } from "../lib/posthog";
       if (initPostHog()) posthog.capture("$pageview");
+    </script>
+    <script>
+      import "../scripts/calendly";
     </script>
     <script
       is:inline

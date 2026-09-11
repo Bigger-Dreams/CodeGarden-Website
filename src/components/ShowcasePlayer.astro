@@ -1,0 +1,51 @@
+---
+type Props = {
+  webmSrc: string;
+  mp4Src: string;
+  posterSrc: string;
+  class?: string;
+};
+
+const { webmSrc, mp4Src, posterSrc, class: className } = Astro.props;
+---
+
+<link rel="preload" as="image" href={posterSrc} fetchpriority="high" />
+<video
+  poster={posterSrc}
+  muted
+  loop
+  playsinline
+  preload="metadata"
+  aria-label="Prototyp-Demo einer App-Oberfläche (Konzept, kein reales Produkt)"
+  class={className}
+  data-showcase-player
+>
+  <source src={webmSrc} type="video/webm" />
+  <source src={mp4Src} type="video/mp4" />
+</video>
+
+<script>
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  if (!reduceMotion) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const video = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        }
+      },
+      { threshold: 0.5 },
+    );
+
+    document
+      .querySelectorAll<HTMLVideoElement>("[data-showcase-player]")
+      .forEach((video) => observer.observe(video));
+  }
+</script>

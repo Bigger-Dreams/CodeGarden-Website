@@ -1,25 +1,22 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Hero } from "../components/Hero";
 import Problem from "../components/Problem.astro";
 import Leistungen from "../components/Leistungen.astro";
 import Ablauf from "../components/Ablauf.astro";
+import Referenzen from "../components/Referenzen.astro";
 import FAQ from "../components/FAQ.astro";
 import Kontakt from "../components/Kontakt.astro";
-import PhoneFrame from "../components/PhoneFrame.astro";
-import AppDemo from "../components/AppDemo.astro";
-// Platzhalter – wird in Paket 6 durch die echte Homepage-Section-Komposition ersetzt.
 ---
 
 <BaseLayout>
-  <h1>Astro-Scaffold steht</h1>
-  <Problem />
-  <Leistungen />
-  <Ablauf />
-  <div class="mx-auto max-w-xs p-12">
-    <PhoneFrame>
-      <AppDemo />
-    </PhoneFrame>
-  </div>
-  <FAQ />
-  <Kontakt />
+  <main class="flex flex-1 flex-col">
+    <Hero client:load />
+    <Problem />
+    <Leistungen />
+    <Ablauf />
+    <Referenzen />
+    <FAQ />
+    <Kontakt />
+  </main>
 </BaseLayout>

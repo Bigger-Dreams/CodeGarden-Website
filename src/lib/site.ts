@@ -1,8 +1,9 @@
-// Canonical production URL. Keep NEXT_PUBLIC_SITE_URL in Vercel set to the same
+// Canonical production URL. Keep PUBLIC_SITE_URL in Vercel set to the same
 // value so metadata, OpenGraph images, sitemap.xml and robots.txt stay aligned.
-// TODO(Paket 9): auf PUBLIC_SITE_URL / import.meta.env umstellen.
-export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://codegarden.at";
+// import.meta.env statt process.env: diese Datei wird auch von Hero.tsx (React-
+// Island) und src/scripts/calendly.ts in den Browser gebündelt, wo `process`
+// nicht existiert.
+export const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? "https://codegarden.at";
 
 export const contactEmail = "office@codegarden.at";
 
