@@ -10,6 +10,7 @@ declare global {
 }
 
 let calendlyScriptPromise: Promise<void> | null = null;
+let calendlyStylesPromise: Promise<void> | null = null;
 
 function loadCalendlyScript() {
   if (window.Calendly) return Promise.resolve();
@@ -36,6 +37,32 @@ function loadCalendlyScript() {
   return calendlyScriptPromise;
 }
 
+// Läuft parallel zu loadCalendlyScript(): CSS ist nur per <link rel="preload">
+// vorgeladen (siehe BaseLayout.astro), nicht angewendet — erst hier als
+// echtes Stylesheet aktiviert, damit unbeteiligte Besucher gar kein
+// render-blocking Calendly-CSS bekommen.
+function loadCalendlyStyles() {
+  calendlyStylesPromise ??= new Promise<void>((resolve, reject) => {
+    const existingLink = document.querySelector<HTMLLinkElement>(
+      'link[rel="stylesheet"][href="https://assets.calendly.com/assets/external/widget.css"]',
+    );
+
+    if (existingLink) {
+      resolve();
+      return;
+    }
+
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "https://assets.calendly.com/assets/external/widget.css";
+    link.addEventListener("load", () => resolve(), { once: true });
+    link.addEventListener("error", () => reject(), { once: true });
+    document.head.appendChild(link);
+  });
+
+  return calendlyStylesPromise;
+}
+
 document.addEventListener("click", async (event) => {
   const trigger = (event.target as HTMLElement).closest<HTMLAnchorElement>(
     "[data-calendly-trigger]",
@@ -53,7 +80,7 @@ document.addEventListener("click", async (event) => {
   trigger.textContent = "Terminmodul wird geladen…";
 
   try {
-    await loadCalendlyScript();
+    await Promise.all([loadCalendlyScript(), loadCalendlyStyles()]);
     window.Calendly?.initPopupWidget({ url: calendlyUrl });
   } finally {
     trigger.removeAttribute("aria-busy");

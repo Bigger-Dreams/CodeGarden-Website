@@ -35,9 +35,18 @@ const { title, description, canonical, ogImage, ogImageAlt, type, noindex } =
     <link rel="preconnect" href="https://calendly.com" />
     <link rel="dns-prefetch" href="https://assets.calendly.com" />
     <link rel="dns-prefetch" href="https://calendly.com" />
+    <!-- Nur vorladen, nicht anwenden/ausführen: hält CSS+JS aus dem kritischen
+    Rendering-Pfad raus und erspart jedem Besuch das Calendly-Cookie, wird aber
+    erst bei echtem Klick von src/scripts/calendly.ts aktiviert. -->
     <link
+      rel="preload"
+      as="style"
       href="https://assets.calendly.com/assets/external/widget.css"
-      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      as="script"
+      href="https://assets.calendly.com/assets/external/widget.js"
     />
 
     <SEO
@@ -72,9 +81,5 @@ const { title, description, canonical, ogImage, ogImageAlt, type, noindex } =
     <script>
       import "../scripts/calendly";
     </script>
-    <script
-      is:inline
-      src="https://assets.calendly.com/assets/external/widget.js"
-    ></script>
   </body>
 </html>
