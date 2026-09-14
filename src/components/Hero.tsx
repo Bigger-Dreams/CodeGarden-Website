@@ -89,6 +89,7 @@ export function Hero({
                 <a
                   href={calendlyUrl}
                   data-calendly-trigger
+                  data-calendly-location="hero"
                   className="inline-flex items-center justify-center rounded-sm bg-brass px-6 py-3 font-sans text-sm font-medium text-ink transition-colors hover:bg-brass-bright"
                 >
                   Erstgespräch vereinbaren

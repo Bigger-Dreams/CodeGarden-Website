@@ -1,4 +1,5 @@
 import { calendlyUrl } from "../lib/site";
+import { posthog } from "../lib/posthog";
 
 declare global {
   interface Window {
@@ -43,6 +44,10 @@ document.addEventListener("click", async (event) => {
 
   event.preventDefault();
 
+  posthog.capture("calendly_cta_clicked", {
+    location: trigger.dataset.calendlyLocation ?? "unknown",
+  });
+
   const originalText = trigger.textContent;
   trigger.setAttribute("aria-busy", "true");
   trigger.textContent = "Terminmodul wird geladen…";
@@ -54,4 +59,19 @@ document.addEventListener("click", async (event) => {
     trigger.removeAttribute("aria-busy");
     trigger.textContent = originalText;
   }
+});
+
+// Calendly postet ein window-Message-Event, sobald im Popup tatsächlich ein
+// Termin gebucht wurde (nicht nur geöffnet) — das läuft im eingebetteten
+// Iframe und ist für unser eigenes Tracking sonst unsichtbar.
+window.addEventListener("message", (event) => {
+  if (
+    event.origin !== "https://calendly.com" ||
+    typeof event.data !== "object" ||
+    event.data?.event !== "calendly.event_scheduled"
+  ) {
+    return;
+  }
+
+  posthog.capture("calendly_booking_completed");
 });
