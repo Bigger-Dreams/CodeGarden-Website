@@ -27,7 +27,12 @@ const linkClassName =
         {
           links.map((link) =>
             link.calendly ? (
-              <a href={link.href} class={linkClassName} data-calendly-trigger>
+              <a
+                href={link.href}
+                class={linkClassName}
+                data-calendly-trigger
+                data-calendly-location="footer"
+              >
                 {link.label}
               </a>
             ) : (
