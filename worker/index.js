@@ -9,19 +9,15 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname.startsWith("/ingest/")) {
-      let targetOrigin;
-      let targetPath;
-
-      if (url.pathname.startsWith("/ingest/static/")) {
-        targetOrigin = "https://eu-assets.i.posthog.com";
-        targetPath = url.pathname.slice("/ingest/static".length);
-      } else if (url.pathname.startsWith("/ingest/array/")) {
-        targetOrigin = "https://eu-assets.i.posthog.com";
-        targetPath = url.pathname.slice("/ingest/array".length);
-      } else {
-        targetOrigin = "https://eu.i.posthog.com";
-        targetPath = url.pathname.slice("/ingest".length);
-      }
+      // /static/ und /array/ bleiben im Zielpfad erhalten (nur das /ingest-
+      // Präfix wird entfernt) — genau wie bei vercel.json's rewrites, deren
+      // destination ebenfalls .../static/$1 bzw. .../array/$1 lautet.
+      const targetOrigin =
+        url.pathname.startsWith("/ingest/static/") ||
+        url.pathname.startsWith("/ingest/array/")
+          ? "https://eu-assets.i.posthog.com"
+          : "https://eu.i.posthog.com";
+      const targetPath = url.pathname.slice("/ingest".length);
 
       const targetUrl = new URL(targetPath + url.search, targetOrigin);
       const proxyRequest = new Request(targetUrl, request);
