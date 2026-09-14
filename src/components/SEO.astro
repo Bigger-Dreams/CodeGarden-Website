@@ -1,0 +1,59 @@
+---
+import { siteUrl } from "../lib/site";
+
+type Props = {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  type?: "website" | "article";
+  noindex?: boolean;
+};
+
+const {
+  title = "CodeGarden | Frontend & UI/UX aus Wien",
+  description = "Wir modernisieren Frontend, UX und UI bestehender Apps und Plattformen für Unternehmen in Wien und Österreich – verständlich geplant und sauber umgesetzt.",
+  canonical = "/",
+  ogImage = "/og-image.png",
+  ogImageAlt = "CodeGarden – Frontend & UI/UX aus Wien",
+  type = "website",
+  noindex = false,
+} = Astro.props;
+
+const canonicalUrl = new URL(canonical, siteUrl).toString();
+const ogImageUrl = new URL(ogImage, siteUrl).toString();
+
+const keywords = [
+  "Frontend Entwicklung Wien",
+  "UI UX Modernisierung",
+  "Frontend Modernisierung",
+  "UX Audit",
+  "Website modernisieren Österreich",
+];
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords.join(", ")} />
+{noindex && <meta name="robots" content="noindex, follow" />}
+<meta name="author" content="Patrick Roith" />
+<meta name="creator" content="Patrick Roith" />
+<meta name="publisher" content="CodeGarden" />
+<link rel="canonical" href={canonicalUrl} />
+
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:site_name" content="CodeGarden" />
+<meta property="og:locale" content="de_AT" />
+<meta property="og:type" content={type} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={ogImageAlt} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />

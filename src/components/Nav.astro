@@ -1,0 +1,112 @@
+---
+import { calendlyUrl } from "../lib/site";
+
+const links = [
+  { href: "/#leistungen", label: "Leistungen" },
+  { href: "/#referenzen", label: "Referenzen" },
+  { href: "/blog", label: "Blog" },
+  { href: "/ueber-uns", label: "Über uns" },
+];
+
+const ctaClass =
+  "inline-flex items-center justify-center rounded-sm bg-brass px-5 py-2.5 font-sans text-sm font-medium text-ink transition-colors hover:bg-brass-bright";
+---
+
+<header class="sticky top-0 z-50 border-b border-slate/40 bg-ink px-6 sm:px-12 lg:px-24">
+  <div class="mx-auto flex w-full max-w-6xl items-center justify-between py-5">
+    <a
+      href="/"
+      class="flex items-center gap-3 font-heading font-medium text-xl text-bone sm:text-2xl"
+    >
+      <img
+        src="/logo.svg"
+        alt=""
+        width="44"
+        height="44"
+        class="h-9 w-9 object-contain sm:h-11 sm:w-11"
+      />
+      CodeGarden
+    </a>
+
+    <nav class="hidden items-center gap-8 sm:flex">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="font-sans text-sm text-bone/80 transition-colors hover:text-brass"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a href={calendlyUrl} data-calendly-trigger class={ctaClass}>
+        Jetzt anfragen
+      </a>
+    </nav>
+
+    <button
+      type="button"
+      id="nav-toggle"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Menü öffnen"
+      class="flex h-8 w-8 items-center justify-center sm:hidden"
+    >
+      <span id="nav-toggle-icon-open" class="flex flex-col gap-1.5">
+        <span class="h-px w-6 bg-bone"></span>
+        <span class="h-px w-6 bg-bone"></span>
+        <span class="h-px w-6 bg-bone"></span>
+      </span>
+      <span id="nav-toggle-icon-close" class="relative hidden h-4 w-6">
+        <span class="absolute top-1/2 left-0 h-px w-6 -translate-y-1/2 rotate-45 bg-bone"></span>
+        <span class="absolute top-1/2 left-0 h-px w-6 -translate-y-1/2 -rotate-45 bg-bone"></span>
+      </span>
+    </button>
+  </div>
+
+  <div
+    id="mobile-menu"
+    hidden
+    class="absolute left-0 right-0 top-full border-t border-slate/40 bg-ink px-6 py-8 shadow-2xl shadow-black/30 sm:hidden"
+  >
+    <nav class="flex flex-col items-start gap-5">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="font-sans text-base text-bone/80 transition-colors hover:text-brass"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a href={calendlyUrl} data-calendly-trigger class={ctaClass}>
+        Jetzt anfragen
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("nav-toggle-icon-open");
+  const iconClose = document.getElementById("nav-toggle-icon-close");
+
+  function setOpen(open: boolean) {
+    if (!toggle || !menu || !iconOpen || !iconClose) return;
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+    menu.hidden = !open;
+    iconOpen.classList.toggle("hidden", open);
+    iconClose.classList.toggle("hidden", !open);
+  }
+
+  toggle?.addEventListener("click", () => {
+    setOpen(menu?.hidden ?? true);
+  });
+
+  menu?.addEventListener("click", (event) => {
+    if ((event.target as HTMLElement).closest("a")) setOpen(false);
+  });
+</script>
