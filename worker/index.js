@@ -2,8 +2,7 @@
 // Static Assets unterstützt in _redirects (anders als das alte Pages-Produkt)
 // keine Proxy-Weiterleitung auf fremde Domains mehr, daher übernimmt hier der
 // Worker selbst das Weiterleiten von /ingest/* an PostHogs EU-Cloud, bevor er
-// für alle anderen Pfade auf die statischen Assets zurückfällt. Äquivalent zu
-// vercel.json's rewrites für die Vercel-Produktion.
+// für alle anderen Pfade auf die statischen Assets zurückfällt.
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);

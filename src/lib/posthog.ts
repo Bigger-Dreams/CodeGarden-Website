@@ -9,7 +9,7 @@ export function initPostHog(): boolean {
   if (!key) return false;
 
   posthog.init(key, {
-    // Routed through vercel.json's rewrites to eu.i.posthog.com, so
+    // Routed through worker/index.js's proxy to eu.i.posthog.com, so
     // requests are first-party instead of going straight to PostHog's
     // domain (official PostHog reverse-proxy guide).
     api_host: "/ingest",

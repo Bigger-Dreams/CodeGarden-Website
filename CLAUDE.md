@@ -16,8 +16,9 @@ Agentur-Sprache betont. USP: Product-Management-Hintergrund + technische Umsetzu
 Business-Strategie UND Code, nicht nur eines von beidem.
 
 **Name/Domain:** CodeGarden mit kanonischer Domain `https://codegarden.at`. Bei Änderungen an
-Domain oder Name müssen `src/lib/site.ts`, `.env.example`, Vercel `PUBLIC_SITE_URL`, Sitemap,
-Robots, Metadata/Canonicals, OG/Twitter-Images und LLM-Dateien konsistent geprüft werden.
+Domain oder Name müssen `src/lib/site.ts`, `.env.example`, Cloudflare Build-Variable
+`PUBLIC_SITE_URL`, Sitemap, Robots, Metadata/Canonicals, OG/Twitter-Images und LLM-Dateien
+konsistent geprüft werden.
 
 ## Tech Stack
 
@@ -26,8 +27,9 @@ Robots, Metadata/Canonicals, OG/Twitter-Images und LLM-Dateien konsistent geprü
   Interaktivität (Nav-Menu, Referenzen-Carousel, ShowcasePlayer, Calendly-Popup) läuft über
   Vanilla-`<script>` bzw. `src/scripts/`.
 - Tailwind CSS v4 über `@tailwindcss/vite`
-- Deployment: Vercel (Preview-Deployment bei jedem Push), Konfiguration in `vercel.json`
-  (PostHog-`/ingest`-Proxy, Cache-Header)
+- Deployment: Cloudflare Workers (automatisches Deployment bei jedem Push, Konfiguration in
+  `wrangler.toml`), PostHog-`/ingest`-Proxy in `worker/index.js`, Cache-Header in
+  `public/_headers`
 - Blog: MDX über Astro Content Collections (`src/content.config.ts`), Artikel unter
   `src/content/blog/*.mdx`, gerendert über `src/pages/blog/[slug].astro`, kein externes CMS
 - Rendering: Static Site Generation (SSG) — keine dynamischen Server-Daten pro Request nötig
@@ -111,7 +113,7 @@ Kein Ersatz für Rechtsberatung — bei rechtlichen Unsicherheiten im Text darau
 - Kleine, klar abgegrenzte Session-Scopes — eine Section pro Session, nicht alles auf einmal
 - Plan-Mode bei mehrere Dateien betreffenden Änderungen
 - Häufige Commits
-- Visuelles Feedback über Vercel-Preview-Links prüfen, bevor weitergearbeitet wird
+- Visuelles Feedback über Cloudflare-Preview-Links prüfen, bevor weitergearbeitet wird
 - `lib/`-Verzeichnis-Konvention für geteilte Utilities (types.ts, format.ts), falls relevant
 
 ## Agent skills

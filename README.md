@@ -31,4 +31,4 @@ Details zur Architektur siehe `CLAUDE.md` und `docs/`.
 
 ## Deployment
 
-Vercel, automatisches Preview-Deployment bei jedem Push. Konfiguration in `vercel.json` (PostHog-`/ingest`-Proxy, Cache-Header).
+Cloudflare Workers, automatisches Deployment bei jedem Push (via `wrangler.toml`). PostHog-`/ingest`-Proxy in `worker/index.js`, Cache-Header in `public/_headers`.
