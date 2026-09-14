@@ -22,7 +22,19 @@ const item: Variants = {
   },
 };
 
-export function Hero() {
+type HeroProps = {
+  heroImageSrc: string;
+  heroImageSrcSet: string;
+  heroImageWidth: number;
+  heroImageHeight: number;
+};
+
+export function Hero({
+  heroImageSrc,
+  heroImageSrcSet,
+  heroImageWidth,
+  heroImageHeight,
+}: HeroProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -127,10 +139,11 @@ export function Hero() {
                 >
                   <div className="relative z-10 w-[240px] min-[380px]:w-[280px] sm:w-[340px]">
                     <img
-                      src="/hero-app-1.webp"
+                      src={heroImageSrc}
+                      srcSet={heroImageSrcSet}
                       alt="Prototyp-Screenshot einer App-Übersicht (Konzept, kein reales Produkt)"
-                      width={760}
-                      height={1498}
+                      width={heroImageWidth}
+                      height={heroImageHeight}
                       loading="eager"
                       fetchPriority="high"
                       className="w-full object-contain"

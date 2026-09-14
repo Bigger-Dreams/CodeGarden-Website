@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import patrickPortrait from "../assets/patrick-portrait.webp";
 
 const paragraphs = [
   "CodeGarden ist eine Wiener Agentur für Frontend-Entwicklung und UI/UX-Modernisierung. Wir arbeiten mit Unternehmen, die eine bestehende Website, App oder Plattform haben, aber kein eigenes Dev-Team dafür. Sie wollen ihre digitalen Produkte gezielt verbessern, ohne gleich alles neu bauen zu müssen.",
@@ -23,9 +25,11 @@ const paragraphs = [
 
       <div class="mt-10 flex items-center gap-5">
         <div class="relative h-36 w-36 shrink-0 overflow-hidden rounded-full border border-bone/15">
-          <img
-            src="/patrick-portrait.webp"
+          <Image
+            src={patrickPortrait}
             alt="Portrait von Patrick Roith"
+            width={288}
+            quality={90}
             class="absolute inset-0 h-full w-full object-cover"
           />
         </div>

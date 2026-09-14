@@ -1,15 +1,19 @@
 ---
+import { Image } from "astro:assets";
+import referenzMockup1 from "../assets/referenz-mockup-1.webp";
+import referenzBankingApp from "../assets/referenz-banking-app.png";
+
 const projects = [
   {
     label: "Banking WebApp",
-    src: "/referenz-mockup-1.webp",
+    image: referenzMockup1,
     alt: "Laptop-Mockup der Finanz-App-Übersicht: Gesamtvermögen mit Konten-Kacheln und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
     caption:
       "Modernes User Interface mit optimierter User Experience für Bank Kunden, um die wichtigsten Informationen auf einen Blick zu erhalten.",
   },
   {
     label: "Banking Mobile App",
-    src: "/referenz-banking-app.svg",
+    image: referenzBankingApp,
     alt: "Smartphone-Mockup der Finanz-App-Übersicht: Gesamtvermögen, Chart, Konten und Schnellaktionen (Konzeptprojekt, kein Kundenauftrag)",
     caption:
       "Übersichtliches Mobile-Design mit den wichtigsten Funktionen auf einen Blick.",
@@ -53,9 +57,12 @@ const projects = [
               </div>
               <div class="relative aspect-[3/2] w-full p-4 sm:p-6 lg:aspect-auto lg:h-full lg:min-h-[320px]">
                 <div class="relative h-full w-full overflow-hidden rounded-sm">
-                  <img
-                    src={project.src}
+                  <Image
+                    src={project.image}
                     alt={project.alt}
+                    width={1400}
+                    quality={90}
+                    format="webp"
                     loading={index === 0 ? "eager" : "lazy"}
                     fetchpriority={index === 0 ? "high" : undefined}
                     class="absolute inset-0 h-full w-full object-cover"
