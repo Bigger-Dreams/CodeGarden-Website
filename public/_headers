@@ -1,0 +1,8 @@
+/poster.webp
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/showcase.webm
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/showcase.mp4
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400

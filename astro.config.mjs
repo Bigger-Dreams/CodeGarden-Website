@@ -4,7 +4,6 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 
 // Priorität/changefreq je Route nachgebildet aus dem Next-Stand (app/sitemap.ts).
@@ -34,7 +33,6 @@ export default defineConfig({
     mdx(),
     sitemap({ serialize: serializeSitemapEntry }),
   ],
-  adapter: vercel(),
   vite: {
     plugins: [tailwindcss()],
   },
