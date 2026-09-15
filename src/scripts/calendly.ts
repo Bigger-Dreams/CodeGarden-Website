@@ -15,12 +15,13 @@ function loadCalendlyWidgetScript() {
   return widgetScriptPromise;
 }
 
-// Inline-Widget erst laden, wenn die Kontakt-Section tatsächlich in die Nähe
-// des Viewports scrollt — erspart Besuchern, die nie so weit scrollen, das
-// Calendly-Skript (und dessen Cookie) komplett. Nur auf dem One-Pager
-// vorhanden, auf anderen Seiten (Blog, Über uns, …) ist kontaktSection null.
-const kontaktSection = document.getElementById("kontakt");
-if (kontaktSection) {
+// Inline-Widget erst laden, wenn es tatsächlich in die Nähe des Viewports
+// scrollt — erspart Besuchern, die nie so weit scrollen, das Calendly-Skript
+// (und dessen Cookie) komplett. Lebt aktuell nur auf /kontakt, daher meist
+// direkt beim Laden schon (fast) sichtbar; generisch per Klasse statt fest
+// verdrahteter Seiten-ID, damit das Widget auch anderswo funktionieren würde.
+const widgetEl = document.querySelector(".calendly-inline-widget");
+if (widgetEl) {
   const observer = new IntersectionObserver(
     (entries) => {
       if (!entries.some((entry) => entry.isIntersecting)) return;
@@ -29,12 +30,12 @@ if (kontaktSection) {
     },
     { rootMargin: "200px" },
   );
-  observer.observe(kontaktSection);
+  observer.observe(widgetEl);
 }
 
-// Kontakt-CTAs außerhalb der Kontakt-Section (Nav, Footer, Hero, Blog) linken
-// direkt auf /#kontakt statt ein Popup zu öffnen, tracken beim Klick aber
-// weiterhin dieselbe Intention wie zuvor.
+// Kontakt-CTAs außerhalb der /kontakt-Seite (Nav, Footer, Hero, Blog, Homepage-
+// Teaser) linken direkt dorthin statt ein Popup zu öffnen, tracken beim Klick
+// aber weiterhin dieselbe Intention wie zuvor.
 document.addEventListener("click", (event) => {
   const trigger = (event.target as HTMLElement).closest<HTMLAnchorElement>(
     "[data-calendly-trigger]",

@@ -13,4 +13,4 @@ export const contactMailto = `mailto:${contactEmail}?subject=Anfrage%20%C3%BCber
 export const calendlyUrl =
   "https://calendly.com/office-codegarden/30min?background_color=1a1a1a&text_color=fffdfd&primary_color=41867a";
 
-export const contactHref = "/#kontakt";
+export const contactHref = "/kontakt";
