@@ -1,4 +1,4 @@
-import { motion, MotionConfig, useReducedMotion, type Variants } from "framer-motion";
+import { motion, MotionConfig, type Variants } from "framer-motion";
 import { calendlyUrl } from "../lib/site";
 
 const easing = [0.25, 0.1, 0.25, 1] as const;
@@ -35,8 +35,6 @@ export function Hero({
   heroImageWidth,
   heroImageHeight,
 }: HeroProps) {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <MotionConfig reducedMotion="user">
       <section className="relative flex min-h-screen items-center overflow-hidden bg-ink px-6 py-24 text-bone sm:px-12 lg:px-24">
@@ -50,7 +48,7 @@ export function Hero({
           initial="hidden"
           animate="visible"
           variants={container}
-          className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_auto] lg:gap-16"
+          className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_1.15fr] lg:gap-14"
         >
           <div className="flex flex-col">
             <motion.p
@@ -62,7 +60,7 @@ export function Hero({
 
             <motion.h1
               variants={item}
-              className="mt-5 max-w-3xl font-heading font-medium text-4xl leading-[1.08] tracking-tight text-bone sm:text-5xl lg:text-6xl"
+              className="mt-5 max-w-2xl font-heading font-medium text-4xl leading-[1.08] tracking-tight text-bone sm:text-5xl lg:text-[3.25rem]"
             >
               Product Consulting &amp; Frontend-Entwicklung.
               <br />
@@ -80,7 +78,7 @@ export function Hero({
               saubere technische Umsetzung – ohne Stille Post zwischen Konzept und Code.
             </motion.p>
 
-            <motion.div variants={item} className="mt-9">
+            <motion.div variants={item} className="mt-8">
               <div className="flex flex-wrap items-center gap-5 sm:gap-6">
                 <motion.div
                   whileHover={{ y: -2 }}
@@ -160,7 +158,7 @@ export function Hero({
               </div>
             </motion.div>
 
-            {/* Trust & Scope Strip: Balances the desktop layout & highlights Product Consulting + Dev */}
+            {/* Scope / Service Strip */}
             <motion.div
               variants={item}
               className="mt-12 border-t border-bone/10 pt-8 grid grid-cols-1 gap-6 sm:grid-cols-3"
@@ -170,7 +168,7 @@ export function Hero({
                   Product Consulting
                 </p>
                 <p className="mt-1 font-sans text-xs text-bone/60 leading-relaxed">
-                  Anforderungen analysieren, Userflows schärfen und Vorhaben realistisch priorisieren.
+                  Anforderungen analysieren, Userflows schärfen, Prioritäten setzen.
                 </p>
               </div>
               <div>
@@ -178,7 +176,7 @@ export function Hero({
                   Frontend-Entwicklung
                 </p>
                 <p className="mt-1 font-sans text-xs text-bone/60 leading-relaxed">
-                  Moderne Umsetzung in React und Next.js, angebunden an Ihre bestehenden APIs.
+                  React &amp; Next.js, angebunden an bestehende APIs ohne Backend-Umbau.
                 </p>
               </div>
               <div>
@@ -186,62 +184,55 @@ export function Hero({
                   Keine Stille Post
                 </p>
                 <p className="mt-1 font-sans text-xs text-bone/60 leading-relaxed">
-                  Wer die Produktstrategie versteht, baut auch das Frontend. Reibungslos und direkt.
+                  Strategie und Code vereint. Kein Informationsverlust im Prozess.
                 </p>
               </div>
             </motion.div>
           </div>
 
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative pb-7">
-              <div className="absolute bottom-0 left-1/2 h-5 w-48 -translate-x-1/2 rounded-full bg-brass/25 min-[380px]:w-56 sm:w-72" />
-              <motion.div
-                initial={
-                  shouldReduceMotion
-                    ? { opacity: 1, scale: 1, y: 0 }
-                    : { opacity: 0, scale: 0.97, y: -90 }
-                }
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={
-                  shouldReduceMotion
-                    ? { duration: 0 }
-                    : {
-                        delay: 0.65,
-                        type: "spring",
-                        bounce: 0.18,
-                        duration: 0.9,
-                      }
-                }
-              >
-                <motion.div
-                  animate={
-                    shouldReduceMotion
-                      ? { y: 0, rotate: 0 }
-                      : { y: [0, -10, 0], rotate: [0, -0.8, 0.6, 0] }
-                  }
-                  transition={{
-                    delay: 1.7,
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <div className="relative z-10 w-[240px] min-[380px]:w-[280px] sm:w-[340px]">
-                    <img
-                      src={heroImageSrc}
-                      srcSet={heroImageSrcSet}
-                      alt="Prototyp-Screenshot einer App-Übersicht (Konzept, kein reales Produkt)"
-                      width={heroImageWidth}
-                      height={heroImageHeight}
-                      loading="eager"
-                      fetchPriority="high"
-                      className="w-full object-contain"
-                    />
+          <motion.div
+            variants={item}
+            className="flex w-full justify-center lg:justify-end"
+          >
+            <div className="relative w-full max-w-lg lg:max-w-xl">
+              {/* Grounded Browser Frame */}
+              <div className="overflow-hidden rounded-md border border-bone/15 bg-ink-soft shadow-2xl shadow-black/60">
+                {/* Browser Top Bar */}
+                <div className="flex items-center justify-between border-b border-bone/10 bg-ink px-4 py-3">
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-2.5 w-2.5 rounded-full bg-bone/20" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-bone/20" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-bone/20" />
                   </div>
-                </motion.div>
-              </motion.div>
+                  <div className="mx-auto flex h-6 w-full max-w-[210px] items-center justify-center rounded-sm bg-bone/5 px-3 font-sans text-[11px] text-bone/45">
+                    app.codegarden.at
+                  </div>
+                  <span className="rounded-sm bg-brass/20 px-2 py-0.5 font-sans text-[10px] font-medium uppercase tracking-wider text-brass-bright">
+                    Prototype
+                  </span>
+                </div>
+
+                {/* Viewport: Crisp Desktop Web-App Screenshot */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-ink">
+                  <img
+                    src={heroImageSrc}
+                    srcSet={heroImageSrcSet}
+                    alt="Desktop-Screenshot einer Finanz-Web-App (Konzeptprojekt, kein reales Produkt)"
+                    width={heroImageWidth}
+                    height={heroImageHeight}
+                    loading="eager"
+                    fetchPriority="high"
+                    className="h-full w-full object-cover object-top"
+                  />
+                </div>
+              </div>
+
+              {/* Grounded Caption */}
+              <p className="mt-3 text-right font-sans text-[11px] text-bone/40">
+                Konzeptprojekt: UI/UX &amp; Frontend einer B2B-Finanzplattform
+              </p>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </section>
     </MotionConfig>
