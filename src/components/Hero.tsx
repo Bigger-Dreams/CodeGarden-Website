@@ -73,7 +73,7 @@ export function Hero({}: HeroProps) {
             >
               Wir analysieren Anforderungen, optimieren Userflows und setzen Interfaces
               direkt in modernem Frontend-Code um. Echte Produkterfahrung trifft
-              saubere technische Umsetzung – für reibungslose Abläufe und messbare Ergebnisse.
+              saubere technische Umsetzung für reibungslose Abläufe und messbare Ergebnisse.
             </motion.p>
 
             <motion.div variants={item} className="mt-8">
@@ -397,10 +397,6 @@ export function Hero({}: HeroProps) {
               </div>
 
               {/* Caption */}
-              <p className="mt-3 flex items-center justify-center gap-1.5 font-sans text-[11px] text-bone/45">
-                <span className="h-1.5 w-1.5 rounded-full bg-brass animate-pulse" />
-                Interaktives Phone-Interface: Testen Sie Buttons &amp; Zeitraum
-              </p>
             </div>
           </motion.div>
         </motion.div>
