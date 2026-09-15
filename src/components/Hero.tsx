@@ -57,25 +57,27 @@ export function Hero({
               variants={item}
               className="font-sans text-xs uppercase tracking-[0.25em] text-brass"
             >
-              Frontend-Entwicklung &amp; UI/UX · Wien
+              Web-Apps, Portale &amp; Plattformen · Wien
             </motion.p>
 
             <motion.h1
               variants={item}
               className="mt-5 max-w-3xl font-heading font-medium text-4xl leading-[1.08] tracking-tight text-bone sm:text-5xl lg:text-6xl"
             >
-              Bestehende Web-Apps &amp; Portale,
+              Product Consulting &amp; Frontend-Entwicklung.
               <br />
-              <span className="text-brass">die wieder einfach funktionieren.</span>
+              <span className="text-brass">
+                Von der Strategie bis zum fertigen Code.
+              </span>
             </motion.h1>
 
             <motion.p
               variants={item}
               className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-bone/75"
             >
-              Wir modernisieren Frontend, UX und UI gewachsener digitaler Produkte.
-              Damit User schneller ans Ziel kommen und Ihr Team auf einer sauberen Code-Basis
-              weiterarbeiten kann – ohne teuren Backend-Neubau.
+              Wir analysieren Anforderungen, optimieren Userflows und setzen Interfaces
+              direkt in modernem Frontend-Code um. Echte Produkterfahrung trifft
+              saubere technische Umsetzung – ohne Stille Post zwischen Konzept und Code.
             </motion.p>
 
             <motion.div variants={item} className="mt-9">
@@ -158,33 +160,33 @@ export function Hero({
               </div>
             </motion.div>
 
-            {/* Trust & Scope Strip: Grounds the desktop layout & resolves key objections */}
+            {/* Trust & Scope Strip: Balances the desktop layout & highlights Product Consulting + Dev */}
             <motion.div
               variants={item}
               className="mt-12 border-t border-bone/10 pt-8 grid grid-cols-1 gap-6 sm:grid-cols-3"
             >
               <div>
                 <p className="font-heading text-sm font-medium text-bone">
-                  Kein Backend-Umbau
+                  Product Consulting
                 </p>
                 <p className="mt-1 font-sans text-xs text-bone/60 leading-relaxed">
-                  Bestehende APIs und Datenbanken bleiben unangetastet.
+                  Anforderungen analysieren, Userflows schärfen und Vorhaben realistisch priorisieren.
                 </p>
               </div>
               <div>
                 <p className="font-heading text-sm font-medium text-bone">
-                  Fixer Projektumfang
+                  Frontend-Entwicklung
                 </p>
                 <p className="mt-1 font-sans text-xs text-bone/60 leading-relaxed">
-                  Klare Leistungsabgrenzung und Pauschalpreise vor Projektstart.
+                  Moderne Umsetzung in React und Next.js, angebunden an Ihre bestehenden APIs.
                 </p>
               </div>
               <div>
                 <p className="font-heading text-sm font-medium text-bone">
-                  Konzept &amp; Code vereint
+                  Keine Stille Post
                 </p>
                 <p className="mt-1 font-sans text-xs text-bone/60 leading-relaxed">
-                  Kein Informationsverlust zwischen UX, Strategie und Frontend.
+                  Wer die Produktstrategie versteht, baut auch das Frontend. Reibungslos und direkt.
                 </p>
               </div>
             </motion.div>
@@ -225,35 +227,6 @@ export function Hero({
                   }}
                 >
                   <div className="relative z-10 w-[240px] min-[380px]:w-[280px] sm:w-[340px]">
-                    {/* Context Badge 1: Top Left */}
-                    <div className="absolute -left-6 top-14 z-20 hidden rounded-md border border-bone/15 bg-ink-soft/95 px-3 py-1.5 shadow-xl sm:flex sm:items-center sm:gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-brass" />
-                      <span className="font-sans text-xs text-bone/90">
-                        React &amp; Next.js
-                      </span>
-                    </div>
-
-                    {/* Context Badge 2: Bottom Right */}
-                    <div className="absolute -right-6 bottom-16 z-20 hidden rounded-md border border-bone/15 bg-ink-soft/95 px-3 py-1.5 shadow-xl sm:flex sm:items-center sm:gap-2">
-                      <svg
-                        className="h-3.5 w-3.5 text-brass"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M5 13l4 4L19 7"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      <span className="font-sans text-xs text-bone/90">
-                        Userflow optimiert
-                      </span>
-                    </div>
-
                     <img
                       src={heroImageSrc}
                       srcSet={heroImageSrcSet}
@@ -274,3 +247,4 @@ export function Hero({
     </MotionConfig>
   );
 }
+
