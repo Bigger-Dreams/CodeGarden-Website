@@ -31,23 +31,14 @@ const { title, description, canonical, ogImage, ogImageAlt, type, noindex } =
     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
     <link rel="manifest" href="/manifest.webmanifest" />
 
+    <!-- Nur Verbindung vorwärmen, Skript wird erst geladen, wenn die
+    Kontakt-Section mit dem Inline-Widget in die Nähe des Viewports scrollt
+    (src/scripts/calendly.ts) — erspart allen anderen Besuchen das
+    Calendly-Cookie komplett. -->
     <link rel="preconnect" href="https://assets.calendly.com" />
     <link rel="preconnect" href="https://calendly.com" />
     <link rel="dns-prefetch" href="https://assets.calendly.com" />
     <link rel="dns-prefetch" href="https://calendly.com" />
-    <!-- Nur vorladen, nicht anwenden/ausführen: hält CSS+JS aus dem kritischen
-    Rendering-Pfad raus und erspart jedem Besuch das Calendly-Cookie, wird aber
-    erst bei echtem Klick von src/scripts/calendly.ts aktiviert. -->
-    <link
-      rel="preload"
-      as="style"
-      href="https://assets.calendly.com/assets/external/widget.css"
-    />
-    <link
-      rel="preload"
-      as="script"
-      href="https://assets.calendly.com/assets/external/widget.js"
-    />
 
     <SEO
       title={title}

@@ -11,6 +11,6 @@ export const contactEmail = "office@codegarden.at";
 export const contactMailto = `mailto:${contactEmail}?subject=Anfrage%20%C3%BCber%20die%20Website`;
 
 export const calendlyUrl =
-  "https://calendly.com/office-codegarden?background_color=000000&text_color=fffefe&primary_color=41867a";
+  "https://calendly.com/office-codegarden/30min?background_color=1a1a1a&text_color=fffdfd&primary_color=41867a";
 
-export const contactHref = "/#kontakt";
+export const contactHref = "/kontakt";

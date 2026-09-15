@@ -14,6 +14,7 @@ function serializeSitemapEntry(item) {
 
   if (path === "/") return { ...item, changefreq: "monthly", priority: 1 };
   if (path === "/blog") return { ...item, changefreq: "weekly", priority: 0.8 };
+  if (path === "/kontakt") return { ...item, changefreq: "monthly", priority: 0.9 };
   if (path === "/ueber-uns") return { ...item, changefreq: "yearly", priority: 0.5 };
   if (path === "/impressum") return { ...item, changefreq: "yearly", priority: 0.3 };
   if (path === "/datenschutz") return { ...item, changefreq: "yearly", priority: 0.3 };
