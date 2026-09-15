@@ -7,9 +7,14 @@ import Ablauf from "../components/Ablauf.astro";
 import Referenzen from "../components/Referenzen.astro";
 import FAQ from "../components/FAQ.astro";
 import Kontakt from "../components/Kontakt.astro";
+import bankingKonto from "../assets/banking-konto.webp";
+import bankingDepot from "../assets/banking-depot.webp";
 ---
 
 <BaseLayout>
+  {/* Hero-Slides 2+3 vorladen, damit beim Blättern kein Leer-/Alt-Stand entsteht (Slide 1 ist eager im SSR-HTML) */}
+  <link slot="head" rel="preload" as="image" href={bankingKonto.src} />
+  <link slot="head" rel="preload" as="image" href={bankingDepot.src} />
   <main class="flex flex-1 flex-col">
     <Hero client:load />
     <Problem />

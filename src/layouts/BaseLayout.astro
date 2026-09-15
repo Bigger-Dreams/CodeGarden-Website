@@ -49,6 +49,7 @@ const { title, description, canonical, ogImage, ogImageAlt, type, noindex } =
       type={type}
       noindex={noindex}
     />
+    <slot name="head" />
   </head>
   <body class="min-h-full flex flex-col">
     <SiteJsonLd />
