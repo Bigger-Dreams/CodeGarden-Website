@@ -73,7 +73,7 @@ export function Hero({}: HeroProps) {
             >
               Wir analysieren Anforderungen, optimieren Userflows und setzen Interfaces
               direkt in modernem Frontend-Code um. Echte Produkterfahrung trifft
-              saubere technische Umsetzung – ohne Stille Post zwischen Konzept und Code.
+              saubere technische Umsetzung – für reibungslose Abläufe und messbare Ergebnisse.
             </motion.p>
 
             <motion.div variants={item} className="mt-8">
@@ -179,10 +179,10 @@ export function Hero({}: HeroProps) {
               </div>
               <div>
                 <p className="font-heading text-sm font-medium text-bone">
-                  Keine Stille Post
+                  Direkte Zusammenarbeit
                 </p>
                 <p className="mt-1 font-sans text-xs text-bone/60 leading-relaxed">
-                  Strategie und Code vereint. Kein Informationsverlust im Prozess.
+                  Ein fester Ansprechpartner für Konzept und Code. Schnelle Abstimmung ohne Agentur-Overhead.
                 </p>
               </div>
             </motion.div>
@@ -272,19 +272,63 @@ export function Hero({}: HeroProps) {
                         <span className="text-bone/50">vs. Vorperiode</span>
                       </div>
 
-                      {/* Clean Minimalist Bars */}
-                      <div className="mt-4 flex items-end gap-2 h-9 pt-2 border-t border-bone/10">
-                        {(timeframe === "30d"
-                          ? [35, 60, 45, 80, 65, 95]
-                          : [50, 70, 60, 90, 75, 100]
-                        ).map((h, i) => (
-                          <div
-                            key={i}
-                            className="flex-1 bg-brass/30 hover:bg-brass rounded-xs transition-all cursor-pointer"
-                            style={{ height: `${h}%` }}
-                            onClick={() => triggerFeedback(`Monat ${i + 1}: ${h}%`)}
-                          />
-                        ))}
+                      {/* Animated Financial Wave Chart */}
+                      <div className="mt-4 pt-2 border-t border-bone/10">
+                        <div className="relative h-12 w-full overflow-hidden">
+                          <svg
+                            viewBox="0 0 250 56"
+                            className="w-full h-full overflow-visible"
+                            preserveAspectRatio="none"
+                          >
+                            {/* Area under curve */}
+                            <motion.path
+                              key={`area-${timeframe}`}
+                              d={
+                                timeframe === "30d"
+                                  ? "M 0 44 C 35 42, 55 48, 85 40 C 115 32, 140 36, 175 24 C 205 14, 225 12, 250 8 L 250 56 L 0 56 Z"
+                                  : "M 0 48 C 30 46, 60 38, 95 32 C 130 26, 160 22, 195 12 C 215 6, 235 4, 250 3 L 250 56 L 0 56 Z"
+                              }
+                              fill="#41867A"
+                              fillOpacity={0.15}
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              transition={{ duration: 0.4 }}
+                            />
+                            {/* Animated Stroke line */}
+                            <motion.path
+                              key={`line-${timeframe}`}
+                              d={
+                                timeframe === "30d"
+                                  ? "M 0 44 C 35 42, 55 48, 85 40 C 115 32, 140 36, 175 24 C 205 14, 225 12, 250 8"
+                                  : "M 0 48 C 30 46, 60 38, 95 32 C 130 26, 160 22, 195 12 C 215 6, 235 4, 250 3"
+                              }
+                              fill="none"
+                              stroke="#41867A"
+                              strokeWidth="2.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              initial={{ pathLength: 0 }}
+                              animate={{ pathLength: 1 }}
+                              transition={{ duration: 0.85, ease: [0.25, 0.1, 0.25, 1] }}
+                            />
+                            {/* Live pulsing dot at end of curve */}
+                            <motion.circle
+                              key={`dot-${timeframe}`}
+                              cx={250}
+                              cy={timeframe === "30d" ? 8 : 3}
+                              r="3.5"
+                              fill="#5FA89C"
+                              initial={{ scale: 0 }}
+                              animate={{ scale: [1, 1.4, 1] }}
+                              transition={{
+                                delay: 0.7,
+                                duration: 2,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                              }}
+                            />
+                          </svg>
+                        </div>
                       </div>
                     </div>
 
