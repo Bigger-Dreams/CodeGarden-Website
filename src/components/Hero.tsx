@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { motion, MotionConfig, type Variants } from "framer-motion";
+import {
+  motion,
+  MotionConfig,
+  AnimatePresence,
+  useReducedMotion,
+  type Variants,
+} from "framer-motion";
 import { calendlyUrl } from "../lib/site";
 
 const easing = [0.25, 0.1, 0.25, 1] as const;
@@ -23,22 +29,138 @@ const item: Variants = {
   },
 };
 
-type HeroProps = {
-  heroImageSrc?: string;
-  heroImageSrcSet?: string;
-  heroImageWidth?: number;
-  heroImageHeight?: number;
+type Slide = {
+  src: string;
+  label: string;
+  alt: string;
 };
 
-export function Hero({}: HeroProps) {
-  const [timeframe, setTimeframe] = useState<"30d" | "90d">("30d");
-  const [feedback, setFeedback] = useState<string | null>(null);
+const slides: Slide[] = [
+  {
+    src: new URL("../assets/banking-uebersicht.webp", import.meta.url).href,
+    label: "Übersicht",
+    alt: "Banking-App Screen Übersicht – Gesamtvermögen, Konten und letzte Aktivität",
+  },
+  {
+    src: new URL("../assets/banking-konto.webp", import.meta.url).href,
+    label: "Konto",
+    alt: "Banking-App Screen Konto – Gehaltskonto, Sparkonto, Einnahmen und Sparziele",
+  },
+  {
+    src: new URL("../assets/banking-depot.webp", import.meta.url).href,
+    label: "Depot",
+    alt: "Banking-App Screen Depot – Depotwert, Positionen und Watchlist",
+  },
+];
 
-  const triggerFeedback = (text: string) => {
-    setFeedback(text);
-    setTimeout(() => setFeedback(null), 2200);
-  };
+const slideVariants: Variants = {
+  enter: (dir: number) => ({ x: dir === 0 ? 0 : dir > 0 ? 90 : -90, opacity: 0 }),
+  center: { x: 0, opacity: 1 },
+  exit: (dir: number) => ({ x: dir > 0 ? -90 : 90, opacity: 0 }),
+};
 
+function HeroShowcase() {
+  const [[index, direction], setIndex] = useState<[number, number]>([0, 0]);
+  const reduceMotion = useReducedMotion();
+
+  const paginate = (dir: number) =>
+    setIndex(([prev]) => [
+      (prev + dir + slides.length) % slides.length,
+      dir,
+    ]);
+
+  const goTo = (next: number) =>
+    setIndex(([prev]) =>
+      next === prev ? [prev, 0] : [next, next > prev ? 1 : -1],
+    );
+
+  const slide = slides[index];
+
+  return (
+    <div className="relative w-[270px] sm:w-[300px]">
+      {/* Swipe-Viewport */}
+      <div
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="App-Screens zum Durchblättern"
+        className="relative z-10 aspect-[1530/3036] w-full touch-pan-y overflow-hidden select-none"
+      >
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.img
+            key={index}
+            src={slide.src}
+            alt={slide.alt}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={
+              reduceMotion
+                ? { duration: 0 }
+                : { duration: 0.35, ease: easing }
+            }
+            drag={reduceMotion ? false : "x"}
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.7}
+            onDragEnd={(_, info) => {
+              if (info.offset.x < -60) paginate(1);
+              else if (info.offset.x > 60) paginate(-1);
+            }}
+            className="absolute inset-0 h-full w-full object-cover"
+            draggable={false}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+          />
+        </AnimatePresence>
+      </div>
+
+      {/* Caption + Steuerung */}
+      <div className="relative z-10 mt-4 flex flex-col items-center gap-3">
+        <p aria-live="polite" className="font-sans text-xs text-bone/70">
+          {slide.label} · {index + 1} / {slides.length}
+        </p>
+        <div className="flex items-center gap-4">
+          <button
+            type="button"
+            onClick={() => paginate(-1)}
+            aria-label="Vorheriger Screen"
+            className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-bone/15 text-bone/70 transition-colors hover:border-brass hover:text-brass"
+          >
+            ←
+          </button>
+          <div className="flex items-center gap-2">
+            {slides.map((s, i) => (
+              <button
+                key={s.label}
+                type="button"
+                onClick={() => goTo(i)}
+                aria-label={`Zu Screen: ${s.label}`}
+                aria-current={i === index}
+                className={`h-1.5 cursor-pointer rounded-full transition-colors ${
+                  i === index
+                    ? "w-6 bg-brass"
+                    : "w-1.5 bg-bone/25 hover:bg-bone/50"
+                }`}
+              />
+            ))}
+          </div>
+          <button
+            type="button"
+            onClick={() => paginate(1)}
+            aria-label="Nächster Screen"
+            className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-bone/15 text-bone/70 transition-colors hover:border-brass hover:text-brass"
+          >
+            →
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function Hero() {
   return (
     <MotionConfig reducedMotion="user">
       <section className="relative flex min-h-screen items-center overflow-hidden bg-ink px-6 py-24 text-bone sm:px-12 lg:px-24">
@@ -188,216 +310,12 @@ export function Hero({}: HeroProps) {
             </motion.div>
           </div>
 
-          {/* Right Column: Sleek, Unstuffed Interactive Phone */}
+          {/* Right Column: Swipeable App-Screens */}
           <motion.div
             variants={item}
             className="flex w-full justify-center lg:justify-end"
           >
-            <div className="relative w-[280px] sm:w-[305px]">
-              {/* Phone Shell */}
-              <div className="relative overflow-hidden rounded-[44px] border-[3px] border-bone/20 bg-ink p-3 shadow-2xl shadow-black/80">
-                {/* Screen Bezel */}
-                <div className="relative flex flex-col justify-between overflow-hidden rounded-[34px] border border-bone/10 bg-ink-soft p-4 text-bone min-h-[530px]">
-                  <div>
-                    {/* Status Bar & Dynamic Island */}
-                    <div className="flex items-center justify-between px-1">
-                      <span className="font-mono text-[11px] font-medium text-bone/60">09:41</span>
-                      <div className="flex h-4 w-20 items-center justify-center rounded-full bg-ink border border-bone/10">
-                        <div className="h-1.5 w-1.5 rounded-full bg-bone/30 mr-1.5" />
-                        <div className="h-2 w-2 rounded-full bg-brass/80" />
-                      </div>
-                      <div className="flex items-center gap-1 text-bone/60">
-                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L12 22l7.03-4.39C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z" />
-                        </svg>
-                        <span className="font-mono text-[10px]">5G</span>
-                      </div>
-                    </div>
-
-                    {/* App Header */}
-                    <div className="mt-4 flex items-center justify-between">
-                      <div>
-                        <p className="font-sans text-[11px] text-bone/50">CodeGarden Portal</p>
-                        <p className="font-heading text-sm font-medium text-bone">Patrick Roith</p>
-                      </div>
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full border border-brass/30 bg-brass/10 font-heading text-xs font-medium text-brass">
-                        P
-                      </div>
-                    </div>
-
-                    {/* Airy Metric Card (Not stuffed!) */}
-                    <div className="mt-4 rounded-xl border border-bone/10 bg-bone/[0.03] p-4">
-                      <div className="flex items-center justify-between">
-                        <span className="font-sans text-xs text-bone/60">Verfügbares Volumen</span>
-                        <div className="flex rounded-sm bg-bone/5 p-0.5">
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setTimeframe("30d");
-                              triggerFeedback("30 Tage");
-                            }}
-                            className={`rounded-xs px-2 py-0.5 font-mono text-[10px] transition-colors cursor-pointer ${
-                              timeframe === "30d"
-                                ? "bg-brass text-ink font-medium"
-                                : "text-bone/60 hover:text-bone"
-                            }`}
-                          >
-                            30T
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setTimeframe("90d");
-                              triggerFeedback("90 Tage");
-                            }}
-                            className={`rounded-xs px-2 py-0.5 font-mono text-[10px] transition-colors cursor-pointer ${
-                              timeframe === "90d"
-                                ? "bg-brass text-ink font-medium"
-                                : "text-bone/60 hover:text-bone"
-                            }`}
-                          >
-                            90T
-                          </button>
-                        </div>
-                      </div>
-
-                      <p className="mt-2 font-heading text-2xl font-medium tracking-tight text-bone">
-                        {timeframe === "30d" ? "€ 38.450,00" : "€ 118.200,00"}
-                      </p>
-
-                      <div className="mt-1 flex items-center gap-2 text-[11px]">
-                        <span className="rounded-xs bg-brass/15 px-1.5 py-0.5 font-mono text-brass-bright">
-                          {timeframe === "30d" ? "+14,2%" : "+22,8%"}
-                        </span>
-                        <span className="text-bone/50">vs. Vorperiode</span>
-                      </div>
-
-                      {/* Animated Financial Wave Chart */}
-                      <div className="mt-4 pt-2 border-t border-bone/10">
-                        <div className="relative h-12 w-full overflow-hidden">
-                          <svg
-                            viewBox="0 0 250 56"
-                            className="w-full h-full overflow-visible"
-                            preserveAspectRatio="none"
-                          >
-                            {/* Area under curve */}
-                            <motion.path
-                              key={`area-${timeframe}`}
-                              d={
-                                timeframe === "30d"
-                                  ? "M 0 44 C 35 42, 55 48, 85 40 C 115 32, 140 36, 175 24 C 205 14, 225 12, 250 8 L 250 56 L 0 56 Z"
-                                  : "M 0 48 C 30 46, 60 38, 95 32 C 130 26, 160 22, 195 12 C 215 6, 235 4, 250 3 L 250 56 L 0 56 Z"
-                              }
-                              fill="#41867A"
-                              fillOpacity={0.15}
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: 1 }}
-                              transition={{ duration: 0.4 }}
-                            />
-                            {/* Animated Stroke line */}
-                            <motion.path
-                              key={`line-${timeframe}`}
-                              d={
-                                timeframe === "30d"
-                                  ? "M 0 44 C 35 42, 55 48, 85 40 C 115 32, 140 36, 175 24 C 205 14, 225 12, 250 8"
-                                  : "M 0 48 C 30 46, 60 38, 95 32 C 130 26, 160 22, 195 12 C 215 6, 235 4, 250 3"
-                              }
-                              fill="none"
-                              stroke="#41867A"
-                              strokeWidth="2.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              initial={{ pathLength: 0 }}
-                              animate={{ pathLength: 1 }}
-                              transition={{ duration: 0.85, ease: [0.25, 0.1, 0.25, 1] }}
-                            />
-                            {/* Live pulsing dot at end of curve */}
-                            <motion.circle
-                              key={`dot-${timeframe}`}
-                              cx={250}
-                              cy={timeframe === "30d" ? 8 : 3}
-                              r="3.5"
-                              fill="#5FA89C"
-                              initial={{ scale: 0 }}
-                              animate={{ scale: [1, 1.4, 1] }}
-                              transition={{
-                                delay: 0.7,
-                                duration: 2,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                              }}
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Quick Action Buttons */}
-                    <div className="mt-3 grid grid-cols-2 gap-2">
-                      <button
-                        type="button"
-                        onClick={() => triggerFeedback("Flow-Simulation aktiv")}
-                        className="rounded-lg bg-brass px-3 py-2 text-center font-sans text-xs font-medium text-ink transition-colors hover:bg-brass-bright cursor-pointer"
-                      >
-                        Flow testen
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => triggerFeedback("APIs synchronisiert")}
-                        className="rounded-lg border border-bone/15 bg-bone/[0.02] px-3 py-2 text-center font-sans text-xs text-bone/80 transition-colors hover:border-brass hover:text-brass cursor-pointer"
-                      >
-                        API Status
-                      </button>
-                    </div>
-
-                    {/* Spacious, Minimal Activity List */}
-                    <div className="mt-4 space-y-2">
-                      <p className="font-sans text-[10px] text-bone/45 uppercase tracking-wider">
-                        Letzte Vorgänge
-                      </p>
-                      <div
-                        onClick={() => triggerFeedback("Kundenportal ausgewählt")}
-                        className="flex items-center justify-between rounded-lg border border-bone/10 bg-bone/[0.02] p-2.5 transition-colors hover:border-bone/20 cursor-pointer"
-                      >
-                        <div>
-                          <p className="font-sans text-xs font-medium text-bone">Kundenportal Web</p>
-                          <p className="font-mono text-[10px] text-bone/50">Next.js · Vor 2 Std.</p>
-                        </div>
-                        <span className="font-mono text-xs text-brass-bright">+€ 4.200</span>
-                      </div>
-                      <div
-                        onClick={() => triggerFeedback("Workflow Engine geprüft")}
-                        className="flex items-center justify-between rounded-lg border border-bone/10 bg-bone/[0.02] p-2.5 transition-colors hover:border-bone/20 cursor-pointer"
-                      >
-                        <div>
-                          <p className="font-sans text-xs font-medium text-bone">Workflow Engine</p>
-                          <p className="font-mono text-[10px] text-bone/50">Orchestrierung</p>
-                        </div>
-                        <span className="font-mono text-xs text-bone/70">-€ 180</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Bottom Area: Feedback & Home Indicator */}
-                  <div className="pt-3">
-                    <div className="h-5 flex items-center justify-center text-center">
-                      {feedback ? (
-                        <span className="font-mono text-[10px] text-brass-bright">
-                          ✓ {feedback}
-                        </span>
-                      ) : (
-                        <span className="font-mono text-[10px] text-bone/40">
-                          Tippen zum Interagieren
-                        </span>
-                      )}
-                    </div>
-                    <div className="mt-2 h-1 w-28 mx-auto rounded-full bg-bone/30" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Caption */}
-            </div>
+            <HeroShowcase />
           </motion.div>
         </motion.div>
       </section>
