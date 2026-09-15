@@ -1,5 +1,5 @@
 import { motion, MotionConfig, useReducedMotion, type Variants } from "framer-motion";
-import { calendlyUrl } from "../lib/site";
+import { contactHref } from "../lib/site";
 
 const easing = [0.25, 0.1, 0.25, 1] as const;
 
@@ -87,7 +87,7 @@ export function Hero({
                 transition={{ duration: 0.15, ease: "easeOut" }}
               >
                 <a
-                  href={calendlyUrl}
+                  href={contactHref}
                   data-calendly-trigger
                   data-calendly-location="hero"
                   className="inline-flex items-center justify-center rounded-sm bg-brass px-6 py-3 font-sans text-sm font-medium text-ink transition-colors hover:bg-brass-bright"

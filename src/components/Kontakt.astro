@@ -18,14 +18,12 @@ import { calendlyUrl } from "../lib/site";
       <p class="mt-4 font-sans text-lg text-bone/70">
         Buchen Sie direkt einen kurzen Termin für eine erste Einschätzung Ihres Projekts.
       </p>
-      <a
-        href={calendlyUrl}
-        data-calendly-trigger
-        data-calendly-location="kontakt"
-        class="mt-10 inline-flex items-center justify-center rounded-sm bg-brass px-6 py-3 font-sans text-sm font-medium text-ink transition-colors hover:bg-brass-bright"
-      >
-        Erstgespräch vereinbaren
-      </a>
+    </div>
+    <div
+      class="calendly-inline-widget mt-10 rounded-sm"
+      data-url={calendlyUrl}
+      style="min-width:320px;height:700px;"
+    >
     </div>
   </div>
 </section>

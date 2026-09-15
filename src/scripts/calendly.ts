@@ -1,31 +1,9 @@
-import { calendlyUrl } from "../lib/site";
 import { posthog } from "../lib/posthog";
 
-declare global {
-  interface Window {
-    Calendly?: {
-      initPopupWidget: (options: { url: string }) => void;
-    };
-  }
-}
+let widgetScriptPromise: Promise<void> | null = null;
 
-let calendlyScriptPromise: Promise<void> | null = null;
-let calendlyStylesPromise: Promise<void> | null = null;
-
-function loadCalendlyScript() {
-  if (window.Calendly) return Promise.resolve();
-
-  calendlyScriptPromise ??= new Promise<void>((resolve, reject) => {
-    const existingScript = document.querySelector<HTMLScriptElement>(
-      'script[src="https://assets.calendly.com/assets/external/widget.js"]',
-    );
-
-    if (existingScript) {
-      existingScript.addEventListener("load", () => resolve(), { once: true });
-      existingScript.addEventListener("error", () => reject(), { once: true });
-      return;
-    }
-
+function loadCalendlyWidgetScript() {
+  widgetScriptPromise ??= new Promise<void>((resolve, reject) => {
     const script = document.createElement("script");
     script.src = "https://assets.calendly.com/assets/external/widget.js";
     script.async = true;
@@ -34,63 +12,43 @@ function loadCalendlyScript() {
     document.body.appendChild(script);
   });
 
-  return calendlyScriptPromise;
+  return widgetScriptPromise;
 }
 
-// Läuft parallel zu loadCalendlyScript(): CSS ist nur per <link rel="preload">
-// vorgeladen (siehe BaseLayout.astro), nicht angewendet — erst hier als
-// echtes Stylesheet aktiviert, damit unbeteiligte Besucher gar kein
-// render-blocking Calendly-CSS bekommen.
-function loadCalendlyStyles() {
-  calendlyStylesPromise ??= new Promise<void>((resolve, reject) => {
-    const existingLink = document.querySelector<HTMLLinkElement>(
-      'link[rel="stylesheet"][href="https://assets.calendly.com/assets/external/widget.css"]',
-    );
-
-    if (existingLink) {
-      resolve();
-      return;
-    }
-
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = "https://assets.calendly.com/assets/external/widget.css";
-    link.addEventListener("load", () => resolve(), { once: true });
-    link.addEventListener("error", () => reject(), { once: true });
-    document.head.appendChild(link);
-  });
-
-  return calendlyStylesPromise;
+// Inline-Widget erst laden, wenn die Kontakt-Section tatsächlich in die Nähe
+// des Viewports scrollt — erspart Besuchern, die nie so weit scrollen, das
+// Calendly-Skript (und dessen Cookie) komplett. Nur auf dem One-Pager
+// vorhanden, auf anderen Seiten (Blog, Über uns, …) ist kontaktSection null.
+const kontaktSection = document.getElementById("kontakt");
+if (kontaktSection) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      loadCalendlyWidgetScript();
+      observer.disconnect();
+    },
+    { rootMargin: "200px" },
+  );
+  observer.observe(kontaktSection);
 }
 
-document.addEventListener("click", async (event) => {
+// Kontakt-CTAs außerhalb der Kontakt-Section (Nav, Footer, Hero, Blog) linken
+// direkt auf /#kontakt statt ein Popup zu öffnen, tracken beim Klick aber
+// weiterhin dieselbe Intention wie zuvor.
+document.addEventListener("click", (event) => {
   const trigger = (event.target as HTMLElement).closest<HTMLAnchorElement>(
     "[data-calendly-trigger]",
   );
   if (!trigger) return;
 
-  event.preventDefault();
-
   posthog.capture("calendly_cta_clicked", {
     location: trigger.dataset.calendlyLocation ?? "unknown",
   });
-
-  const originalText = trigger.textContent;
-  trigger.setAttribute("aria-busy", "true");
-  trigger.textContent = "Terminmodul wird geladen…";
-
-  try {
-    await Promise.all([loadCalendlyScript(), loadCalendlyStyles()]);
-    window.Calendly?.initPopupWidget({ url: calendlyUrl });
-  } finally {
-    trigger.removeAttribute("aria-busy");
-    trigger.textContent = originalText;
-  }
 });
 
-// Calendly postet ein window-Message-Event, sobald im Popup tatsächlich ein
-// Termin gebucht wurde (nicht nur geöffnet) — das läuft im eingebetteten
-// Iframe und ist für unser eigenes Tracking sonst unsichtbar.
+// Calendly postet ein window-Message-Event, sobald im eingebetteten Kalender
+// tatsächlich ein Termin gebucht wurde (nicht nur angezeigt) — das läuft im
+// iframe und ist für unser eigenes Tracking sonst unsichtbar.
 window.addEventListener("message", (event) => {
   if (
     event.origin !== "https://calendly.com" ||

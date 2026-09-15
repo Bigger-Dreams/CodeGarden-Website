@@ -1,5 +1,5 @@
 ---
-import { calendlyUrl } from "../lib/site";
+import { contactHref } from "../lib/site";
 
 const links = [
   { href: "/#leistungen", label: "Leistungen" },
@@ -39,7 +39,7 @@ const ctaClass =
           </a>
         ))
       }
-      <a href={calendlyUrl} data-calendly-trigger data-calendly-location="nav" class={ctaClass}>
+      <a href={contactHref} data-calendly-trigger data-calendly-location="nav" class={ctaClass}>
         Jetzt anfragen
       </a>
     </nav>
@@ -80,7 +80,7 @@ const ctaClass =
           </a>
         ))
       }
-      <a href={calendlyUrl} data-calendly-trigger data-calendly-location="nav-mobile" class={ctaClass}>
+      <a href={contactHref} data-calendly-trigger data-calendly-location="nav-mobile" class={ctaClass}>
         Jetzt anfragen
       </a>
     </nav>
