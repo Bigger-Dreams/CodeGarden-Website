@@ -1,5 +1,4 @@
 ---
-import { getImage } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Hero } from "../components/Hero";
 import Problem from "../components/Problem.astro";
@@ -8,32 +7,11 @@ import Ablauf from "../components/Ablauf.astro";
 import Referenzen from "../components/Referenzen.astro";
 import FAQ from "../components/FAQ.astro";
 import Kontakt from "../components/Kontakt.astro";
-import heroImageSource from "../assets/hero-app-1.webp";
-
-// Hero.tsx ist eine React-Insel und kann astro:assets nicht selbst nutzen
-// (das läuft nur im Astro-Build-Kontext) — daher hier optimieren und als
-// fertige src/srcSet-Strings durchreichen. 340px = größte CSS-Breite des
-// Mockups (sm:w-[340px]); 1x/2x deckt Standard- und Retina-Displays ab.
-// quality:90 ist bei WebP visuell nicht von 100 unterscheidbar, aber
-// spürbar kleiner (libwebp komprimiert bei q100 kaum noch).
-const heroImage = await getImage({
-  src: heroImageSource,
-  width: 340,
-  quality: 90,
-  format: "webp",
-  densities: [1, 2],
-});
 ---
 
 <BaseLayout>
   <main class="flex flex-1 flex-col">
-    <Hero
-      heroImageSrc={heroImage.src}
-      heroImageSrcSet={heroImage.srcSet.attribute}
-      heroImageWidth={heroImage.attributes.width}
-      heroImageHeight={heroImage.attributes.height}
-      client:load
-    />
+    <Hero client:load />
     <Problem />
     <Leistungen />
     <Ablauf />
