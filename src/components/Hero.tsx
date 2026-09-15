@@ -7,6 +7,9 @@ import {
   type Variants,
 } from "framer-motion";
 import { contactHref } from "../lib/site";
+import bankingUebersicht from "../assets/banking-uebersicht.webp";
+import bankingKonto from "../assets/banking-konto.webp";
+import bankingDepot from "../assets/banking-depot.webp";
 
 const easing = [0.25, 0.1, 0.25, 1] as const;
 
@@ -37,17 +40,17 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    src: new URL("../assets/banking-uebersicht.webp", import.meta.url).href,
+    src: bankingUebersicht.src,
     label: "Übersicht",
     alt: "Banking-App Screen Übersicht – Gesamtvermögen, Konten und letzte Aktivität",
   },
   {
-    src: new URL("../assets/banking-konto.webp", import.meta.url).href,
+    src: bankingKonto.src,
     label: "Konto",
     alt: "Banking-App Screen Konto – Gehaltskonto, Sparkonto, Einnahmen und Sparziele",
   },
   {
-    src: new URL("../assets/banking-depot.webp", import.meta.url).href,
+    src: bankingDepot.src,
     label: "Depot",
     alt: "Banking-App Screen Depot – Depotwert, Positionen und Watchlist",
   },
